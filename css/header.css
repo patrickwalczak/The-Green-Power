@@ -619,14 +619,14 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: 22%;
+    margin-left: calc(100vw - 88%);
     max-width: 985px;
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 70%;
     max-width: 910px;
-    margin-left: 28%;
+    margin-left: calc(100vw - 83%);
   }
 
   .hero__button {
