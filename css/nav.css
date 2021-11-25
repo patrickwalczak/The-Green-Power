@@ -10,7 +10,7 @@ nav {
   width: 100%;
   height: auto;
   flex-direction: column;
-  border-bottom: 1px solid gray;
+  border-bottom: 2px solid rgb(77, 7, 7);
   display: flex;
 }
 
