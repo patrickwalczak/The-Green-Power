@@ -1151,4 +1151,28 @@
     --translate-block-two: 40vw;
     --translate-block-three: 62vw;
   }
+
+  .e_1 {
+    --transform-title: translate3d(-60%, 0px, 0px) scale3d(1, 1, 1);
+  }
+
+  .e_2 {
+    --transform-title: translate3d(-140%, 0px, 0px) scale3d(1, 1, 1);
+  }
+
+  .e_3 {
+    --transform-title: translate3d(-64%, 0px, 0px) scale3d(1, 1, 1);
+  }
+
+  .event__title {
+    font-size: clamp(2rem, 2vw + 0.1rem, 3.5rem);
+  }
+  .event_date {
+    min-width: 90px;
+    width: 180px;
+  }
+
+  .line__between {
+    margin-right: 0;
+  }
 }
