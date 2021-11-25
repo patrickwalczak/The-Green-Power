@@ -12,4 +12,6 @@ At the moment, there are some things which have to be done. However, most are do
 
 I will work on smooth scrolling, scrollbar, adding elements or sections dynamically, footer and I have to tidy my js file when I finish everything.
 
+To properly open a link, please copy from line below 'thegreenpower.netlify.app' and do not add prefix 'www.' because 'Your connection is not private' window will be shown and there is no way to omit it. 
+
 Link: thegreenpower.netlify.app/
