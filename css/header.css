@@ -246,6 +246,9 @@ This is intro animaton (fading in elements) */
   width: 100%;
   font-size: 2.5rem;
   margin-top: calc(100vw - 87%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Adding opacity to sub header when left/right button is hovered */
@@ -267,12 +270,12 @@ This is intro animaton (fading in elements) */
 
 #hero__left__image__content.image__content h3 {
   width: 90%;
-  margin-left: calc(100% - (100% - 3%));
+  /* margin-left: calc(100% - (100% - 3%)); */
 }
 
 #hero__right__image__content.image__content h3 {
   width: 70%;
-  margin-left: 20%;
+  /* margin-left: 20%; */
 }
 
 .image__content h3 span {
@@ -288,12 +291,12 @@ This is intro animaton (fading in elements) */
 
 #hero__left__image__content .image__content__paragraph {
   width: 70%;
-  margin-left: calc(100% - (100% - 10%));
+  /* margin-left: calc(100% - (100% - 10%)); */
 }
 
 #hero__right__image__content .image__content__paragraph {
   width: 60%;
-  margin-left: calc(100% - (100% - 22%));
+  /* margin-left: calc(100% - (100% - 22%)); */
 }
 
 .word__H.wordHeroRight,
@@ -363,22 +366,22 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content.image__content h3 {
     width: 85%;
-    margin-left: calc(100% - (100% - 3%));
+    /* margin-left: calc(100% - (100% - 3%)); */
   }
 
   #hero__right__image__content.image__content h3 {
     width: 65%;
-    margin-left: 20%;
+    /* margin-left: 20%; */
   }
 
   #hero__left__image__content .image__content__paragraph {
     width: 75%;
-    margin-left: calc(100% - (100% - 10%));
+    /* margin-left: calc(100% - (100% - 10%)); */
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 65%;
-    margin-left: calc(100% - (100% - 20%));
+    /* margin-left: calc(100% - (100% - 20%)); */
   }
 
   /* header's buttons */
@@ -441,12 +444,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content.image__content h3 {
     width: 90%;
-    margin-left: calc(100% - (100% - 3%));
+    /* margin-left: calc(100% - (100% - 3%)); */
   }
 
   #hero__right__image__content.image__content h3 {
     width: 80%;
-    margin-left: 12%;
+    /* margin-left: 12%; */
   }
 
   .image__content__paragraph {
@@ -456,12 +459,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: calc(100% - (100% - 10%));
+    /* margin-left: calc(100% - (100% - 10%)); */
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 60%;
-    margin-left: calc(100% - (100% - 22%));
+    /* margin-left: calc(100% - (100% - 22%)); */
   }
 
   .hero__button {
@@ -518,12 +521,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content.image__content h3 {
     width: 90%;
-    margin-left: calc(100% - (100% - 3%));
+    /* margin-left: calc(100% - (100% - 3%)); */
   }
 
   #hero__right__image__content.image__content h3 {
     width: 90%;
-    margin-left: 6%;
+    /* margin-left: 6%; */
   }
 
   .image__content__paragraph {
@@ -533,12 +536,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: calc(100% - (100% - 10%));
+    /* margin-left: calc(100% - (100% - 10%)); */
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 80%;
-    margin-left: calc(100% - (100% - 14%));
+    /* margin-left: calc(100% - (100% - 14%)); */
   }
 
   .hero__button {
@@ -604,12 +607,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content.image__content h3 {
     width: 90%;
-    margin-left: calc(100% - (100% - 3%));
+    /* margin-left: calc(100% - (100% - 3%)); */
   }
 
   #hero__right__image__content.image__content h3 {
     width: 90%;
-    margin-left: 8%;
+    /* margin-left: 8%; */
   }
 
   .image__content__paragraph {
@@ -619,14 +622,12 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: calc(100vw - 88%);
     max-width: 985px;
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 70%;
     max-width: 910px;
-    margin-left: calc(100vw - 83%);
   }
 
   .hero__button {
