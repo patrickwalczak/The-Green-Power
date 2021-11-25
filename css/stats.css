@@ -661,11 +661,12 @@
     grid-row: 1/2;
     align-self: start;
     justify-self: center;
-    font-size: clamp(4rem, 5vw + 0.1rem, 10rem);
+    font-size: clamp(4rem, 5vw + 0.1rem, 8rem);
     margin-bottom: 0vw;
     user-select: none;
     padding-left: 3vw;
     text-align: left;
+    margin-bottom: 2vw;
   }
 
   /* LINE BELOW HEADER */
@@ -725,7 +726,7 @@
     height: 30vw;
     max-width: 440px;
     max-height: 120px;
-    margin-top: -3vw;
+    margin-top: -5vw;
   }
 
   .typing-class {
