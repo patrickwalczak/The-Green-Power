@@ -602,7 +602,7 @@
   }
 
   .animated-title > div h2 {
-    font-size: clamp(5rem, 8vw + 0.1rem, 8rem);
+    font-size: clamp(5rem, 8vw + 0.1rem, 12rem);
   }
 
   .ecoHome__header__container::before {
@@ -664,13 +664,14 @@
     grid-row: 3 / 4;
     width: 20vw;
     height: 35vw;
-    max-height: 500px;
-    max-width: 280px;
-    justify-self: right;
+    max-height: 600px;
+    max-width: 350px;
+    justify-self: center;
     padding-top: 4vw;
     padding-bottom: 3vw;
     margin-right: 2vw;
     margin-bottom: 0;
+    margin-left: 7vw;
   }
 
   .block > p {
