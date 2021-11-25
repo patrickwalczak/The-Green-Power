@@ -1,0 +1,41 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  min-width: 100%;
+  position: relative;
+  margin-top: 8rem;
+}
+
+body.overflowClass {
+  overflow: hidden;
+}
+
+.container {
+  visibility: visible;
+}
+
+.container.loaded {
+  visibility: visible;
+}
+
+@media all and (max-width: 700px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
+}

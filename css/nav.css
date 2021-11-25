@@ -1,0 +1,995 @@
+@media all and (min-width: 149px) and (max-width: 300px) {
+  body {
+    margin-top: 4rem;
+  }
+}
+
+/* General properties */
+
+nav {
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  border-bottom: 1px solid gray;
+  display: flex;
+}
+
+.nav__top {
+  width: inherit;
+  display: grid;
+  z-index: 500;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid gray;
+  opacity: 1;
+  transition: 500ms ease-in-out;
+  grid-template-columns: 10% 80%;
+  grid-template-rows: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* ============================== */
+/* properties for smaller black nav */
+
+.nav__top.transform__nav {
+  background-color: black;
+  transition: 500ms ease-in-out;
+  grid-template-columns: 10% 80%;
+  grid-template-rows: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.nav__top .nav__links {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.nav__top.transform__nav .nav__links {
+  display: flex;
+  justify-content: start;
+  /* place-self: align-self justify-self */
+  place-self: center stretch;
+  /* grid area: GRS / GCS / GRE / GRC */
+  grid-column: 2/3;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.nav__top.transform__nav .nav__link {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  position: relative;
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+/* =================== */
+
+.nav__top.transform__nav .hamburger__menu > span {
+  background-color: white;
+}
+
+.nav__top.transform__nav .logo {
+  grid-column: 2/3;
+  place-self: center center;
+  font-size: clamp(1.1rem, 7vw, 1.5rem);
+}
+
+.nav__top.transform__nav .logo h2 {
+  color: white;
+}
+
+/* Leaf's size */
+.nav__top.transform__nav .leaf__large {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.nav__top.transform__nav .btn__contact {
+  border: none;
+  background: rgb(0, 80, 0);
+  color: rgb(255, 255, 255);
+  grid-column: 4/5;
+  font-weight: 500;
+  display: none;
+}
+
+.nav__top.transform__nav .btn__contact:hover {
+  color: rgb(0, 80, 0);
+  background: rgb(255, 255, 255);
+}
+
+/* properties for smaller black nav ^ */
+/* ============================== */
+
+/* ===================== */
+/* nav__top element: hamburger menu */
+.hamburger__menu {
+  cursor: pointer;
+  place-self: center start;
+  grid-column: 1/2;
+}
+
+.hamburger__menu > span {
+  display: block;
+  width: 13px;
+  height: 1px;
+  background-color: rgb(0, 0, 0);
+  transition: 400ms ease-in-out;
+}
+
+.hamburger__menu > span:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.hamburger__menu.open > span {
+  transition: 600ms ease-in-out;
+}
+.hamburger__menu.open > span:first-child {
+  transform: rotate(45deg) translateX(5px) translateY(5px);
+}
+
+.hamburger__menu.open > span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger__menu.open > span:last-child {
+  transform: rotate(-45deg) translateX(5px) translateY(-5px);
+}
+
+/* hamburger menu */
+/* ===================== */
+
+.logo {
+  font-weight: 600;
+  position: relative;
+  user-select: none;
+  place-self: center center;
+  grid-column: 2/3;
+  font-size: clamp(1.1rem, 7vw, 1.5rem);
+}
+
+.logo h2 {
+  color: #0f461f;
+}
+
+.leaf__large {
+  position: absolute;
+  top: 60%;
+  right: -5%;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+/* nav__top element: Contact Us */
+.btn__contact {
+  background: inherit;
+  color: rgb(0, 80, 0);
+  font-weight: 500;
+  place-self: center end;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  grid-column: 3 / 4;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  border: 1px solid rgb(0, 80, 0);
+  display: none;
+}
+
+.btn__contact:hover {
+  color: white;
+  background: rgb(0, 80, 0);
+}
+
+.nav__bottom {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5.5% 94% 0.5%;
+  grid-template-rows: 2rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.nav__bottom .nav__links {
+  display: flex;
+  justify-content: space-between;
+  /* place-self: align-self justify-self */
+  place-self: center stretch;
+  /* grid area: GRS / GCS / GRE / GRC */
+  grid-column: 2/3;
+  position: relative;
+}
+
+.nav__bottom .nav__links #link__careers {
+  display: none;
+}
+
+li:last-child {
+  position: relative;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav__link {
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  position: relative;
+  letter-spacing: 0.02em;
+  font-size: clamp(0.75rem, 5vw, 1rem);
+  margin-left: 0.5rem;
+}
+
+.nav__link:hover {
+  color: rgb(0, 80, 0);
+}
+
+.nav__link::after {
+  content: "";
+  display: block;
+  width: 0;
+  position: absolute;
+  height: 3px;
+  bottom: -15px;
+  background-color: green;
+  transition: all 0.4s linear 0s;
+  left: 0;
+}
+
+.nav__link:hover:after {
+  width: 100%;
+}
+
+.button__newsletter {
+  place-self: center end;
+  grid-column: 3 / 4;
+  border: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: rgb(0, 80, 0);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  background: none;
+  display: none;
+}
+
+/* ===================== */
+/* hidden side main menu */
+
+.hidden__menu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 23.5rem;
+  background-color: white;
+  z-index: 1000;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: transform 500ms ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.4, 0.5, 0.5, 1);
+}
+
+#subMenu__investors.hidden__menu,
+#subMenu__about.hidden__menu,
+#subMenu__solutions.hidden__menu {
+  z-index: 2000;
+}
+
+.hiddenAnimation {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.4s cubic-bezier(0.4, 0.5, 0.5, 1);
+}
+
+.hidden__menu__closedMenu_header_container {
+  width: 100%;
+  height: 5.2rem;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  cursor: pointer;
+}
+
+.closedMenu {
+  margin-left: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.closedMenu:hover span {
+  background-color: rgb(87, 17, 17);
+}
+
+.closedMenu > span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: rgb(7, 3, 3);
+  position: absolute;
+  top: 50%;
+  left: 0%;
+}
+
+.closedMenu > span:first-child {
+  transform: rotate(45deg);
+}
+
+.closedMenu > span:last-child {
+  transform: rotate(-45deg);
+}
+
+.hidden__menu__header {
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  /*padding: top right bottom left */
+  padding: 0.6rem 2rem 0 1rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.hidden__menu__linksContainer {
+  list-style: none;
+  width: 100%;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.hidden__menu__linkContainer {
+  width: 100%;
+  height: 5rem;
+  padding: 1.6rem 1rem 0rem 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.indicator__container {
+  width: 1rem;
+  height: 5rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.indicator {
+  position: absolute;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  top: -5%;
+}
+
+.indicator__container_back {
+  margin-left: 0.2rem;
+  height: 1rem;
+  width: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.indicator__container_back::before {
+  content: " \003C";
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+}
+
+.hidden__menu__linkContainer:hover {
+  background: rgb(0, 80, 0);
+}
+
+.hidden__menu__linkContainer:hover .indicator {
+  color: white;
+}
+
+.hidden__menu__linkContainer:hover .hidden__menu__link {
+  color: white;
+}
+
+.hidden__menu__link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.514);
+  backdrop-filter: blur(1px);
+  z-index: 800;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+/* The smallest header can be less than 40rem */
+
+@media all and (min-width: 300.1px) and (max-width: 600px) {
+  body {
+    margin-top: 4rem;
+  }
+
+  nav {
+    border-bottom: 1px solid gray;
+  }
+
+  .nav__top {
+    grid-template-rows: 4.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  .nav__top.transform__nav {
+    grid-template-rows: 4rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .nav__top .nav__links {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav__top.transform__nav .nav__links {
+    display: none;
+  }
+
+  .nav__top.transform__nav .nav__link {
+    /*  */
+    display: none;
+  }
+
+  /* =================== */
+  /* properties for smaller black nav ^ */
+  /* ============================== */
+
+  /* ===================== */
+  /* nav__top element: hamburger menu */
+
+  .hamburger__menu > span {
+    width: 22px;
+    height: 1px;
+  }
+
+  .hamburger__menu > span:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  /* hamburger menu */
+  /* ===================== */
+
+  .logo {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .leaf__large {
+    top: 60%;
+    right: -4%;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  /* nav__top element: Contact Us */
+  .btn__contact {
+    display: none;
+  }
+
+  .nav__bottom {
+    grid-template-columns: 15% 75% 10%;
+    grid-template-rows: 3.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .nav__bottom .nav__links #link__careers {
+    display: none;
+  }
+
+  .nav__link {
+    font-size: clamp(0.5rem, 6vw, 1.2rem);
+  }
+
+  .nav__link::after {
+    height: 3px;
+    bottom: -5px;
+  }
+
+  .button__newsletter {
+    display: none;
+  }
+
+  /* ===================== */
+  /* hidden side main menu */
+
+  .hidden__menu {
+    position: fixed;
+  }
+
+  .closedMenu > span {
+    width: 20px;
+    height: 1px;
+
+    top: 50%;
+    left: 0%;
+  }
+
+  .hidden__menu__header {
+    /*padding: top right bottom left */
+    padding: 0.6rem 2rem 0 1rem;
+    height: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .indicator__container_back::before {
+    top: -6%;
+  }
+
+  .hidden__menu__link {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+@media all and (min-width: 600.1px) and (max-width: 900px) {
+  body {
+    margin-top: 5rem;
+  }
+
+  nav {
+    border-bottom: 2px solid gray;
+  }
+
+  .nav__top {
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  .nav__top.transform__nav {
+    grid-template-columns: 20% 50% 40%;
+    grid-template-rows: 4.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav__top.transform__nav .nav__links {
+    display: none;
+  }
+
+  .nav__top.transform__nav .nav__link {
+    display: none;
+  }
+
+  /* =================== */
+
+  .nav__top.transform__nav .logo {
+    grid-column: 2/3;
+    place-self: center center;
+    font-size: clamp(1.5rem, 7vw, 2.5rem);
+  }
+
+  /* Leaf's size */
+  .nav__top.transform__nav .leaf__large {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav__top.transform__nav .btn__contact {
+    grid-column: 3/4;
+    width: 10rem;
+    height: 2.8rem;
+    place-self: center center;
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  /* properties for smaller black nav ^ */
+  /* ============================== */
+
+  /* ===================== */
+  /* nav__top element: hamburger menu */
+
+  .hamburger__menu > span {
+    width: 24px;
+    height: 2px;
+  }
+
+  .hamburger__menu > span:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  /* hamburger menu */
+  /* ===================== */
+
+  .logo {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .leaf__large {
+    right: -5%;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav__bottom {
+    grid-template-columns: 24% 52vw 24%;
+    grid-template-rows: 3.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .btn__contact {
+    display: block;
+  }
+
+  .nav__bottom .nav__links {
+    justify-content: space-between;
+  }
+
+  .nav__bottom .nav__links #link__careers {
+    display: block;
+  }
+
+  .nav__link {
+    font-size: clamp(1rem, 5vw, 1.2rem);
+  }
+
+  .nav__link::after {
+    height: 3px;
+    bottom: -10px;
+  }
+
+  .button__newsletter {
+    display: none;
+  }
+
+  /* ===================== */
+  /* hidden side main menu */
+
+  .hidden__menu {
+    max-width: 25.5rem;
+  }
+
+  .closedMenu {
+    margin-left: 1.5rem;
+  }
+
+  .closedMenu > span {
+    width: 22px;
+    height: 2px;
+    top: 59%;
+  }
+
+  .hidden__menu__header {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .hidden__menu__linkContainer {
+    padding: 1.6rem 2rem 0rem 1.5rem;
+  }
+
+  .indicator__container_back::before {
+    content: " \003C";
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: absolute;
+    top: -6%;
+    right: 5%;
+  }
+
+  .hidden__menu__linkContainer:hover {
+    background: rgb(0, 80, 0);
+  }
+
+  .hidden__menu__linkContainer:hover .indicator {
+    color: white;
+  }
+
+  .hidden__menu__linkContainer:hover .hidden__menu__link {
+    color: white;
+  }
+
+  .hidden__menu__link {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+@media all and (min-width: 900.1px) {
+  body {
+    margin-top: 6rem;
+  }
+
+  nav {
+    border-bottom: 2px solid gray;
+  }
+
+  .nav__top {
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  .nav__top.transform__nav {
+    grid-template-rows: 5rem;
+    grid-template-columns: 5% 38% 42% 15%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .nav__top.transform__nav .nav__links {
+    justify-content: space-around;
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+  }
+
+  .nav__top.transform__nav .nav__link {
+    margin-right: 0rem;
+    font-size: 1.1rem;
+  }
+
+  /* =================== */
+
+  .nav__top.transform__nav .logo {
+    font-size: 2rem;
+    grid-column: 3/4;
+    justify-self: center;
+  }
+
+  .nav__top.transform__nav .leaf__large {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .nav__top.transform__nav .btn__contact {
+    border-radius: 2.5rem;
+    border: none;
+    background: rgb(0, 80, 0);
+    color: rgb(255, 255, 255);
+    grid-column: 4/5;
+    width: 10rem;
+    height: 3.2rem;
+    display: block;
+    font-size: 1.1rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  /* ===================== */
+  /* hidden side main menu */
+
+  .hidden__menu {
+    width: 23.5vw;
+    min-width: 30rem;
+    max-width: 32rem;
+  }
+
+  .hidden__menu__closedMenu_header_container {
+    height: 7.2rem;
+  }
+
+  .closedMenu {
+    margin-left: 2rem;
+  }
+
+  .closedMenu > span {
+    width: 21px;
+    height: 2px;
+  }
+
+  .hidden__menu__header {
+    padding: 0.4rem 2rem 0 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .hidden__menu__linkContainer {
+    padding: 1.6rem 2rem 0rem 2rem;
+  }
+
+  .indicator {
+    font-size: 2.3rem;
+
+    top: -7%;
+  }
+
+  .indicator__container_back {
+    margin-left: 1.5rem;
+    height: 3rem;
+  }
+
+  .indicator__container_back::before {
+    font-size: 2.3rem;
+
+    top: 15%;
+    right: 5%;
+  }
+
+  .hidden__menu__link {
+    font-size: 1.6rem;
+  }
+
+  /* ===================== */
+  /* nav__top element: hamburger menu */
+  .hamburger__menu {
+    cursor: pointer;
+    place-self: center start;
+  }
+  .hamburger__menu > span {
+    width: 26px;
+    height: 2px;
+  }
+
+  .hamburger__menu > span:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  /* hamburger menu */
+  /* ===================== */
+
+  .logo {
+    font-size: 4rem;
+  }
+
+  .leaf__large {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* nav__top element: Contact Us */
+  .btn__contact {
+    width: 12rem;
+    height: 4rem;
+    font-weight: 500;
+    display: block;
+  }
+
+  .nav__bottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 55% 25%;
+    grid-template-rows: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .nav__bottom .nav__links {
+    justify-content: space-around;
+    font-size: 1rem;
+  }
+
+  .nav__bottom .nav__links #link__careers {
+    display: block;
+  }
+
+  .button__newsletter {
+    display: inline-block;
+  }
+
+  .nav__link {
+    font-size: 1.3rem;
+  }
+}
+
+@media all and (min-width: 1100.1px) {
+  body {
+    margin-top: 8rem;
+  }
+
+  .nav__top {
+    grid-template-rows: 8rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  .nav__top.transform__nav {
+    grid-template-rows: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  /* =================== */
+
+  .nav__top.transform__nav .nav__link {
+    font-size: 1.2rem;
+  }
+
+  .nav__top.transform__nav .logo {
+    font-size: 3rem;
+  }
+
+  .nav__top.transform__nav .leaf__large {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* ============================== */
+  /* properties for smaller black nav */
+
+  .logo {
+    font-size: 5rem;
+  }
+
+  .leaf__large {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .nav__top.transform__nav .btn__contact {
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.4rem;
+  }
+
+  .btn__contact {
+    width: 16rem;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+
+  .nav__bottom {
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .hidden__menu {
+    max-width: 36rem;
+  }
+}

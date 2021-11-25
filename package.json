@@ -1,0 +1,19 @@
+{
+  "name": "the-greenpower",
+  "version": "1.0.0",
+  "description": "",
+  "default": "script.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Patryk Walczak",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "core-js": "^3.19.1",
+    "regenerator-runtime": "^0.13.9"
+  }
+}
