@@ -589,9 +589,9 @@ This is intro animaton (fading in elements) */
   }
 
   .hero__section {
-    height: 65rem;
+    height: 100vh;
     min-height: 20rem;
-    max-height: 80rem;
+    max-height: 100vh;
   }
 
   .image__content h3 {
