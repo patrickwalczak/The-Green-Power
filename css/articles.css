@@ -1144,3 +1144,11 @@
     width: 90px;
   }
 }
+
+@media all and (min-width: 1600px) {
+  :root {
+    --translate-block-one: 23vw;
+    --translate-block-two: 40vw;
+    --translate-block-three: 62vw;
+  }
+}
