@@ -579,7 +579,7 @@
   .solutions__section {
     padding-top: 0rem;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 50rem 50rem 50rem 50rem;
+    grid-template-rows: repeat(4, 32vw);
     padding-left: 0rem;
   }
 
@@ -608,6 +608,8 @@
     font-size: 1.4rem;
     width: 80%;
     line-height: 1.6;
+    max-width: 703px;
+    text-align: left;
   }
 
   /* ============ */
@@ -615,6 +617,7 @@
   #solution__info--1 {
     grid-column: 1/2;
     grid-row: 1 / 2;
+    justify-self: start;
   }
 
   #solution__info--2 {
@@ -625,6 +628,7 @@
   #solution__info--3 {
     grid-column: 1/2;
     grid-row: 3/4;
+    justify-self: start;
   }
 
   #solution__info--4 {
@@ -634,10 +638,10 @@
 
   /* General properties for each solution's image */
   .solution_image {
-    width: 50vw;
-    max-width: 65rem;
-    max-height: 50rem;
-    height: 40vw;
+    width: 45vw;
+    max-width: 89rem;
+    max-height: 60rem;
+    height: 32vw;
   }
 
   /* ============ */
