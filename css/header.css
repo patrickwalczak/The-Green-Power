@@ -589,9 +589,9 @@ This is intro animaton (fading in elements) */
   }
 
   .hero__section {
-    height: 65rem;
-    min-height: 65rem;
-    max-height: 65rem;
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
   }
 
   .image__content h3 {
@@ -619,12 +619,14 @@ This is intro animaton (fading in elements) */
 
   #hero__left__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: calc(100% - (100% - 14%));
+    margin-left: 22%;
+    max-width: 700px;
   }
 
   #hero__right__image__content .image__content__paragraph {
     width: 70%;
-    margin-left: calc(100% - (100% - 18%));
+    max-width: 910px;
+    margin-left: 20%;
   }
 
   .hero__button {
