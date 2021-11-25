@@ -747,7 +747,7 @@ li {
   }
 
   nav {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid rgb(77, 7, 7);
   }
 
   .nav__top {
