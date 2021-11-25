@@ -661,7 +661,7 @@
     grid-row: 1/2;
     align-self: start;
     justify-self: center;
-    font-size: clamp(4rem, 5vw + 0.1rem, 6rem);
+    font-size: clamp(4rem, 5vw + 0.1rem, 10rem);
     margin-bottom: 0vw;
     user-select: none;
     padding-left: 3vw;
@@ -677,7 +677,7 @@
   /* ============================== */
 
   .slider__paragraph {
-    font-size: clamp(1.8rem, 1vw + 0.1rem, 2.5rem);
+    font-size: clamp(1.8rem, 1vw + 0.1rem, 3.5rem);
     width: 40vw;
     max-width: 500px;
     margin-top: 0vw;
