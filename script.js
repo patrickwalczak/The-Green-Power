@@ -720,3 +720,5 @@ const pageContainer = document.querySelector(".container");
 window.addEventListener("load", function () {
   console.log("test");
 });
+
+console.log("test");
