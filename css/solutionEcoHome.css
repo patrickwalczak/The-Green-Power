@@ -648,10 +648,10 @@
   .ecoHome__image {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
-    width: 65vw;
+    width: 60vw;
     height: 35vw;
-    max-width: 1000px;
-    max-height: 600px;
+    max-width: 1150px;
+    max-height: 650px;
     outline-offset: 20px;
     align-self: start;
     justify-self: left;
