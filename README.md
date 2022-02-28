@@ -4,7 +4,7 @@
 
 The GreenPower website is my first mini project where I create everything from scratch.
 
-The main goal of this project was to focus on CSS&HTML. I challenged myself to create a nice-looking site.
+The main goal of this project was to build nice-looking site.
 
 Technologies: CSS&HTML, JavaScript
 
