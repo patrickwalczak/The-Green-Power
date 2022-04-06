@@ -146,10 +146,10 @@ class SideNav {
     this.hiddenMenuCon.classList.toggle("hiddenAnimation");
   }
 
-  generateSubmenuLinks(...a) {
-    const arr = [...a];
+  generateSubmenuLinks(...links) {
+    const linksArr = [...links];
 
-    const markup = arr
+    const markup = linksArr
       .map(
         (link) => `
     <li class="hidden__menu__linkContainer">

@@ -1,14 +1,8 @@
-# The GreenPower [IN PROGRESS]
+# The GreenPower
 
+This is my first project where I create everything from scratch.
+The main goal of this project was to build nice-looking website.
 
-
-The GreenPower website is my first mini project where I create everything from scratch.
-
-The main goal of this project was to build nice-looking site.
+A GreenPower is a fictional company which provides sustainable energy solutions and more.
 
 Technologies: CSS&HTML, JavaScript
-
-
-To properly open a link, please copy from line below 'thegreenpower.netlify.app' and do not add prefix 'www.' because 'Your connection is not private' window will be shown and there is no way to omit it. 
-
-Link: thegreenpower.netlify.app/

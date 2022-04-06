@@ -247,7 +247,7 @@ ecoHomeButtonsContainer.addEventListener("click", function (e) {
 
 // Slider section
 
-const section = document.querySelector(".slider");
+const sectionSlider = document.querySelector(".slider");
 const sliderHeader = document.querySelector(".slider__header");
 const sectionButton = document.querySelector(".section__button");
 const lineBelowHeader = document.querySelector(".line");
@@ -260,6 +260,36 @@ const images = document.querySelectorAll(".slide__image");
 const descriptionContainer = document.querySelector(".img__descrip__container");
 const descriptionText = document.querySelector(".img__descrip__text");
 const emNum = document.querySelector(".emphasize__num");
+
+const firstSlide = `<h3 class="img__descrip__text">
+<span class="first_part typing-class"> With You we planted </span>
+<br />
+<span class="emphasize__num second_part typing-class">5</span>
+<span class="third_part typing-class"> million </span>
+
+<br />
+<span class="fourth_part typing-class"
+  >trees around the world
+</span>
+</h3>`;
+
+function initTypingClass(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0.5 && entry.isIntersecting) {
+      document.querySelector(".img__descrip__container").innerHTML = firstSlide;
+      observer.unobserve(sectionSlider);
+    } else {
+      sectionSlider.classList.remove("section--hidden");
+    }
+  });
+}
+
+const sliderSectionObserver = new IntersectionObserver(initTypingClass, {
+  root: null,
+  threshold: [0.2, 0.7],
+});
+
+sliderSectionObserver.observe(sectionSlider);
 
 function slider() {
   let currSlide = 1;
@@ -355,9 +385,9 @@ function slider() {
     dots[currSlide - 1].classList.add("dot__active");
     images[currSlide - 1].classList.remove("hidden");
 
-    const classArr = new Array(...section.classList);
-    section.classList.remove(classArr[1]);
-    section.classList.add(`slider__BG__${currSlide}`);
+    const classArr = new Array(...sliderSection.classList);
+    sliderSection.classList.remove(classArr[1]);
+    sliderSection.classList.add(`slider__BG__${currSlide}`);
   }
 }
 

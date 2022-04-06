@@ -102,7 +102,7 @@
 .animated-title > div h2 {
   padding: 2vmin 0;
   position: absolute;
-  font-size: 10vw;
+  font-size: clamp(4rem, 5vw + 0.1rem, 7.5rem);
   user-select: none;
 }
 
@@ -602,7 +602,7 @@
   }
 
   .animated-title > div h2 {
-    font-size: clamp(5rem, 8vw + 0.1rem, 12rem);
+    font-size: clamp(5rem, 8vw + 0.1rem, 8rem);
   }
 
   .ecoHome__header__container::before {
