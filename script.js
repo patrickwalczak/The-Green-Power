@@ -1,3 +1,5 @@
+console.log("test");
+
 import SideNav from "./sideNav.js";
 // Hero section elements
 
