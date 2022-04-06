@@ -1,177 +1,10 @@
-import SideNav from "./sideNav.js";
-// Hero section elements
-
-const leftHeroImage = document.querySelector(".header--leftImage");
-
-const rightHeroImage = document.querySelector(".header--rightImage");
-
-const leftHeroButton = document.querySelector(".header__leftSide_btn");
-
-const rightHeroButton = document.querySelector(".header__rightSide_btn");
-
-const heroHeader = document.querySelector(".hero__header__wrapper");
-
-const hero__leftButtonLinesContainer = document.querySelector("#leftHero");
-
-const hero__rightButtonLinesContainer = document.querySelector("#rightHero");
-
-const hero__leftContentWrapper = document.querySelector(
-  "#hero__left__image__content"
-);
-
-const hero__rightContentWrapper = document.querySelector(
-  "#hero__right__image__content"
-);
-
-const hero__rightContentWords = document.querySelectorAll(".word__H");
-
-const hero__leftContentWords = document.querySelectorAll(".word__L");
-
-////////////////////
-
-function mouseenterHeroImgHandler(
-  oppositeImg,
-  btn,
-  linesContainer,
-  contentWrapper,
-  contentWords
-) {
-  leftHeroImage.style.clipPath = "var(--left--normal)";
-  rightHeroImage.style.clipPath = "var(--right--normal)";
-
-  heroHeader.classList.remove("hideVisibility");
-
-  linesContainer.style.bottom = "-15%";
-  linesContainer.style.left = "-8%";
-
-  btn.classList.remove("isHovered");
-
-  oppositeImg.classList.remove("imageIsHovered");
-
-  contentWrapper.classList.remove("displayContent");
-
-  contentWords.forEach((word) => {
-    word.classList.remove("wordHeroRight");
-  });
-}
-
-function mouseenterHeroBtnHandler(
-  leftState,
-  rightState,
-  linesContainer,
-  contentWrapper,
-  contentWords
-) {
-  // ============
-  // Adding/removing classes associate with adjusting 'clip: polygon' property for left and right hero images
-  leftHeroImage.style.clipPath = `var(--left--${leftState})`;
-
-  rightHeroImage.style.clipPath = `var(--right--${rightState})`;
-
-  // Hide header text
-  heroHeader.classList.add("hideVisibility");
-
-  // Change the position of the button's white lines
-  linesContainer.style.bottom = "0%";
-  linesContainer.style.left = "0%";
-
-  // Change entire button element position
-  this.classList.add("isHovered");
-
-  // ===============
-  //  Change a background-image position
-  if (leftState === "active") {
-    leftHeroImage.classList.add("imageIsHovered");
-  } else {
-    rightHeroImage.classList.add("imageIsHovered");
-  }
-  // =============
-  // For entire content wrapper is added animation which add opacity and visibility
-  contentWrapper.classList.add("displayContent");
-
-  // Add animation for each content word
-  contentWords.forEach((word) => {
-    word.classList.add("wordHeroRight");
-  });
-}
-
-function mouseoutHeroHandler() {
-  // Reset left side
-  mouseenterHeroImgHandler(
-    leftHeroImage,
-    leftHeroButton,
-    hero__leftButtonLinesContainer,
-    hero__leftContentWrapper,
-    hero__leftContentWords
-  );
-  // Reset right side
-  mouseenterHeroImgHandler(
-    rightHeroImage,
-    rightHeroButton,
-    hero__rightButtonLinesContainer,
-    hero__rightContentWrapper,
-    hero__rightContentWords
-  );
-}
-
-window.addEventListener("load", () => {
-  leftHeroImage.classList.remove("afterLoading");
-  rightHeroImage.classList.remove("afterLoading");
-});
-
-leftHeroButton.addEventListener(
-  "mouseenter",
-  mouseenterHeroBtnHandler.bind(
-    leftHeroButton,
-    "active",
-    "unactive",
-    hero__leftButtonLinesContainer,
-    hero__leftContentWrapper,
-    hero__leftContentWords
-  )
-);
-
-rightHeroButton.addEventListener(
-  "mouseenter",
-  mouseenterHeroBtnHandler.bind(
-    rightHeroButton,
-    "unactive",
-    "active",
-    hero__rightButtonLinesContainer,
-    hero__rightContentWrapper,
-    hero__rightContentWords
-  )
-);
-
-rightHeroImage.addEventListener(
-  "mouseenter",
-  mouseenterHeroImgHandler.bind(
-    rightHeroImage,
-    leftHeroImage,
-    leftHeroButton,
-    hero__leftButtonLinesContainer,
-    hero__leftContentWrapper,
-    hero__leftContentWords
-  )
-);
-
-leftHeroImage.addEventListener(
-  "mouseenter",
-  mouseenterHeroImgHandler.bind(
-    leftHeroImage,
-    rightHeroImage,
-    rightHeroButton,
-    hero__rightButtonLinesContainer,
-    hero__rightContentWrapper,
-    hero__rightContentWords
-  )
-);
-
-leftHeroImage.addEventListener("mouseleave", mouseoutHeroHandler);
-
-rightHeroImage.addEventListener("mouseleave", mouseoutHeroHandler);
+import HiddenMenu from "./hiddenMenu.js";
+import HeroView from "./heroView.js";
+import ecoHomeView from "./ecoHomeView.js";
 
 const donateBtn = document.querySelector(".button__newsletter");
+
+const navTop = document.querySelector(".nav__top");
 
 const navBottom = document.querySelector(".nav__bottom");
 
@@ -199,8 +32,6 @@ navBottom.addEventListener("mouseover", hoverNavLinkHandler.bind(0.5));
 
 navBottom.addEventListener("mouseout", hoverNavLinkHandler.bind(1));
 
-const navTop = document.querySelector(".nav__top");
-
 function transformNavActions(entries) {
   entries.forEach((entry) => {
     if (entry.intersectionRatio > 0.8 && entry.isIntersecting) {
@@ -221,45 +52,39 @@ navBottomObserver.observe(navBottom);
 
 // ECOHOME BUTTONS
 
-const ecoHomeButtonsContainer = document.querySelector(
-  ".ecoHome__buttonsContainer"
-);
+// const ecoHomeButtonsContainer = document.querySelector(
+//   ".ecoHome__buttonsContainer"
+// );
 
-const ecoHomeButtons = document.querySelectorAll(".ecoHome__button");
+// const ecoHomeButtons = document.querySelectorAll(".ecoHome__button");
 
-const ecoHomeImages = document.querySelectorAll(".ecoHome__image");
+// const ecoHomeImages = document.querySelectorAll(".ecoHome__image");
 
-ecoHomeButtonsContainer.addEventListener("click", function (e) {
-  const clicked = e.target.closest(".ecoHome__button");
+// ecoHomeButtonsContainer.addEventListener("click", function (e) {
+//   const clicked = e.target.closest(".ecoHome__button");
 
-  if (!clicked) return;
+//   if (!clicked) return;
 
-  ecoHomeButtons.forEach((btn) => btn.classList.remove("button--active"));
+//   ecoHomeButtons.forEach((btn) => btn.classList.remove("button--active"));
 
-  ecoHomeImages.forEach((btn) => btn.classList.add("hidden"));
+//   ecoHomeImages.forEach((btn) => btn.classList.add("hidden"));
 
-  clicked.classList.add("button--active");
+//   clicked.classList.add("button--active");
 
-  ecoHomeImages[clicked.dataset.tab].classList.remove("hidden");
-});
+//   ecoHomeImages[clicked.dataset.tab].classList.remove("hidden");
+// });
 
+// ==========================================
 // ==========================================
 
 // Slider section
 
 const sectionSlider = document.querySelector(".slider");
-const sliderHeader = document.querySelector(".slider__header");
-const sectionButton = document.querySelector(".section__button");
-const lineBelowHeader = document.querySelector(".line");
-const arrows = document.querySelectorAll(".arrow");
 const rArrow = document.querySelector(".rightArrow");
 const lArrow = document.querySelector(".leftArrow");
 const dots = document.querySelectorAll(".dot");
-const dotsContainer = document.querySelector(".dots");
 const images = document.querySelectorAll(".slide__image");
 const descriptionContainer = document.querySelector(".img__descrip__container");
-const descriptionText = document.querySelector(".img__descrip__text");
-const emNum = document.querySelector(".emphasize__num");
 
 const firstSlide = `<h3 class="img__descrip__text">
 <span class="first_part typing-class"> With You we planted </span>
@@ -329,19 +154,7 @@ function slider() {
 
   function controlDescription(currSlide) {
     if (currSlide === 1) {
-      descriptionContainer.innerHTML = `
-
-        <h3 class="img__descrip__text">
-          <span class="first_part typing-class"> With You we planted </span>
-          <br />
-          <span class="emphasize__num second_part typing-class">5</span>
-          <span class="third_part typing-class"> million </span>
-
-          <br />
-          <span class="fourth_part typing-class">trees around the world </span>
-        </h3>
-
-      `;
+      descriptionContainer.innerHTML = firstSlide;
     }
 
     if (currSlide === 2) {
@@ -385,14 +198,16 @@ function slider() {
     dots[currSlide - 1].classList.add("dot__active");
     images[currSlide - 1].classList.remove("hidden");
 
-    const classArr = new Array(...sliderSection.classList);
-    sliderSection.classList.remove(classArr[1]);
-    sliderSection.classList.add(`slider__BG__${currSlide}`);
+    const classArr = new Array(...sectionSlider.classList);
+    sectionSlider.classList.remove(classArr[1]);
+    sectionSlider.classList.add(`slider__BG__${currSlide}`);
   }
 }
 
 slider();
 
+//==========================
+//==========================
 //==========================
 
 ///////////////////////////////////////
@@ -566,28 +381,28 @@ strengthsSectionObserver.observe(strengthsSection);
 // ==============
 // ==============
 
-const ecoHomeHeaderWrapper = document.querySelector(
-  ".ecoHome__header__container"
-);
+// const ecoHomeHeaderWrapper = document.querySelector(
+//   ".ecoHome__header__container"
+// );
 
-const ecoHomeHeaderWrapperObserver = new IntersectionObserver(
-  runEcoHomeAnimation,
-  {
-    root: null,
-    threshold: 0.6,
-  }
-);
+// const ecoHomeHeaderWrapperObserver = new IntersectionObserver(
+//   runEcoHomeAnimation,
+//   {
+//     root: null,
+//     threshold: 0.6,
+//   }
+// );
 
-function runEcoHomeAnimation(entries) {
-  const [entry] = entries;
+// function runEcoHomeAnimation(entries) {
+//   const [entry] = entries;
 
-  if (entry.isIntersecting) {
-    ecoHomeHeaderWrapper.classList.add("visible");
-    document.querySelector("#ecoHome__textTop").classList.add("text-top");
-    document.querySelector("#ecoHome__textBottom").classList.add("text-bottom");
-  }
-}
+//   if (entry.isIntersecting) {
+//     ecoHomeHeaderWrapper.classList.add("visible");
+//     document.querySelector("#ecoHome__textTop").classList.add("text-top");
+//     document.querySelector("#ecoHome__textBottom").classList.add("text-bottom");
+//   }
+// }
 
-ecoHomeHeaderWrapperObserver.observe(ecoHomeHeaderWrapper);
+// ecoHomeHeaderWrapperObserver.observe(ecoHomeHeaderWrapper);
 
 // ==========================

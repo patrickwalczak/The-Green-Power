@@ -683,7 +683,7 @@
   /* ============================== */
 
   .slider__paragraph {
-    font-size: clamp(1.8rem, 1vw + 0.1rem, 3.5rem);
+    font-size: clamp(2rem, 1vw + 0.1rem, 3.5rem);
     width: 40vw;
     max-width: 500px;
     margin-top: 0vw;
