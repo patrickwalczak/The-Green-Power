@@ -179,7 +179,7 @@
 @media all and (min-width: 1000.1px) {
   .solutions__opening__wrapper {
     flex-direction: row;
-    margin-bottom: 10rem;
+    margin-bottom: 2rem;
   }
 
   .solutions__opening {
@@ -441,7 +441,7 @@
   }
 
   .solution__name {
-    left: 12%;
+    left: 15%;
     font-size: 1.2rem;
   }
 
@@ -463,7 +463,7 @@
   }
 }
 
-@media all and (min-width: 800.1px) and (max-width: 1000px) {
+@media all and (min-width: 800.1px) {
   .solutions__section {
     padding-top: 0rem;
     grid-template-columns: 50% 50%;
@@ -476,14 +476,14 @@
     margin-left: 5rem;
     align-self: center;
     justify-self: right;
-    margin-top: 8rem;
+    margin-top: 5rem;
     padding-left: 0rem;
     padding-right: 0rem;
   }
 
   .solution__name {
-    left: 10%;
-    font-size: 1.4;
+    left: 0%;
+    font-size: 1.4rem;
   }
 
   .solution__header {
@@ -536,7 +536,6 @@
   .solution__image_1 {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    justify-self: right;
   }
 
   .solution__image_2 {
@@ -548,50 +547,57 @@
   .solution__image_3 {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
-
-    justify-self: right;
   }
 
   .solution__image_4 {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
-
     justify-self: left;
   }
 }
 
-@media all and (min-width: 1000.1px) {
+@media all and (min-width: 1000.1px) and (max-width: 1350px) {
+  .solution__name {
+    left: 0%;
+    font-size: 1.4rem;
+  }
+
+  .solution__header {
+    font-size: 4.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .solution__paragraph {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 1350.1px) {
   .solutions__section {
-    padding-top: 0rem;
-    grid-template-columns: 50% 50%;
     grid-template-rows: repeat(4, 32vw);
-    padding-left: 0rem;
   }
 
   .solution__info {
-    align-self: start;
-    justify-self: right;
     margin-left: 5rem;
     margin-top: 10rem;
     padding-left: 5vw;
-    padding-right: 0rem;
     margin-bottom: 2rem;
   }
 
   .solution__name {
     top: -10%;
+    left: 10%;
+
     font-size: 1.4rem;
   }
 
   .solution__header {
     font-size: 5rem;
     margin-bottom: 4rem;
-    text-align: left;
   }
 
   .solution__paragraph {
     font-size: 1.4rem;
-    width: 80%;
     line-height: 1.6;
     max-width: 703px;
     text-align: left;
@@ -600,25 +606,11 @@
   /* ============ */
 
   #solution__info--1 {
-    grid-column: 1/2;
-    grid-row: 1 / 2;
     justify-self: start;
-  }
-
-  #solution__info--2 {
-    grid-column: 2/3;
-    grid-row: 2/3;
   }
 
   #solution__info--3 {
-    grid-column: 1/2;
-    grid-row: 3/4;
     justify-self: start;
-  }
-
-  #solution__info--4 {
-    grid-column: 2/3;
-    grid-row: 4/5;
   }
 
   /* General properties for each solution's image */
@@ -629,29 +621,7 @@
     height: 32vw;
   }
 
-  /* ============ */
-
-  .solution__image_1 {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    justify-self: right;
-  }
-
-  .solution__image_2 {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    justify-self: left;
-  }
-
-  .solution__image_3 {
-    grid-column: 2 / 4;
-    grid-row: 3 / 4;
-    justify-self: right;
-  }
-
-  .solution__image_4 {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-    justify-self: left;
+  #solution__info--4 {
+    margin-top: 10rem;
   }
 }

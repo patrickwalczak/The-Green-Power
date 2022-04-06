@@ -1,5 +1,3 @@
-console.log("test");
-
 import SideNav from "./sideNav.js";
 // Hero section elements
 
@@ -367,11 +365,7 @@ slider();
 
 //==========================
 
-// Fun with IntersectionObserver
-
 ///////////////////////////////////////
-
-const headerBelowheader = document.querySelector(".solutions__opening__header");
 
 const beforeSolutionsSection = document.querySelector(".solutions__opening");
 
@@ -379,12 +373,13 @@ const constrastEl = document.querySelector(".solutions__opening__sidebar");
 
 const welcomeHeader = document.querySelector(".solutions__opening__header");
 
-function actions(entries) {
+function actions(entries, observer) {
   const [entry] = entries;
 
   if (entry.isIntersecting) {
     beforeSolutionsSection.classList.add("runAnimation");
     constrastEl.classList.add("displayBar");
+    observer.unobserve(beforeSolutionsSection);
   }
 }
 
@@ -403,35 +398,27 @@ const wholeThirdTextEl = document.querySelector("#solution__info--3");
 
 const wholeFourthTextEl = document.querySelector("#solution__info--4");
 
-const advantagesHeader = document.querySelector(".intro__header");
-
-const advantageBoxes = document.querySelectorAll(".advantage__box");
-
 window.addEventListener("scroll", function () {
   if (window.scrollY > 770 && window.scrollY < 1450) {
     wholeTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
-      (1200 - window.scrollY) / 10
+      (1200 - window.scrollY) / 12
     })`;
   }
-
   if (window.scrollY > 1250 && window.scrollY < 2150) {
     wholeSecondTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
       (1800 - window.scrollY) / 12
     })`;
   }
-
   if (window.scrollY > 1750 && window.scrollY < 2750) {
     wholeThirdTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
       (2200 - window.scrollY) / 12
     })`;
   }
-
   if (window.scrollY > 2200 && window.scrollY < 3200) {
     wholeFourthTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
       (2800 - window.scrollY) / 12
     })`;
   }
-
   if (window.scrollY > 200 && window.scrollY < 850) {
     welcomeHeader.style.transform = `matrix(1, 0, 0, 1, 0, ${
       (500 - window.scrollY) / 10
@@ -445,7 +432,6 @@ window.addEventListener("scroll", function () {
 // ===========================
 
 const solutionOneImg = document.querySelector(".solution__image_1");
-
 const solutionTwoImg = document.querySelector(".solution__image_2");
 const solutionThreeImg = document.querySelector(".solution__image_3");
 const solutionFourImg = document.querySelector(".solution__image_4");
