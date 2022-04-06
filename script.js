@@ -1,3 +1,4 @@
+console.log("test");
 // Hero section elements
 const leftHeroImage = document.querySelector(".header--leftImage");
 
