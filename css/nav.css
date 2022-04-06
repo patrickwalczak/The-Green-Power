@@ -233,6 +233,7 @@ li {
   letter-spacing: 0.02em;
   font-size: clamp(0.75rem, 5vw, 1rem);
   margin-left: 0.5rem;
+  transition: 500ms;
 }
 
 .nav__link:hover {
@@ -274,8 +275,6 @@ li {
 
 .hidden__menu {
   position: fixed;
-  display: flex;
-  flex-direction: column;
   top: 0;
   left: 0;
   width: 100%;
@@ -284,10 +283,7 @@ li {
   z-index: 1000;
   height: 100vh;
   transform: translateX(-100%);
-  transition: transform 500ms ease-in-out;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.2s cubic-bezier(0.4, 0.5, 0.5, 1);
+  transition: all 500ms;
 }
 
 #subMenu__investors.hidden__menu,
@@ -298,9 +294,7 @@ li {
 
 .hiddenAnimation {
   transform: translateX(0);
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.4s cubic-bezier(0.4, 0.5, 0.5, 1);
+  transition: all 500ms;
 }
 
 .hidden__menu__closedMenu_header_container {
@@ -368,6 +362,7 @@ li {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(202, 202, 202);
 }
 
 .indicator__container {
@@ -394,7 +389,7 @@ li {
 }
 
 .indicator__container_back::before {
-  content: " \003C";
+  content: "\003C";
   color: black;
   font-size: 1.5rem;
   font-weight: 400;
@@ -405,6 +400,7 @@ li {
 
 .hidden__menu__linkContainer:hover {
   background: rgb(0, 80, 0);
+  border-bottom: none;
 }
 
 .hidden__menu__linkContainer:hover .indicator {
@@ -421,19 +417,23 @@ li {
   font-size: 1.2rem;
   font-weight: 600;
 }
+
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0%;
+  display: none;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.514);
-  backdrop-filter: blur(1px);
-  z-index: 800;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  cursor: pointer;
 }
 
-.overlay.hidden {
-  display: none;
+.overlay.displayOverlay {
+  display: block;
 }
 
 /* The smallest header can be less than 40rem */
@@ -472,7 +472,6 @@ li {
   }
 
   .nav__top.transform__nav .nav__link {
-    /*  */
     display: none;
   }
 

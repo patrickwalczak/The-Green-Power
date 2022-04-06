@@ -1,3 +1,12 @@
+:root {
+  --left--normal: polygon(100% 0%, 0% 100%, 0% 100%, 0% 0%);
+  --left--active: polygon(100% 0%, 90% 100%, 0% 100%, 0% 0%);
+  --left--unactive: polygon(100% -700%, 0% 100%, 0% 100%, 0% 0%);
+  --right--normal: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+  --right--active: polygon(100% 100%, 100% -700%, 0% 100%, 0% 100%);
+  --right--unactive: polygon(100% 100%, 100% 0%, 90% 100%, 0% 100%);
+}
+
 .hero__section {
   width: 100%;
   height: 40rem;
@@ -33,7 +42,7 @@ This is intro animaton (fading in elements) */
   word-break: break-word;
   color: rgb(255, 255, 255);
   z-index: 10;
-  transition: 400ms ease-in-out;
+  transition: 500ms ease-in-out;
   user-select: none;
 }
 
@@ -42,7 +51,6 @@ This is intro animaton (fading in elements) */
 .hero__header__wrapper.hideVisibility {
   opacity: 0;
   visibility: hidden;
-  transition: 400ms ease-in-out;
 }
 
 /* ====== MAIN HEADER ^ */
@@ -58,7 +66,7 @@ This is intro animaton (fading in elements) */
   background-position: center;
   display: flex;
   flex-direction: column;
-  transition: 1000ms ease-in-out;
+  transition: 1200ms ease-in-out;
 }
 
 /* Left image properties V */
@@ -70,24 +78,15 @@ This is intro animaton (fading in elements) */
       rgba(51, 51, 51, 0.582) 100%
     ),
     url("/images/heroImageBusiness.jpg");
-  transform: translateX(-200rem);
-  background-position: center;
+  clip-path: var(--left--normal);
 }
 
-.header--leftImage.imageLeftIsHovered {
+.header--leftImage.afterLoading {
+  transform: translateX(-100%);
+}
+
+.header--leftImage.imageIsHovered {
   background-position: bottom;
-}
-
-.leftImage__normal {
-  clip-path: polygon(100% 0%, 0% 100%, 0% 100%, 0% 0%);
-}
-
-.leftImage__active {
-  clip-path: polygon(100% 0%, 90% 100%, 0% 100%, 0% 0%);
-}
-
-.leftImage__unactive {
-  clip-path: polygon(100% -700%, 0% 100%, 0% 100%, 0% 0%);
 }
 
 /* Right image properties V */
@@ -101,25 +100,17 @@ This is intro animaton (fading in elements) */
     ),
     url("/images/headerLeftImage.jpg");
 
-  transform: translateX(200rem);
   background-position: top;
   background-size: cover;
+  clip-path: var(--right--normal);
 }
 
-.header--rightImage.imageRightIsHovered {
+.header--rightImage.afterLoading {
+  transform: translateX(100%);
+}
+
+.header--rightImage.imageIsHovered {
   background-position: center;
-}
-
-.rightImage__normal {
-  clip-path: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
-}
-
-.rightImage__unactive {
-  clip-path: polygon(100% 100%, 100% 0%, 90% 100%, 0% 100%);
-}
-
-.rightImage__active {
-  clip-path: polygon(100% 100%, 100% -700%, 0% 100%, 0% 100%);
 }
 
 /* === HERO BUTTONS V */
@@ -240,26 +231,24 @@ This is intro animaton (fading in elements) */
   height: auto;
   font-family: serif;
   text-align: center;
-  opacity: 0;
-  transition: 600ms;
-  visibility: hidden;
   width: 100%;
-  font-size: 2.5rem;
   margin-top: calc(100vw - 87%);
-  display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* Adding opacity to sub header when left/right button is hovered */
-.image__content.removeOpacity__animation {
+  display: none;
   animation-name: removeOpacity;
   animation-fill-mode: forwards;
   animation-delay: 600ms;
   animation-duration: 600ms;
 }
 
-.image__content > h3 {
+/* Adding opacity and display to side header when left/right button is hovered */
+.image__content.displayContent {
+  display: flex;
+  opacity: 0;
+}
+
+.image__content h3 {
   color: rgb(255, 255, 255);
   overflow-y: hidden;
   word-break: break-word;
@@ -718,10 +707,11 @@ This is intro animaton (fading in elements) */
 @keyframes removeOpacity {
   0% {
     opacity: 0;
-    visibility: hidden;
+  }
+  50% {
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
-    visibility: visible;
   }
 }

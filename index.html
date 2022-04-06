@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GreenPower</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <script defer src="script.js"></script>
+    <script defer type="module" src="script.js"></script>
     <link rel="icon" type="image/png" href="/images/leaf.svg" />
   </head>
   <body>
@@ -53,95 +53,7 @@
               <a href="#" class="hidden__menu__link">Follow us</a>
             </li>
           </ul>
-          <div class="hidden__menu" id="subMenu__investors">
-            <div
-              class="hidden__menu__closedMenu_header_container"
-              id="subMenu__header_investors"
-            >
-              <div class="indicator__container_back">
-                <span class="indicator__back"></span>
-              </div>
-              <h3 class="hidden__menu__header">Investors</h3>
-            </div>
-            <ul class="hidden__menu__linksContainer">
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Presentations</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#"
-                  >Selected Financial Data</a
-                >
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Dividend</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Periodical Reports</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Annual Reports</a>
-              </li>
-            </ul>
-          </div>
-          <div class="hidden__menu" id="subMenu__solutions">
-            <div
-              class="hidden__menu__closedMenu_header_container"
-              id="subMenu__header_solutions"
-            >
-              <div class="indicator__container_back">
-                <span class="indicator__back"></span>
-              </div>
-              <h3 class="hidden__menu__header">Solutions</h3>
-            </div>
-            <ul class="hidden__menu__linksContainer">
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">EcoHome</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Solar Panels</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Wind Turbines</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Hydropower Technology</a>
-              </li>
-            </ul>
-          </div>
-          <div class="hidden__menu" id="subMenu__about">
-            <div
-              class="hidden__menu__closedMenu_header_container"
-              id="subMenu__header_about"
-            >
-              <div class="indicator__container_back">
-                <span class="indicator__back"></span>
-              </div>
-              <h3 class="hidden__menu__header">About Company</h3>
-            </div>
-            <ul class="hidden__menu__linksContainer">
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Worldwide Offices</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Headquarters</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#">Management Board</a>
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#"
-                  >Research & Development</a
-                >
-              </li>
-              <li class="hidden__menu__linkContainer">
-                <a class="hidden__menu__link" href="#"
-                  >Personal Data & Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </div>
         </div>
-
         <div class="nav__top">
           <div class="hamburger__menu">
             <span></span>
@@ -302,6 +214,7 @@
           </p>
         </div>
         <img
+          data-imgside="R"
           class="solution_image solution__image_1"
           src="./images/ecoHome__intro.jpg"
           alt=""
@@ -322,7 +235,7 @@
           </p>
         </div>
 
-        <div class="solution_image solution__image_2"></div>
+        <div data-imgside="L" class="solution_image solution__image_2"></div>
 
         <div class="solution__info" id="solution__info--3">
           <h3 class="solution__name">Hydropower technology</h3>
@@ -339,7 +252,7 @@
           </p>
         </div>
 
-        <div class="solution_image solution__image_3"></div>
+        <div data-imgside="R" class="solution_image solution__image_3"></div>
 
         <div class="solution__info" id="solution__info--4">
           <h3 class="solution__name">Solar panels</h3>
@@ -355,7 +268,7 @@
           </p>
         </div>
 
-        <div class="solution_image solution__image_4"></div>
+        <div data-imgside="L" class="solution_image solution__image_4"></div>
       </section>
 
       <section class="strengths__section">

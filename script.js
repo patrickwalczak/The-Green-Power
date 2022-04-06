@@ -1,5 +1,6 @@
-console.log("test");
+import SideNav from "./sideNav.js";
 // Hero section elements
+
 const leftHeroImage = document.querySelector(".header--leftImage");
 
 const rightHeroImage = document.querySelector(".header--rightImage");
@@ -26,157 +27,199 @@ const hero__rightContentWords = document.querySelectorAll(".word__H");
 
 const hero__leftContentWords = document.querySelectorAll(".word__L");
 
-leftHeroImage.addEventListener("load", () => {
-  console.log("test");
-  heroHeader.style.visibility = "visible";
-});
+////////////////////
 
-leftHeroButton.addEventListener("mouseenter", function () {
+function mouseenterHeroImgHandler(
+  oppositeImg,
+  btn,
+  linesContainer,
+  contentWrapper,
+  contentWords
+) {
+  leftHeroImage.style.clipPath = "var(--left--normal)";
+  rightHeroImage.style.clipPath = "var(--right--normal)";
+
+  heroHeader.classList.remove("hideVisibility");
+
+  linesContainer.style.bottom = "-15%";
+  linesContainer.style.left = "-8%";
+
+  btn.classList.remove("isHovered");
+
+  oppositeImg.classList.remove("imageIsHovered");
+
+  contentWrapper.classList.remove("displayContent");
+
+  contentWords.forEach((word) => {
+    word.classList.remove("wordHeroRight");
+  });
+}
+
+function mouseenterHeroBtnHandler(
+  leftState,
+  rightState,
+  linesContainer,
+  contentWrapper,
+  contentWords
+) {
   // ============
   // Adding/removing classes associate with adjusting 'clip: polygon' property for left and right hero images
+  leftHeroImage.style.clipPath = `var(--left--${leftState})`;
 
-  leftHeroImage.classList.remove("leftImage__normal");
+  rightHeroImage.style.clipPath = `var(--right--${rightState})`;
 
-  leftHeroImage.classList.add("leftImage__active");
-
-  rightHeroImage.classList.remove("rightImage__normal");
-
-  rightHeroImage.classList.add("rightImage__unactive");
-  // =============
-
-  // ===========
-  // After hovevring left or right hero button main header dissapears
+  // Hide header text
   heroHeader.classList.add("hideVisibility");
 
-  // =============
+  // Change the position of the button's white lines
+  linesContainer.style.bottom = "0%";
+  linesContainer.style.left = "0%";
 
-  // ============
-  // Hero button
-
-  // Change a position of the lines container
-  hero__leftButtonLinesContainer.style.bottom = "0%";
-  hero__leftButtonLinesContainer.style.left = "0%";
   // Change entire button element position
-  leftHeroButton.classList.add("isHovered");
-
-  // ============
+  this.classList.add("isHovered");
 
   // ===============
   //  Change a background-image position
-  leftHeroImage.classList.add("imageLeftIsHovered");
-
+  if (leftState === "active") {
+    leftHeroImage.classList.add("imageIsHovered");
+  } else {
+    rightHeroImage.classList.add("imageIsHovered");
+  }
   // =============
   // For entire content wrapper is added animation which add opacity and visibility
-  hero__leftContentWrapper.classList.add("removeOpacity__animation");
+  contentWrapper.classList.add("displayContent");
 
   // Add animation for each content word
-  hero__leftContentWords.forEach((word) => {
+  contentWords.forEach((word) => {
     word.classList.add("wordHeroRight");
   });
+}
+
+function mouseoutHeroHandler() {
+  // Reset left side
+  mouseenterHeroImgHandler(
+    leftHeroImage,
+    leftHeroButton,
+    hero__leftButtonLinesContainer,
+    hero__leftContentWrapper,
+    hero__leftContentWords
+  );
+  // Reset right side
+  mouseenterHeroImgHandler(
+    rightHeroImage,
+    rightHeroButton,
+    hero__rightButtonLinesContainer,
+    hero__rightContentWrapper,
+    hero__rightContentWords
+  );
+}
+
+window.addEventListener("load", () => {
+  leftHeroImage.classList.remove("afterLoading");
+  rightHeroImage.classList.remove("afterLoading");
 });
 
-rightHeroButton.addEventListener("mouseenter", function () {
-  // ============
-  // Adding/removing classes associate with adjusting 'clip: polygon' property for left and right hero images
-  leftHeroImage.classList.remove("leftImage__normal");
+leftHeroButton.addEventListener(
+  "mouseenter",
+  mouseenterHeroBtnHandler.bind(
+    leftHeroButton,
+    "active",
+    "unactive",
+    hero__leftButtonLinesContainer,
+    hero__leftContentWrapper,
+    hero__leftContentWords
+  )
+);
 
-  leftHeroImage.classList.add("leftImage__unactive");
+rightHeroButton.addEventListener(
+  "mouseenter",
+  mouseenterHeroBtnHandler.bind(
+    rightHeroButton,
+    "unactive",
+    "active",
+    hero__rightButtonLinesContainer,
+    hero__rightContentWrapper,
+    hero__rightContentWords
+  )
+);
 
-  rightHeroImage.classList.remove("rightImage__normal");
-  rightHeroImage.classList.add("rightImage__active");
-  // ======================
+rightHeroImage.addEventListener(
+  "mouseenter",
+  mouseenterHeroImgHandler.bind(
+    rightHeroImage,
+    leftHeroImage,
+    leftHeroButton,
+    hero__leftButtonLinesContainer,
+    hero__leftContentWrapper,
+    hero__leftContentWords
+  )
+);
 
-  // ===========
-  // After hovevring left or right hero button main header dissapears
-  heroHeader.classList.add("hideVisibility");
+leftHeroImage.addEventListener(
+  "mouseenter",
+  mouseenterHeroImgHandler.bind(
+    leftHeroImage,
+    rightHeroImage,
+    rightHeroButton,
+    hero__rightButtonLinesContainer,
+    hero__rightContentWrapper,
+    hero__rightContentWords
+  )
+);
 
-  // =============
+leftHeroImage.addEventListener("mouseleave", mouseoutHeroHandler);
 
-  // ============
-  // Hero button
+rightHeroImage.addEventListener("mouseleave", mouseoutHeroHandler);
 
-  // Change a position of the lines container
+const donateBtn = document.querySelector(".button__newsletter");
 
-  hero__rightButtonLinesContainer.style.bottom = "0%";
-  hero__rightButtonLinesContainer.style.left = "0%";
-  // Change entire button element position
-  rightHeroButton.classList.add("isHovered");
+const navBottom = document.querySelector(".nav__bottom");
 
-  // ===============
-  //  Change a background-image position
-  rightHeroImage.classList.add("imageRightIsHovered");
+const hoverNavLinkHandler = function (e) {
+  if (e.target.classList.contains("nav__link")) {
+    const hoveredLink = e.target;
+    const links = hoveredLink
+      .closest(".nav__bottom")
+      .querySelectorAll(".nav__link");
 
-  // =============
-  // For entire content wrapper is added animation which add opacity and visibility
-  hero__rightContentWrapper.classList.add("removeOpacity__animation");
-
-  // Add animation for each content word
-  hero__rightContentWords.forEach((word) => {
-    word.classList.add("wordHeroRight");
-  });
-});
-
-rightHeroImage.addEventListener("mouseenter", function () {
-  rightHeroImage.classList.remove("rightImage__unactive");
-  rightHeroImage.classList.add("rightImage__normal");
-
-  leftHeroImage.classList.remove("leftImage__active");
-
-  leftHeroImage.classList.add("leftImage__normal");
-
-  if (!rightHeroImage.classList.contains("rightImage__active")) {
-    heroHeader.classList.remove("hideVisibility");
+    links.forEach((el) => {
+      if (el !== hoveredLink) el.style.opacity = this;
+    });
+    donateBtn.style.opacity = this;
   }
-
-  hero__leftButtonLinesContainer.style.bottom = "-15%";
-  hero__leftButtonLinesContainer.style.left = "-8%";
-
-  leftHeroButton.classList.remove("isHovered");
-
-  leftHeroImage.classList.remove("imageLeftIsHovered");
-
-  document
-    .querySelector("#hero__left__image__content")
-    .classList.remove("removeOpacity__animation");
-
-  hero__leftContentWords.forEach((word) => {
-    word.classList.remove("wordHeroRight");
-  });
-});
-
-leftHeroImage.addEventListener("mouseenter", function () {
-  rightHeroImage.classList.remove("rightImage__active");
-  rightHeroImage.classList.add("rightImage__normal");
-
-  leftHeroImage.classList.add("leftImage__normal");
-
-  leftHeroImage.classList.remove("leftImage__unactive");
-
-  if (!leftHeroImage.classList.contains("leftImage__active")) {
-    heroHeader.classList.remove("hideVisibility");
+  if (e.target === donateBtn) {
+    donateBtn
+      .closest(".nav__bottom")
+      .querySelectorAll(".nav__link")
+      .forEach((el) => (el.style.opacity = this));
   }
-  hero__rightButtonLinesContainer.style.bottom = "-15%";
-  hero__rightButtonLinesContainer.style.left = "-8%";
+};
 
-  rightHeroButton.classList.remove("isHovered");
+navBottom.addEventListener("mouseover", hoverNavLinkHandler.bind(0.5));
 
-  rightHeroImage.classList.remove("imageRightIsHovered");
+navBottom.addEventListener("mouseout", hoverNavLinkHandler.bind(1));
 
-  document
-    .querySelector("#hero__right__image__content")
-    .classList.remove("removeOpacity__animation");
+const navTop = document.querySelector(".nav__top");
 
-  hero__rightContentWords.forEach((word) => {
-    word.classList.remove("wordHeroRight");
+function transformNavActions(entries) {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio > 0.8 && entry.isIntersecting) {
+      navTop.classList.remove("transform__nav");
+    } else {
+      navTop.classList.add("transform__nav");
+    }
   });
+}
+
+const navBottomObserver = new IntersectionObserver(transformNavActions, {
+  root: null,
+  threshold: [0.9, 0.2],
+  rootMargin: "-40px",
 });
 
-window.addEventListener("load", function () {
-  leftHeroImage.style.transform = "translateX(0rem)";
-  rightHeroImage.style.transform = "translateX(0rem)";
-});
+navBottomObserver.observe(navBottom);
 
-// Tabbed component
+// ECOHOME BUTTONS
 
 const ecoHomeButtonsContainer = document.querySelector(
   ".ecoHome__buttonsContainer"
@@ -199,153 +242,6 @@ ecoHomeButtonsContainer.addEventListener("click", function (e) {
 
   ecoHomeImages[clicked.dataset.tab].classList.remove("hidden");
 });
-
-document
-  .querySelector(".nav__bottom")
-  .addEventListener("mouseenter", function (e) {
-    leftHeroImage.classList.remove("leftImage__active");
-
-    leftHeroImage.classList.add("leftImage__normal");
-
-    leftHeroImage.classList.remove("leftImage__unactive");
-
-    rightHeroImage.classList.remove("rightImage__unactive");
-    rightHeroImage.classList.add("rightImage__normal");
-
-    rightHeroImage.classList.remove("rightImage__active");
-
-    heroHeader.classList.remove("hideVisibility");
-
-    hero__leftButtonLinesContainer.style.bottom = "-15%";
-    hero__leftButtonLinesContainer.style.left = "-8%";
-
-    leftHeroButton.classList.remove("isHovered");
-
-    hero__rightButtonLinesContainer.style.bottom = "-15%";
-    hero__rightButtonLinesContainer.style.left = "-8%";
-
-    rightHeroButton.classList.remove("isHovered");
-
-    leftHeroImage.classList.remove("imageLeftIsHovered");
-
-    rightHeroImage.classList.remove("imageRightIsHovered");
-
-    document
-      .querySelector("#hero__left__image__content")
-      .classList.remove("removeOpacity__animation");
-
-    hero__leftContentWords.forEach((word) => {
-      word.classList.remove("wordHeroRight");
-    });
-
-    document
-      .querySelector("#hero__right__image__content")
-      .classList.remove("removeOpacity__animation");
-
-    hero__rightContentWords.forEach((word) => {
-      word.classList.remove("wordHeroRight");
-    });
-  });
-
-const handleHover = function (e) {
-  if (e.target.classList.contains("nav__link")) {
-    const link = e.target;
-    const siblings = link
-      .closest(".nav__bottom")
-      .querySelectorAll(".nav__link");
-    const buttonNewsLetter = link
-      .closest(".nav__bottom")
-      .querySelector(".button__newsletter");
-
-    siblings.forEach((el) => {
-      if (el !== link) el.style.opacity = this;
-    });
-    buttonNewsLetter.style.opacity = this;
-  }
-};
-
-// Passing "argument" into handler
-document
-  .querySelector(".nav__bottom")
-  .addEventListener("mouseover", handleHover.bind(0.5));
-document
-  .querySelector(".nav__bottom")
-  .addEventListener("mouseout", handleHover.bind(1));
-
-const ham_menu = document.querySelector(".hamburger__menu");
-
-ham_menu.addEventListener("click", function () {
-  ham_menu.classList.toggle("open");
-  document.querySelector("body").classList.toggle("overflowClass");
-  document.querySelector(".overlay").classList.toggle("hidden");
-  document.querySelector("#main__menu").classList.toggle("hiddenAnimation");
-});
-
-document.querySelector(".closedMenu").addEventListener("click", function () {
-  document.querySelector("body").classList.toggle("overflowClass");
-  document.querySelector(".overlay").classList.toggle("hidden");
-  ham_menu.classList.toggle("open");
-  document.querySelector("#main__menu").classList.toggle("hiddenAnimation");
-});
-
-document
-  .querySelector("#mainMenu__investors")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__investors")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document
-  .querySelector("#subMenu__header_investors")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__investors")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document
-  .querySelector("#mainMenu__solutions")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__solutions")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document
-  .querySelector("#subMenu__header_solutions")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__solutions")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document
-  .querySelector("#mainMenu__about")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__about")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document
-  .querySelector("#subMenu__header_about")
-  .addEventListener("click", function () {
-    document
-      .querySelector("#subMenu__about")
-      .classList.toggle("hiddenAnimation");
-  });
-
-document.querySelector(".overlay").addEventListener("click", function () {
-  document.querySelector("body").classList.toggle("overflowClass");
-  document.querySelector(".overlay").classList.toggle("hidden");
-  ham_menu.classList.toggle("open");
-  document.querySelector("#main__menu").classList.toggle("hiddenAnimation");
-});
-
-const headerBelowheader = document.querySelector(".solutions__opening__header");
-
-//   transform: matrix(1, 0, 0, 1, 0, -50.2217);
 
 // ==========================================
 
@@ -405,7 +301,6 @@ function slider() {
     if (currSlide === 1) {
       descriptionContainer.innerHTML = `
 
-
         <h3 class="img__descrip__text">
           <span class="first_part typing-class"> With You we planted </span>
           <br />
@@ -415,14 +310,13 @@ function slider() {
           <br />
           <span class="fourth_part typing-class">trees around the world </span>
         </h3>
-      
+
       `;
     }
 
     if (currSlide === 2) {
       descriptionContainer.innerHTML = `
 
-    
     <h3 class="img__descrip__text">
           <span class="first_part_2 typing-class"> The Ocean Clean-Up </span>
           <br />
@@ -431,13 +325,12 @@ function slider() {
           <span class="third_part_2 typing-class emphasize__num">100</span>
           <span class="fourth_part_2 typing-class">tons of plastic </span>
         </h3>
-      
+
       `;
     }
 
     if (currSlide === 3) {
       descriptionContainer.innerHTML = `
-    
 
     <h3 class="img__descrip__text">
           <span class="first_part_3 typing-class">We collected about</span> <span class="second_part_3 typing-class emphasize__num">50</span>
@@ -465,7 +358,6 @@ function slider() {
     const classArr = new Array(...section.classList);
     section.classList.remove(classArr[1]);
     section.classList.add(`slider__BG__${currSlide}`);
-    console.log(currSlide);
   }
 }
 
@@ -476,6 +368,8 @@ slider();
 // Fun with IntersectionObserver
 
 ///////////////////////////////////////
+
+const headerBelowheader = document.querySelector(".solutions__opening__header");
 
 const beforeSolutionsSection = document.querySelector(".solutions__opening");
 
@@ -488,7 +382,7 @@ function actions(entries) {
 
   if (entry.isIntersecting) {
     beforeSolutionsSection.classList.add("runAnimation");
-    constrastEl.classList.add("runAnimation__2");
+    constrastEl.classList.add("displayBar");
   }
 }
 
@@ -512,14 +406,6 @@ const advantagesHeader = document.querySelector(".intro__header");
 const advantageBoxes = document.querySelectorAll(".advantage__box");
 
 window.addEventListener("scroll", function () {
-  if (window.scrollY > 80) {
-    document.querySelector(".nav__top").classList.add("transform__nav");
-  }
-
-  if (window.scrollY < 80) {
-    document.querySelector(".nav__top").classList.remove("transform__nav");
-  }
-
   if (window.scrollY > 770 && window.scrollY < 1450) {
     wholeTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
       (1200 - window.scrollY) / 10
@@ -551,71 +437,50 @@ window.addEventListener("scroll", function () {
   }
 });
 
+// ===========================
+// ===========================
+// ===========================
+// ===========================
+
 const solutionOneImg = document.querySelector(".solution__image_1");
 
 const solutionTwoImg = document.querySelector(".solution__image_2");
 const solutionThreeImg = document.querySelector(".solution__image_3");
 const solutionFourImg = document.querySelector(".solution__image_4");
 
-const rightImagesObserver = new IntersectionObserver(rightImageActions, {
+const intersectionOptions = {
   root: null,
   threshold: 0.5,
-});
+};
 
-function rightImageActions(entries) {
+const solutionImgObserver = new IntersectionObserver(
+  rightImageActions,
+  intersectionOptions
+);
+
+function rightImageActions(entries, observer) {
   const [entry] = entries;
 
   if (entry.isIntersecting) {
-    solutionOneImg.classList.add("runAnimation__rImg");
+    if (entry.target.dataset.imgside === "R") {
+      entry.target.classList.add("runAnimation__rImg");
+      observer.unobserve(entry.target);
+    }
+    if (entry.target.dataset.imgside === "L") {
+      entry.target.classList.add("runAnimation__lImg");
+      observer.unobserve(entry.target);
+    }
   }
 }
 
-rightImagesObserver.observe(solutionOneImg);
+solutionImgObserver.observe(solutionOneImg);
+solutionImgObserver.observe(solutionTwoImg);
+solutionImgObserver.observe(solutionThreeImg);
+solutionImgObserver.observe(solutionFourImg);
 
-const rightThirdImgObserver = new IntersectionObserver(rightThirdImageActions, {
-  root: null,
-  threshold: 0.5,
-});
-
-function rightThirdImageActions(entries) {
-  const [entry] = entries;
-
-  if (entry.isIntersecting) {
-    solutionThreeImg.classList.add("runAnimation__rImg");
-  }
-}
-rightThirdImgObserver.observe(solutionThreeImg);
-
-// ====================
-
-const leftFirstImgObserver = new IntersectionObserver(leftFirstImageActions, {
-  root: null,
-  threshold: 0.5,
-});
-
-function leftFirstImageActions(entries) {
-  const [entry] = entries;
-
-  if (entry.isIntersecting) {
-    solutionTwoImg.classList.add("runAnimation__lImg");
-  }
-}
-leftFirstImgObserver.observe(solutionTwoImg);
-
-const leftSecondImgObserver = new IntersectionObserver(leftSecondImageActions, {
-  root: null,
-  threshold: 0.5,
-});
-
-function leftSecondImageActions(entries) {
-  const [entry] = entries;
-
-  if (entry.isIntersecting) {
-    solutionFourImg.classList.add("runAnimation__lImg");
-  }
-}
-leftSecondImgObserver.observe(solutionFourImg);
-
+// ===========================
+// ===========================
+// ===========================
 // ===========================
 
 const contentEl = document.querySelector(".content__block");
@@ -655,40 +520,33 @@ imageThree.addEventListener("mouseenter", () => {
 const strengthsSection = document.querySelector(".strengths__section");
 const strengthsCards = document.querySelectorAll(".strength__card");
 
-function strengthsActions(entries) {
-  const [entry] = entries;
-
-  if (entry.isIntersecting) {
-    strengthsCards.forEach((card) => {
-      card.classList.add("fadeinAnimation");
-    });
-  }
+function strengthsActions(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.intersectionRatio < 0.3 && entry.isIntersecting) {
+      strengthsSection.classList.remove("section--hidden");
+      observer.unobserve(strengthsSection);
+    }
+    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+      strengthsCards.forEach((card) => {
+        card.classList.add("fadeinAnimation");
+      });
+      observer.unobserve(strengthsCards[0]);
+    }
+  });
 }
 
 const strengthsSectionObserver = new IntersectionObserver(strengthsActions, {
   root: null,
-  threshold: 0.7,
+  threshold: [0.2, 0.7],
 });
 
+strengthsSectionObserver.observe(strengthsCards[0]);
 strengthsSectionObserver.observe(strengthsSection);
 
-const leftSecondImgObserver__showStrengths = new IntersectionObserver(
-  displayStrengths,
-  {
-    root: null,
-    threshold: 0.9,
-  }
-);
-
-function displayStrengths(entries) {
-  const [entry] = entries;
-
-  if (entry.isIntersecting) {
-    strengthsSection.classList.add("visible");
-  }
-}
-
-leftSecondImgObserver__showStrengths.observe(solutionFourImg);
+// ==============
+// ==============
+// ==============
+// ==============
 
 const ecoHomeHeaderWrapper = document.querySelector(
   ".ecoHome__header__container"
@@ -715,9 +573,3 @@ function runEcoHomeAnimation(entries) {
 ecoHomeHeaderWrapperObserver.observe(ecoHomeHeaderWrapper);
 
 // ==========================
-
-const pageContainer = document.querySelector(".container");
-
-window.addEventListener("load", function () {
-  console.log("test");
-});

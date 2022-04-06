@@ -10,10 +10,10 @@
   "author": "Patryk Walczak",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.0.1"
+    "parcel": "^2.4.1"
   },
   "dependencies": {
-    "core-js": "^3.19.1",
+    "core-js": "^3.21.1",
     "regenerator-runtime": "^0.13.9"
   }
 }

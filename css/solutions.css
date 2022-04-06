@@ -68,20 +68,16 @@
 }
 
 .solutions__opening__sidebar {
-  height: 5rem;
-  width: 100%;
   background-color: rgb(0, 0, 0);
-
   opacity: 0;
   z-index: 0;
+  clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
 }
 
-.solutions__opening__sidebar.runAnimation__2 {
-  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
+.solutions__opening__sidebar.displayBar {
   transition: 2000ms ease-in-out;
-  animation: likeCurtain 1s;
-  animation-fill-mode: forwards;
-  opacity: 0;
+  opacity: 1;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 }
 
 @keyframes blinkingArrow {
@@ -95,17 +91,6 @@
   100% {
     transform: rotate(-45deg) translate(-20px, 20px);
     opacity: 0;
-  }
-}
-
-@keyframes likeCurtain {
-  from {
-    clip-path: polygon(100% 0%, 100% 10%, 0% 10%, 0% 0%);
-    opacity: 1;
-  }
-  to {
-    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
-    opacity: 1;
   }
 }
 
@@ -661,14 +646,12 @@
   .solution__image_3 {
     grid-column: 2 / 4;
     grid-row: 3 / 4;
-
     justify-self: right;
   }
 
   .solution__image_4 {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
-
     justify-self: left;
   }
 }

@@ -11,10 +11,13 @@
   padding: 0rem 0.5rem 1rem 0.5rem;
   margin-top: 10rem;
   margin-bottom: 6rem;
+  display: grid;
+  transition: transform 1s, opacity 1s;
 }
 
-.strengths__section.visible {
-  display: grid;
+.strengths__section.section--hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }
 
 .strengths__section::after,
