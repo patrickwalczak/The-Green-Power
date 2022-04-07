@@ -1,3 +1,7 @@
+// import image1 from "../images/ecoHome1.jpg";
+
+// console.log(image1);
+
 class EcoHomeView {
   headerContainer = document.querySelector(".ecoHome__header__container");
   headerTopPart = document.querySelector("#ecoHome__textTop");
@@ -44,7 +48,8 @@ class EcoHomeView {
       this.headerBottomPart.classList.add("text-bottom");
 
       this.ecoHomeImages.forEach((img, index) => {
-        img.src = `../images/ecoHome${index + 1}.jpg`;
+        img.src = img.dataset.imgpath;
+        console.log(img);
       });
 
       observer.unobserve(this.headerContainer);
