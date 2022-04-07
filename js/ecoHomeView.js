@@ -43,8 +43,8 @@ class EcoHomeView {
       this.headerTopPart.classList.add("text-top");
       this.headerBottomPart.classList.add("text-bottom");
 
-      this.ecoHomeImages.forEach((img) => {
-        img.src = img.dataset.imgpath;
+      this.ecoHomeImages.forEach((img, index) => {
+        img.src = `../images/ecoHome${index + 1}.jpg`;
       });
 
       observer.unobserve(this.headerContainer);
