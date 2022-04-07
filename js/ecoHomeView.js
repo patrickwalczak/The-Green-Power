@@ -16,9 +16,7 @@ class EcoHomeView {
         root: null,
         threshold: 0.6,
       }
-    );
-
-    this.headerObserver.observe(this.headerContainer);
+    ).observe(this.headerContainer);
 
     this.ecoHomeButtonsContainer.addEventListener(
       "click",

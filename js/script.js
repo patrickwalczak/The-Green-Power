@@ -1,81 +1,7 @@
 import HiddenMenu from "./hiddenMenu.js";
 import HeroView from "./heroView.js";
-import ecoHomeView from "./ecoHomeView.js";
-
-const donateBtn = document.querySelector(".button__newsletter");
-
-const navTop = document.querySelector(".nav__top");
-
-const navBottom = document.querySelector(".nav__bottom");
-
-const hoverNavLinkHandler = function (e) {
-  if (e.target.classList.contains("nav__link")) {
-    const hoveredLink = e.target;
-    const links = hoveredLink
-      .closest(".nav__bottom")
-      .querySelectorAll(".nav__link");
-
-    links.forEach((el) => {
-      if (el !== hoveredLink) el.style.opacity = this;
-    });
-    donateBtn.style.opacity = this;
-  }
-  if (e.target === donateBtn) {
-    donateBtn
-      .closest(".nav__bottom")
-      .querySelectorAll(".nav__link")
-      .forEach((el) => (el.style.opacity = this));
-  }
-};
-
-navBottom.addEventListener("mouseover", hoverNavLinkHandler.bind(0.5));
-
-navBottom.addEventListener("mouseout", hoverNavLinkHandler.bind(1));
-
-function transformNavActions(entries) {
-  entries.forEach((entry) => {
-    if (entry.intersectionRatio > 0.8 && entry.isIntersecting) {
-      navTop.classList.remove("transform__nav");
-    } else {
-      navTop.classList.add("transform__nav");
-    }
-  });
-}
-
-const navBottomObserver = new IntersectionObserver(transformNavActions, {
-  root: null,
-  threshold: [0.9, 0.2],
-  rootMargin: "-40px",
-});
-
-navBottomObserver.observe(navBottom);
-
-// ECOHOME BUTTONS
-
-// const ecoHomeButtonsContainer = document.querySelector(
-//   ".ecoHome__buttonsContainer"
-// );
-
-// const ecoHomeButtons = document.querySelectorAll(".ecoHome__button");
-
-// const ecoHomeImages = document.querySelectorAll(".ecoHome__image");
-
-// ecoHomeButtonsContainer.addEventListener("click", function (e) {
-//   const clicked = e.target.closest(".ecoHome__button");
-
-//   if (!clicked) return;
-
-//   ecoHomeButtons.forEach((btn) => btn.classList.remove("button--active"));
-
-//   ecoHomeImages.forEach((btn) => btn.classList.add("hidden"));
-
-//   clicked.classList.add("button--active");
-
-//   ecoHomeImages[clicked.dataset.tab].classList.remove("hidden");
-// });
-
-// ==========================================
-// ==========================================
+import EcoHomeView from "./ecoHomeView.js";
+import NavView from "./navView.js";
 
 // Slider section
 
@@ -375,34 +301,3 @@ const strengthsSectionObserver = new IntersectionObserver(strengthsActions, {
 
 strengthsSectionObserver.observe(strengthsCards[0]);
 strengthsSectionObserver.observe(strengthsSection);
-
-// ==============
-// ==============
-// ==============
-// ==============
-
-// const ecoHomeHeaderWrapper = document.querySelector(
-//   ".ecoHome__header__container"
-// );
-
-// const ecoHomeHeaderWrapperObserver = new IntersectionObserver(
-//   runEcoHomeAnimation,
-//   {
-//     root: null,
-//     threshold: 0.6,
-//   }
-// );
-
-// function runEcoHomeAnimation(entries) {
-//   const [entry] = entries;
-
-//   if (entry.isIntersecting) {
-//     ecoHomeHeaderWrapper.classList.add("visible");
-//     document.querySelector("#ecoHome__textTop").classList.add("text-top");
-//     document.querySelector("#ecoHome__textBottom").classList.add("text-bottom");
-//   }
-// }
-
-// ecoHomeHeaderWrapperObserver.observe(ecoHomeHeaderWrapper);
-
-// ==========================
