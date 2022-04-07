@@ -64,7 +64,6 @@ class SolutionsView {
 
   actions(entries, observer) {
     const [entry] = entries;
-
     if (entry.isIntersecting) {
       this.solutionsSectionIntro.classList.add("runAnimation");
       this.constrastEl.classList.add("displayBar");
