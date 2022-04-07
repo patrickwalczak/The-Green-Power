@@ -37,10 +37,14 @@
   width: 100vw;
   grid-column: 1/2;
   grid-row: 2/3;
-  background-image: url("/images/eye_opening.jpg");
+  background-image: none;
   background-position: top;
   background-size: cover;
   transition: 400ms ease-in-out;
+}
+
+.article__image.loaded {
+  background-image: url("/images/eye_opening.jpg");
 }
 
 /* .a    */
@@ -75,7 +79,7 @@
 }
 
 .article__image__2 {
-  background-image: url("/images/bacteria.jpg");
+  background-image: none;
   background-position: center;
   background-size: cover;
   grid-column: 1/2;
@@ -84,18 +88,26 @@
   height: 80vw;
 }
 
+.article__image__2.loaded {
+  background-image: url("/images/bacteria.jpg");
+}
+
 .article__image__3 {
   grid-column: 1/2;
   grid-row: 5/6;
   width: 100vw;
   height: 80vw;
-  background-image: url("/images/dragonfly.jpg");
+  background-image: none;
   background-position: center;
   background-size: cover;
 }
 
+.article__image__3.loaded {
+  background-image: url("/images/dragonfly.jpg");
+}
+
 .article__image__4 {
-  background-image: url("/images/ecological.jpg");
+  background-image: none;
   background-position: center;
   background-size: cover;
   grid-column: 1/2;
@@ -104,11 +116,19 @@
   height: 120vw;
 }
 
+.article__image__4.loaded {
+  background-image: url("/images/ecological.jpg");
+}
+
 .article__image__5 {
-  background-image: url("/images/psycho_leaves.jpg");
+  background-image: none;
   background-position: center;
   background-size: cover;
   display: none;
+}
+
+.article__image__5.loaded {
+  background-image: url("/images/psycho_leaves.jpg");
 }
 
 .subscribe {

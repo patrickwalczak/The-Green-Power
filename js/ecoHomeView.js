@@ -35,13 +35,19 @@ class EcoHomeView {
     this.ecoHomeImages[clicked.dataset.tab].classList.remove("hidden");
   }
 
-  displayHeader(entries) {
+  displayHeader(entries, observer) {
     const [entry] = entries;
 
     if (entry.isIntersecting) {
       this.headerContainer.classList.add("visible");
       this.headerTopPart.classList.add("text-top");
       this.headerBottomPart.classList.add("text-bottom");
+
+      this.ecoHomeImages.forEach((img) => {
+        img.src = img.dataset.imgpath;
+      });
+
+      observer.unobserve(this.headerContainer);
     }
   }
 }

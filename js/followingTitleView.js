@@ -8,6 +8,10 @@ class FollowingTitleView {
   sdTitle = `<h4 class="block__text">Environmental Protection Topics</h4>`;
   thTitle = `<h4 class="block__text">Environmental technology Topics</h4>`;
 
+  images = document.querySelectorAll(".artImg");
+  sectionContainer = document.querySelector(".articles__section");
+  sectionObserver;
+
   constructor() {
     [
       [this.imageOne, "one", this.fstTitle],
@@ -19,6 +23,24 @@ class FollowingTitleView {
         this.generateMarkUp.bind(this, arr[1], arr[2])
       )
     );
+
+    this.sectionObserver = new IntersectionObserver(
+      this.addImagesActions.bind(this),
+      {
+        root: null,
+        threshold: 0.1,
+        rootMargin: "150px",
+      }
+    ).observe(this.sectionContainer);
+  }
+
+  addImagesActions(entries, observer) {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      console.log(entry);
+      this.images.forEach((img) => img.classList.add("loaded"));
+      observer.unobserve(this.sectionContainer);
+    }
   }
 
   generateMarkUp(id, content) {
