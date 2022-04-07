@@ -37,7 +37,6 @@ class FollowingTitleView {
   addImagesActions(entries, observer) {
     const [entry] = entries;
     if (entry.isIntersecting) {
-      console.log(entry);
       this.images.forEach((img) => img.classList.add("loaded"));
       observer.unobserve(this.sectionContainer);
     }
