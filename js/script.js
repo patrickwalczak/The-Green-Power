@@ -10,7 +10,6 @@ import CompanyStrengths from "./companyStrengths.js";
 window.addEventListener("load", () => {
   document.querySelector("body").classList.remove("loading");
   document.querySelector(".loadingModal").classList.add("loaded");
-  updateWebCounter();
 });
 
 const loadingTimeLimitHandler = (milliseconds = 3000) => {
@@ -63,3 +62,5 @@ const updateWebCounter = async () => {
     console.log(err);
   }
 };
+
+updateWebCounter();
