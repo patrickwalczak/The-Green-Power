@@ -53,7 +53,7 @@ const updateWebCounter = async () => {
       fetchHandler(
         "https://trading-platform-dabf0-default-rtdb.europe-west1.firebasedatabase.app/application/greenPowerCounter.json",
         {
-          method: "PATCH",
+          method: "PUT",
           body: JSON.stringify(webCounter + 1),
         }
       ),
