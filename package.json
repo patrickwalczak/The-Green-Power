@@ -10,7 +10,7 @@
   "author": "Patryk Walczak",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^2.4.1"
+    "parcel": "^2.6.1"
   },
   "dependencies": {
     "core-js": "^3.21.1",

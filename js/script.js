@@ -47,6 +47,8 @@ const updateWebCounter = async () => {
       ),
     ]);
 
+    console.log(webCounter);
+
     await Promise.race([
       loadingTimeLimitHandler(),
 
