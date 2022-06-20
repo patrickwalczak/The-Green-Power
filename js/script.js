@@ -22,19 +22,17 @@ const loadingTimeLimitHandler = (milliseconds = 3000) => {
   );
 };
 
-export const fetchHandler = (url, methodOptionsObject = {}) => {
-  return async () => {
-    try {
-      const response = await fetch(url, methodOptionsObject);
+export const fetchHandler = async (url, methodOptionsObject = {}) => {
+  try {
+    const response = await fetch(url, methodOptionsObject);
 
-      if (!response.ok) {
-        throw new Error([response.status, response.statusText, response.url]);
-      }
-      return response.json();
-    } catch (err) {
-      throw err;
+    if (!response.ok) {
+      throw new Error([response.status, response.statusText, response.url]);
     }
-  };
+    return response.json();
+  } catch (err) {
+    throw err;
+  }
 };
 
 const updateWebCounter = async () => {
