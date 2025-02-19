@@ -21,7 +21,7 @@
 
 .articles__navigation h2 {
   color: rgb(149, 149, 149);
-  font-family: "sans-serif";
+  font-family: 'sans-serif';
   align-self: center;
   font-size: clamp(1rem, 5vw + 0.1rem, 4rem);
   justify-self: center;
@@ -44,7 +44,7 @@
 }
 
 .article__image.loaded {
-  background-image: url("/images/eye_opening.jpg");
+  background-image: url('../assets/eye_opening.jpg');
 }
 
 /* .a    */
@@ -89,7 +89,7 @@
 }
 
 .article__image__2.loaded {
-  background-image: url("/images/bacteria.jpg");
+  background-image: url('../assets/bacteria.jpg');
 }
 
 .article__image__3 {
@@ -103,7 +103,7 @@
 }
 
 .article__image__3.loaded {
-  background-image: url("/images/dragonfly.jpg");
+  background-image: url('../assets/dragonfly.jpg');
 }
 
 .article__image__4 {
@@ -117,7 +117,7 @@
 }
 
 .article__image__4.loaded {
-  background-image: url("/images/ecological.jpg");
+  background-image: url('../assets/ecological.jpg');
 }
 
 .article__image__5 {
@@ -128,7 +128,7 @@
 }
 
 .article__image__5.loaded {
-  background-image: url("/images/psycho_leaves.jpg");
+  background-image: url('../assets/psycho_leaves.jpg');
 }
 
 .subscribe {
@@ -175,7 +175,7 @@
 
 .sub_button:after {
   position: absolute;
-  content: "";
+  content: '';
   width: 0;
   height: 100%;
   top: 0;
@@ -304,7 +304,7 @@
 
 .news_paragraph::after,
 .news_paragraph::before {
-  content: "";
+  content: '';
   display: block;
   width: 60vw;
   position: absolute;
@@ -344,7 +344,7 @@
 }
 
 .button_news::after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   position: absolute;

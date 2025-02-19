@@ -114,22 +114,22 @@
 }
 
 .image__1 {
-  background-image: url("/images/planted_tree.jpg");
+  background-image: url('../assets/planted_tree.jpg');
   transition: 1000ms ease-in-out;
 }
 
 .image__2 {
-  background-image: url("/images/waterPollution.jpg");
+  background-image: url('../assets/waterPollution.jpg');
   transition: 400ms ease-in-out;
 }
 
 .image__3 {
-  background-image: url("/images/helped_animals.jpg");
+  background-image: url('../assets/helped_animals.jpg');
   transition: 400ms ease-in-out;
 }
 
 .slide__image::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 75vw;
   height: 110vw;

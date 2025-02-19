@@ -347,7 +347,7 @@
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   transform: translateX(0rem);
-  background-image: url("/images/windFarm.jpg");
+  background-image: url('../assets/windFarm.jpg');
   background-position: left;
   background-size: cover;
 }
@@ -356,7 +356,7 @@
   grid-column: 1 / 2;
   grid-row: 5 / 6;
   transform: translateX(0rem);
-  background-image: url("/images/hydroPower_backGr.jpg");
+  background-image: url('../assets/hydroPower_backGr.jpg');
   background-position: right;
   background-size: cover;
 }
@@ -365,7 +365,7 @@
   grid-column: 1 / 2;
   grid-row: 7 / 8;
   transform: translateX(0rem);
-  background-image: url("/images/solarPanels__intro.jpg");
+  background-image: url('../assets/solarPanels__intro.jpg');
   background-position: left;
   background-size: cover;
 }
