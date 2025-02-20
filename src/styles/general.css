@@ -38,3 +38,7 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(116, 116, 116);
   border-radius: 0.5rem;
 }
+
+li {
+  list-style-type: none;
+}

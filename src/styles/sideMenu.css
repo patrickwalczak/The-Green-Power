@@ -1,0 +1,293 @@
+.side__menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 23.5rem;
+  background-color: white;
+  z-index: 1000;
+  height: 100vh;
+  transform: translateX(-100%);
+  transition: all 500ms;
+}
+
+.hiddenAnimation {
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+#subMenu__solutions.side__menu {
+  z-index: 2000;
+}
+
+.hiddenAnimation {
+  transform: translateX(0);
+  transition: all 500ms;
+}
+
+.side__menu_header {
+  width: 100%;
+  height: 5.2rem;
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.close__menu_btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 0.5rem;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.close__menu_btn:hover span {
+  background-color: rgb(87, 17, 17);
+}
+
+.close__menu_btn > span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: rgb(7, 3, 3);
+}
+
+.close__menu_btn > span:first-child {
+  transform: rotate(45deg);
+}
+
+.close__menu_btn > span:last-child {
+  transform: rotate(-45deg);
+}
+
+.side__menu_heading {
+  color: rgb(0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 0.6rem 2rem 0 1rem;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.side__menu_links_list {
+  width: 100%;
+}
+
+.side__menu_button {
+  background: none;
+  border: none;
+}
+
+.side__menu_link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 5rem;
+  padding: 1.6rem 1rem 0rem 1rem;
+  border-bottom: 1px solid rgb(202, 202, 202);
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.side__menu_link:hover {
+  background: rgb(0, 80, 0);
+  border-bottom: none;
+}
+
+.side__menu_link:hover .indicator,
+.side__menu_link:hover {
+  color: white;
+}
+
+.indicator__container {
+  width: 1rem;
+  height: 5rem;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.indicator {
+  position: absolute;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: 400;
+  top: -5%;
+}
+
+.close_side_menu_layer_btn {
+  margin-left: 0.2rem;
+  height: 1rem;
+  width: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.close_side_menu_layer_btn::before {
+  content: '\003C';
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 400;
+  position: absolute;
+  top: 0%;
+  right: 5%;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.overlay.displayOverlay {
+  display: block;
+}
+
+/* The smallest header can be less than 40rem */
+
+@media all and (min-width: 300.1px) and (max-width: 600px) {
+  /* ===================== */
+  /* side main menu */
+
+  .side__menu {
+    position: fixed;
+  }
+
+  .close__menu_btn > span {
+    top: 50%;
+    left: 0%;
+    width: 20px;
+    height: 1px;
+  }
+
+  .side__menu_heading {
+    /*padding: top right bottom left */
+    padding: 0.6rem 2rem 0 1rem;
+    height: 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+
+  .close_side_menu_layer_btn::before {
+    top: -6%;
+  }
+
+  .side__menu_link {
+    font-size: 1.2rem;
+  }
+}
+
+@media all and (min-width: 600.1px) and (max-width: 900px) {
+  .side__menu {
+    max-width: 25.5rem;
+  }
+
+  .close__menu_btn {
+    margin-left: 1.5rem;
+  }
+
+  .close__menu_btn > span {
+    top: 59%;
+    width: 22px;
+    height: 2px;
+  }
+
+  .side__menu_heading {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .side__menu_link {
+    padding: 1.6rem 2rem 0rem 1.5rem;
+  }
+
+  .close_side_menu_layer_btn::before {
+    content: ' \003C';
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 400;
+    position: absolute;
+    top: -6%;
+    right: 5%;
+  }
+
+  .side__menu_link {
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 900.1px) {
+  .side__menu {
+    width: 23.5vw;
+    min-width: 30rem;
+    max-width: 32rem;
+  }
+
+  .side__menu_header {
+    height: 7.2rem;
+  }
+
+  .close__menu_btn {
+    margin-left: 2rem;
+  }
+
+  .close__menu_btn > span {
+    width: 21px;
+    height: 2px;
+  }
+
+  .side__menu_heading {
+    padding: 0.4rem 2rem 0 1rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .side__menu_link {
+    padding: 1.6rem 2rem 0rem 2rem;
+  }
+
+  .indicator {
+    font-size: 2.3rem;
+    top: -7%;
+  }
+
+  .close_side_menu_layer_btn {
+    margin-left: 1.5rem;
+    height: 3rem;
+  }
+
+  .close_side_menu_layer_btn::before {
+    font-size: 2.3rem;
+    top: 15%;
+    right: 5%;
+  }
+
+  .side__menu_link {
+    font-size: 1.6rem;
+  }
+}
+
+@media all and (min-width: 1100.1px) {
+  .side__menu {
+    max-width: 36rem;
+  }
+}

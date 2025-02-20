@@ -1,4 +1,4 @@
-import HiddenMenu from './hiddenMenu.js';
+import SideMenu from './sideMenu.js';
 import HeroView from './heroView.js';
 import EcoHomeView from './ecoHomeView.js';
 import NavView from './navView.js';

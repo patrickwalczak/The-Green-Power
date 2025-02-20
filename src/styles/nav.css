@@ -75,7 +75,7 @@ nav {
 
 /* =================== */
 
-.nav__top.transform__nav .hamburger__menu > span {
+.nav__top.transform__nav .hamburger__button > span {
   background-color: white;
 }
 
@@ -114,13 +114,15 @@ nav {
 
 /* ===================== */
 /* nav__top element: hamburger menu */
-.hamburger__menu {
-  cursor: pointer;
-  place-self: center start;
+.hamburger__button {
   grid-column: 1/2;
+  place-self: center start;
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
-.hamburger__menu > span {
+.hamburger__button > span {
   display: block;
   width: 13px;
   height: 1px;
@@ -128,22 +130,22 @@ nav {
   transition: 400ms ease-in-out;
 }
 
-.hamburger__menu > span:not(:last-child) {
+.hamburger__button > span:not(:last-child) {
   margin-bottom: 2px;
 }
 
-.hamburger__menu.open > span {
+.hamburger__button.open > span {
   transition: 600ms ease-in-out;
 }
-.hamburger__menu.open > span:first-child {
+.hamburger__button.open > span:first-child {
   transform: rotate(45deg) translateX(5px) translateY(5px);
 }
 
-.hamburger__menu.open > span:nth-child(2) {
+.hamburger__button.open > span:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger__menu.open > span:last-child {
+.hamburger__button.open > span:last-child {
   transform: rotate(-45deg) translateX(5px) translateY(-5px);
 }
 
@@ -216,14 +218,6 @@ nav {
   display: none;
 }
 
-li:last-child {
-  position: relative;
-}
-
-li {
-  list-style-type: none;
-}
-
 .nav__link {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
@@ -270,174 +264,6 @@ li {
   display: none;
 }
 
-/* ===================== */
-/* hidden side main menu */
-
-.hidden__menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 23.5rem;
-  background-color: white;
-  z-index: 1000;
-  height: 100vh;
-  transform: translateX(-100%);
-  transition: all 500ms;
-}
-
-#subMenu__investors.hidden__menu,
-#subMenu__about.hidden__menu,
-#subMenu__solutions.hidden__menu {
-  z-index: 2000;
-}
-
-.hiddenAnimation {
-  transform: translateX(0);
-  transition: all 500ms;
-}
-
-.hidden__menu__closedMenu_header_container {
-  width: 100%;
-  height: 5.2rem;
-  background-color: #f1f1f1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px solid rgb(214, 214, 214);
-  cursor: pointer;
-}
-
-.closedMenu {
-  margin-left: 0.5rem;
-  height: 3rem;
-  width: 3rem;
-  position: relative;
-  cursor: pointer;
-}
-
-.closedMenu:hover span {
-  background-color: rgb(87, 17, 17);
-}
-
-.closedMenu > span {
-  display: block;
-  width: 20px;
-  height: 1px;
-  background-color: rgb(7, 3, 3);
-  position: absolute;
-  top: 50%;
-  left: 0%;
-}
-
-.closedMenu > span:first-child {
-  transform: rotate(45deg);
-}
-
-.closedMenu > span:last-child {
-  transform: rotate(-45deg);
-}
-
-.hidden__menu__header {
-  color: rgb(0, 0, 0);
-  overflow: hidden;
-  white-space: nowrap;
-  /*padding: top right bottom left */
-  padding: 0.6rem 2rem 0 1rem;
-  height: 2.5rem;
-  font-size: 1.6rem;
-  font-weight: 500;
-}
-
-.hidden__menu__linksContainer {
-  list-style: none;
-  width: 100%;
-  border-bottom: 1px solid rgb(214, 214, 214);
-}
-
-.hidden__menu__linkContainer {
-  width: 100%;
-  height: 5rem;
-  padding: 1.6rem 1rem 0rem 1rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid rgb(202, 202, 202);
-}
-
-.indicator__container {
-  width: 1rem;
-  height: 5rem;
-  padding-bottom: 1rem;
-  position: relative;
-}
-
-.indicator {
-  position: absolute;
-  color: black;
-  font-size: 1.8rem;
-  font-weight: 400;
-  top: -5%;
-}
-
-.indicator__container_back {
-  margin-left: 0.2rem;
-  height: 1rem;
-  width: 2rem;
-  position: relative;
-  cursor: pointer;
-}
-
-.indicator__container_back::before {
-  content: '\003C';
-  color: black;
-  font-size: 1.5rem;
-  font-weight: 400;
-  position: absolute;
-  top: 0%;
-  right: 5%;
-}
-
-.hidden__menu__linkContainer:hover {
-  background: rgb(0, 80, 0);
-  border-bottom: none;
-}
-
-.hidden__menu__linkContainer:hover .indicator {
-  color: white;
-}
-
-.hidden__menu__linkContainer:hover .hidden__menu__link {
-  color: white;
-}
-
-.hidden__menu__link {
-  text-decoration: none;
-  color: black;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  cursor: pointer;
-}
-
-.overlay.displayOverlay {
-  display: block;
-}
-
-/* The smallest header can be less than 40rem */
-
 @media all and (min-width: 300.1px) and (max-width: 600px) {
   body {
     margin-top: 4rem;
@@ -482,12 +308,12 @@ li {
   /* ===================== */
   /* nav__top element: hamburger menu */
 
-  .hamburger__menu > span {
+  .hamburger__button > span {
     width: 22px;
     height: 1px;
   }
 
-  .hamburger__menu > span:not(:last-child) {
+  .hamburger__button > span:not(:last-child) {
     margin-bottom: 4px;
   }
 
@@ -533,38 +359,6 @@ li {
 
   .button__newsletter {
     display: none;
-  }
-
-  /* ===================== */
-  /* hidden side main menu */
-
-  .hidden__menu {
-    position: fixed;
-  }
-
-  .closedMenu > span {
-    width: 20px;
-    height: 1px;
-
-    top: 50%;
-    left: 0%;
-  }
-
-  .hidden__menu__header {
-    /*padding: top right bottom left */
-    padding: 0.6rem 2rem 0 1rem;
-    height: 2.5rem;
-    font-size: 1.6rem;
-    font-weight: 500;
-  }
-
-  .indicator__container_back::before {
-    top: -6%;
-  }
-
-  .hidden__menu__link {
-    font-size: 1.2rem;
-    font-weight: 600;
   }
 }
 
@@ -631,12 +425,12 @@ li {
   /* ===================== */
   /* nav__top element: hamburger menu */
 
-  .hamburger__menu > span {
+  .hamburger__button > span {
     width: 24px;
     height: 2px;
   }
 
-  .hamburger__menu > span:not(:last-child) {
+  .hamburger__button > span:not(:last-child) {
     margin-bottom: 4px;
   }
 
@@ -682,61 +476,6 @@ li {
 
   .button__newsletter {
     display: none;
-  }
-
-  /* ===================== */
-  /* hidden side main menu */
-
-  .hidden__menu {
-    max-width: 25.5rem;
-  }
-
-  .closedMenu {
-    margin-left: 1.5rem;
-  }
-
-  .closedMenu > span {
-    width: 22px;
-    height: 2px;
-    top: 59%;
-  }
-
-  .hidden__menu__header {
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .hidden__menu__linkContainer {
-    padding: 1.6rem 2rem 0rem 1.5rem;
-  }
-
-  .indicator__container_back::before {
-    content: ' \003C';
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 400;
-    position: absolute;
-    top: -6%;
-    right: 5%;
-  }
-
-  .hidden__menu__linkContainer:hover {
-    background: rgb(0, 80, 0);
-  }
-
-  .hidden__menu__linkContainer:hover .indicator {
-    color: white;
-  }
-
-  .hidden__menu__linkContainer:hover .hidden__menu__link {
-    color: white;
-  }
-
-  .hidden__menu__link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 600;
   }
 }
 
@@ -803,75 +542,19 @@ li {
     font-size: 1.1rem;
   }
 
-  /* ============================== */
-  /* properties for smaller black nav */
-
-  /* ===================== */
-  /* hidden side main menu */
-
-  .hidden__menu {
-    width: 23.5vw;
-    min-width: 30rem;
-    max-width: 32rem;
-  }
-
-  .hidden__menu__closedMenu_header_container {
-    height: 7.2rem;
-  }
-
-  .closedMenu {
-    margin-left: 2rem;
-  }
-
-  .closedMenu > span {
-    width: 21px;
-    height: 2px;
-  }
-
-  .hidden__menu__header {
-    padding: 0.4rem 2rem 0 1rem;
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .hidden__menu__linkContainer {
-    padding: 1.6rem 2rem 0rem 2rem;
-  }
-
-  .indicator {
-    font-size: 2.3rem;
-
-    top: -7%;
-  }
-
-  .indicator__container_back {
-    margin-left: 1.5rem;
-    height: 3rem;
-  }
-
-  .indicator__container_back::before {
-    font-size: 2.3rem;
-
-    top: 15%;
-    right: 5%;
-  }
-
-  .hidden__menu__link {
-    font-size: 1.6rem;
-  }
-
   /* ===================== */
   /* nav__top element: hamburger menu */
-  .hamburger__menu {
+  .hamburger__button {
     cursor: pointer;
     place-self: center start;
   }
-  .hamburger__menu > span {
+
+  .hamburger__button > span {
     width: 26px;
     height: 2px;
   }
 
-  .hamburger__menu > span:not(:last-child) {
+  .hamburger__button > span:not(:last-child) {
     margin-bottom: 5px;
   }
 
@@ -986,9 +669,5 @@ li {
     grid-template-rows: 5rem;
     padding-left: 4rem;
     padding-right: 4rem;
-  }
-
-  .hidden__menu {
-    max-width: 36rem;
   }
 }
