@@ -1,43 +1,38 @@
 class HeroView {
-  leftHeroImage = document.querySelector(".header--leftImage");
+  leftHeroImage = document.querySelector('.header--leftImage');
 
-  rightHeroImage = document.querySelector(".header--rightImage");
+  rightHeroImage = document.querySelector('.header--rightImage');
 
-  leftHeroButton = document.querySelector(".header__leftSide_btn");
+  leftHeroButton = document.querySelector('.header__leftSide_btn');
 
-  rightHeroButton = document.querySelector(".header__rightSide_btn");
+  rightHeroButton = document.querySelector('.header__rightSide_btn');
 
-  heroHeader = document.querySelector(".hero__header__wrapper");
+  heroHeader = document.querySelector('.hero__header__wrapper');
 
-  hero__leftButtonLinesContainer = document.querySelector("#leftHero");
+  hero__leftButtonLinesContainer = document.querySelector('#leftHero');
 
-  hero__rightButtonLinesContainer = document.querySelector("#rightHero");
+  hero__rightButtonLinesContainer = document.querySelector('#rightHero');
 
   hero__leftContentWrapper = document.querySelector(
-    "#hero__left__image__content"
+    '#hero__left__image__content'
   );
 
   hero__rightContentWrapper = document.querySelector(
-    "#hero__right__image__content"
+    '#hero__right__image__content'
   );
 
-  hero__rightContentWords = document.querySelectorAll(".word__H");
+  hero__rightContentWords = document.querySelectorAll('.word__H');
 
-  hero__leftContentWords = document.querySelectorAll(".word__L");
+  hero__leftContentWords = document.querySelectorAll('.word__L');
 
   constructor() {
-    window.addEventListener("load", () => {
-      this.leftHeroImage.classList.remove("afterLoading");
-      this.rightHeroImage.classList.remove("afterLoading");
-    });
-
     this.leftHeroButton.addEventListener(
-      "mouseenter",
+      'mouseenter',
       this.mouseenterHeroBtnHandler.bind(
         this,
         this.leftHeroButton,
-        "active",
-        "unactive",
+        'active',
+        'unactive',
         this.hero__leftButtonLinesContainer,
         this.hero__leftContentWrapper,
         this.hero__leftContentWords
@@ -45,12 +40,12 @@ class HeroView {
     );
 
     this.rightHeroButton.addEventListener(
-      "mouseenter",
+      'mouseenter',
       this.mouseenterHeroBtnHandler.bind(
         this,
         this.rightHeroButton,
-        "unactive",
-        "active",
+        'unactive',
+        'active',
         this.hero__rightButtonLinesContainer,
         this.hero__rightContentWrapper,
         this.hero__rightContentWords
@@ -58,7 +53,7 @@ class HeroView {
     );
 
     this.rightHeroImage.addEventListener(
-      "mouseenter",
+      'mouseenter',
       this.mouseenterHeroImgHandler.bind(
         this,
         this.leftHeroImage,
@@ -70,7 +65,7 @@ class HeroView {
     );
 
     this.leftHeroImage.addEventListener(
-      "mouseenter",
+      'mouseenter',
       this.mouseenterHeroImgHandler.bind(
         this,
         this.rightHeroImage,
@@ -82,12 +77,12 @@ class HeroView {
     );
 
     this.leftHeroImage.addEventListener(
-      "mouseleave",
+      'mouseleave',
       this.mouseoutHeroHandler.bind(this)
     );
 
     this.rightHeroImage.addEventListener(
-      "mouseleave",
+      'mouseleave',
       this.mouseoutHeroHandler.bind(this)
     );
   }
@@ -118,22 +113,22 @@ class HeroView {
     contentWrapper,
     contentWords
   ) {
-    this.leftHeroImage.style.clipPath = "var(--left--normal)";
-    this.rightHeroImage.style.clipPath = "var(--right--normal)";
+    this.leftHeroImage.style.clipPath = 'var(--left--normal)';
+    this.rightHeroImage.style.clipPath = 'var(--right--normal)';
 
-    this.heroHeader.classList.remove("hideVisibility");
+    this.heroHeader.classList.remove('hideVisibility');
 
-    linesContainer.style.bottom = "-15%";
-    linesContainer.style.left = "-8%";
+    linesContainer.style.bottom = '-15%';
+    linesContainer.style.left = '-8%';
 
-    btn.classList.remove("isHovered");
+    btn.classList.remove('isHovered');
 
-    oppositeImg.classList.remove("imageIsHovered");
+    oppositeImg.classList.remove('imageIsHovered');
 
-    contentWrapper.classList.remove("displayContent");
+    contentWrapper.classList.remove('displayContent');
 
     contentWords.forEach((word) => {
-      word.classList.remove("wordHeroRight");
+      word.classList.remove('wordHeroRight');
     });
   }
 
@@ -152,29 +147,29 @@ class HeroView {
     this.rightHeroImage.style.clipPath = `var(--right--${rightState})`;
 
     // Hide header text
-    this.heroHeader.classList.add("hideVisibility");
+    this.heroHeader.classList.add('hideVisibility');
 
     // Change the position of the button's white lines
-    linesContainer.style.bottom = "0%";
-    linesContainer.style.left = "0%";
+    linesContainer.style.bottom = '0%';
+    linesContainer.style.left = '0%';
 
     // Change entire button element position
-    btn.classList.add("isHovered");
+    btn.classList.add('isHovered');
 
     // ===============
     //  Change a background-image position
-    if (leftState === "active") {
-      this.leftHeroImage.classList.add("imageIsHovered");
+    if (leftState === 'active') {
+      this.leftHeroImage.classList.add('imageIsHovered');
     } else {
-      this.rightHeroImage.classList.add("imageIsHovered");
+      this.rightHeroImage.classList.add('imageIsHovered');
     }
     // =============
     // For entire content wrapper is added animation which add opacity and visibility
-    contentWrapper.classList.add("displayContent");
+    contentWrapper.classList.add('displayContent');
 
     // Add animation for each content word
     contentWords.forEach((word) => {
-      word.classList.add("wordHeroRight");
+      word.classList.add('wordHeroRight');
     });
   }
 }

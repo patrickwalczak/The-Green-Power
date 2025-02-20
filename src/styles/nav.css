@@ -62,7 +62,7 @@ nav {
 }
 
 .nav__top.transform__nav .nav__link {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-weight: 600;
@@ -212,7 +212,7 @@ nav {
   position: relative;
 }
 
-.nav__bottom .nav__links #link__careers {
+.nav__bottom .nav__links #link_ecohome {
   display: none;
 }
 
@@ -225,7 +225,7 @@ li {
 }
 
 .nav__link {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-decoration: none;
   color: rgb(0, 0, 0);
   font-weight: 600;
@@ -241,7 +241,7 @@ li {
 }
 
 .nav__link::after {
-  content: "";
+  content: '';
   display: block;
   width: 0;
   position: absolute;
@@ -389,7 +389,7 @@ li {
 }
 
 .indicator__container_back::before {
-  content: "\003C";
+  content: '\003C';
   color: black;
   font-size: 1.5rem;
   font-weight: 400;
@@ -518,7 +518,7 @@ li {
     padding-top: 0.5rem;
   }
 
-  .nav__bottom .nav__links #link__careers {
+  .nav__bottom .nav__links #link_ecohome {
     display: none;
   }
 
@@ -667,7 +667,7 @@ li {
     justify-content: space-between;
   }
 
-  .nav__bottom .nav__links #link__careers {
+  .nav__bottom .nav__links #link_ecohome {
     display: block;
   }
 
@@ -711,7 +711,7 @@ li {
   }
 
   .indicator__container_back::before {
-    content: " \003C";
+    content: ' \003C';
     color: black;
     font-size: 1.5rem;
     font-weight: 400;
@@ -909,7 +909,7 @@ li {
     font-size: 1rem;
   }
 
-  .nav__bottom .nav__links #link__careers {
+  .nav__bottom .nav__links #link_ecohome {
     display: block;
   }
 

@@ -22,7 +22,6 @@ This is intro animaton (fading in elements) */
 .hero__elements__animation {
   animation-name: text-clip;
   animation-duration: 2s;
-  animation-delay: 1s;
   animation-fill-mode: forwards;
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 }
@@ -81,10 +80,6 @@ This is intro animaton (fading in elements) */
   clip-path: var(--left--normal);
 }
 
-.header--leftImage.afterLoading {
-  transform: translateX(-100%);
-}
-
 .header--leftImage.imageIsHovered {
   background-position: bottom;
 }
@@ -103,10 +98,6 @@ This is intro animaton (fading in elements) */
   background-position: top;
   background-size: cover;
   clip-path: var(--right--normal);
-}
-
-.header--rightImage.afterLoading {
-  transform: translateX(100%);
 }
 
 .header--rightImage.imageIsHovered {

@@ -38,9 +38,3 @@ body::-webkit-scrollbar-thumb {
   background-color: rgb(116, 116, 116);
   border-radius: 0.5rem;
 }
-
-@media all and (max-width: 700px) {
-  body::-webkit-scrollbar {
-    display: none;
-  }
-}

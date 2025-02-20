@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GreenPower</title>
+    <meta
+      name="title"
+      content="The Green Power - Sustainable Energy Solutions"
+    />
+    <meta
+      name="description"
+      content="The Green Power provides innovative renewable energy solutions to reduce carbon footprints and build a sustainable future. Join us in making the world greener!"
+    />
     <link rel="stylesheet" href="/src/styles/index.css" />
     <link rel="icon" type="image/svg+xml" href="leaf.svg" />
   </head>
-  <body class="loading">
+  <body>
     <div class="loadingModal">
       <img
         class="loadingSpinner"
@@ -69,16 +76,16 @@
 
           <ul class="nav__links">
             <li>
-              <a class="nav__link" href="#">NEWS</a>
+              <a class="nav__link" href="#solutions">SOLUTIONS</a>
             </li>
             <li>
-              <a class="nav__link" href="#">ABOUT US</a>
+              <a class="nav__link" href="#ecohome">ECOHOME</a>
             </li>
             <li>
-              <a class="nav__link" href="#">SOLUTIONS</a>
+              <a class="nav__link" href="#contribution">GREEN IMPACT</a>
             </li>
             <li>
-              <a class="nav__link" href="#">CAREERS</a>
+              <a class="nav__link" href="#blog">BLOG</a>
             </li>
           </ul>
 
@@ -91,16 +98,16 @@
         <div class="nav__bottom">
           <ul class="nav__links">
             <li>
-              <a class="nav__link" href="#">NEWS</a>
+              <a class="nav__link" href="#solutions">SOLUTIONS</a>
             </li>
             <li>
-              <a class="nav__link" href="#">ABOUT US</a>
+              <a class="nav__link" href="#ecohome">ECOHOME</a>
             </li>
             <li>
-              <a class="nav__link" href="#">SOLUTIONS</a>
+              <a class="nav__link" href="#contribution">GREEN IMPACT</a>
             </li>
             <li>
-              <a class="nav__link" href="#" id="link__careers">CAREERS</a>
+              <a class="nav__link" href="#blog">BLOG</a>
             </li>
           </ul>
           <button class="button__newsletter">DONATE CHARITY</button>
@@ -116,7 +123,7 @@
           </span>
         </h1>
 
-        <div class="hero_image header--leftImage afterLoading">
+        <div class="hero_image header--leftImage">
           <div class="image__content" id="hero__left__image__content">
             <h3>
               <span class="word__L word__1">Choose</span>
@@ -148,7 +155,7 @@
             </div>
           </button>
         </div>
-        <div class="hero_image header--rightImage afterLoading">
+        <div class="hero_image header--rightImage">
           <div class="image__content" id="hero__right__image__content">
             <h3>
               <span class="word__H word__1">Climate</span>
@@ -202,12 +209,12 @@
               </span>
             </p>
           </div>
-          <a class="scrollDownBtn" href="#"><span></span></a>
+          <div class="scrollDownContainer" href="#"><span></span></div>
         </div>
         <div class="solutions__opening__sidebar"></div>
       </div>
 
-      <section class="solutions__section">
+      <section class="solutions__section" id="solutions">
         <div class="solution__info" id="solution__info--1">
           <h3 class="solution__name">EcoHome</h3>
 
@@ -337,8 +344,13 @@
         </div>
       </section>
 
-      <section class="solution__ecoHome">
-        <img class="image_home" src="src/assets/ecoHomeTriangle.jpg" alt="" />
+      <section class="solution__ecoHome" id="ecohome">
+        <img
+          class="image_home"
+          src="src/assets/ecoHomeTriangle.jpg"
+          alt=""
+          loading="lazy"
+        />
         <div class="intro__circle">
           <span> ECOHOME</span>
         </div>
@@ -383,16 +395,19 @@
           class="ecoHome__image"
           src="src/assets/ecoHome1.jpg"
           alt="EcoHome Preview"
+          loading="lazy"
         />
         <img
           class="ecoHome__image hidden"
           src="src/assets/ecoHome2.jpg"
           alt="EcoHome Preview"
+          loading="lazy"
         />
         <img
           class="ecoHome__image hidden"
           src="src/assets/ecoHome3.jpg"
           alt="EcoHome Preview"
+          loading="lazy"
         />
 
         <div class="block">
@@ -403,7 +418,7 @@
         </div>
       </section>
 
-      <section class="slider slider__BG__1 section--hidden">
+      <section class="slider slider__BG__1 section--hidden" id="contribution">
         <h2 class="slider__header animation">
           The GreenPower <br />
           is not only about <br />
@@ -434,7 +449,7 @@
         <div class="img__descrip__container"></div>
       </section>
 
-      <section class="articles__section">
+      <section class="articles__section" id="blog">
         <div class="articles__navigation">
           <h2>“I cannot teach anybody anything. I can only make them think”</h2>
         </div>

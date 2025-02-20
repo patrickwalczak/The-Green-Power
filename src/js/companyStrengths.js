@@ -1,34 +1,43 @@
 class CompanyStrengths {
-  strengthsSection = document.querySelector(".strengths__section");
-  strengthsCards = document.querySelectorAll(".strength__card");
-  strengthsSectionObserver;
+  strengthsSection = null;
+  strengthsCards = null;
+  observer = null;
 
   constructor() {
-    this.strengthsSectionObserver = new IntersectionObserver(
-      this.strengthsActions.bind(this),
-      {
-        root: null,
-        threshold: [0.2, 0.7],
-      }
-    );
+    this.strengthsSection = document.querySelector('.strengths__section');
+    this.strengthsCards = document.querySelectorAll('.strength__card');
 
-    this.strengthsSectionObserver.observe(this.strengthsCards[0]);
-    this.strengthsSectionObserver.observe(this.strengthsSection);
+    if (!this.strengthsSection || !this.strengthsCards.length) return;
+
+    this.attachObserver();
   }
 
-  strengthsActions(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio < 0.3 && entry.isIntersecting) {
-        this.strengthsSection.classList.remove("section--hidden");
-        observer.unobserve(this.strengthsSection);
-      }
-      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        this.strengthsCards.forEach((card) => {
-          card.classList.add("fadeinAnimation");
-        });
-        observer.unobserve(this.strengthsCards[0]);
-      }
+  attachObserver() {
+    this.observer = new IntersectionObserver(
+      (entries, observer) => this.observerCallback(entries, observer),
+      { threshold: [0.2] }
+    );
+
+    this.observer.observe(this.strengthsSection);
+  }
+
+  observerCallback(entries, observer) {
+    const [entry] = entries;
+
+    if (!entry.isIntersecting) return;
+
+    this.strengthsSection.classList.remove('section--hidden');
+
+    this.strengthsCards.forEach((card, index) => {
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          card.classList.add('fadeinAnimation');
+        }, index * 200);
+      });
     });
+
+    observer.unobserve(entry.target);
+    this.observer = null;
   }
 }
 

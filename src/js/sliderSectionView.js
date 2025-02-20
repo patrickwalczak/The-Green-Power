@@ -1,10 +1,10 @@
 class SliderSectionView {
-  sectionSlider = document.querySelector(".slider");
-  rArrow = document.querySelector(".rightArrow");
-  lArrow = document.querySelector(".leftArrow");
-  dots = document.querySelectorAll(".dot");
-  images = document.querySelectorAll(".slide__image");
-  descriptionContainer = document.querySelector(".img__descrip__container");
+  sectionSlider = document.querySelector('.slider');
+  rArrow = document.querySelector('.rightArrow');
+  lArrow = document.querySelector('.leftArrow');
+  dots = document.querySelectorAll('.dot');
+  images = document.querySelectorAll('.slide__image');
+  descriptionContainer = document.querySelector('.img__descrip__container');
   firstSlide = `<h3 class="img__descrip__text">
     <span class="first_part typing-class"> With You we planted </span>
     <br />
@@ -23,17 +23,16 @@ class SliderSectionView {
     this.sliderSectionObserver = new IntersectionObserver(
       this.initTypingClass.bind(this),
       {
-        root: null,
-        threshold: [0.2, 0.7],
+        threshold: [0.2],
       }
     ).observe(this.sectionSlider);
 
-    this.rArrow.addEventListener("click", this.rightArrowActions.bind(this));
+    this.rArrow.addEventListener('click', this.rightArrowActions.bind(this));
 
-    this.lArrow.addEventListener("click", this.leftArrowActions.bind(this));
+    this.lArrow.addEventListener('click', this.leftArrowActions.bind(this));
 
     this.dots.forEach((dot) => {
-      dot.addEventListener("click", this.dotActions.bind(this, dot));
+      dot.addEventListener('click', this.dotActions.bind(this, dot));
     });
   }
 
@@ -46,14 +45,13 @@ class SliderSectionView {
   }
 
   initTypingClass(entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0.5 && entry.isIntersecting) {
-        document.querySelector(".img__descrip__container").innerHTML =
-          this.firstSlide;
-      } else {
-        this.sectionSlider.classList.remove("section--hidden");
-      }
-    });
+    const entry = entries[0];
+
+    if (!entry.isIntersecting) return;
+
+    document.querySelector('.img__descrip__container').innerHTML =
+      this.firstSlide;
+    this.sectionSlider.classList.remove('section--hidden');
   }
 
   rightArrowActions() {
@@ -114,15 +112,15 @@ class SliderSectionView {
 
   controlDots() {
     this.dots.forEach((dot) => {
-      dot.classList.remove("dot__active");
+      dot.classList.remove('dot__active');
     });
 
     this.images.forEach((img) => {
-      img.classList.add("hidden");
+      img.classList.add('hidden');
     });
 
-    this.dots[this.currSlide - 1].classList.add("dot__active");
-    this.images[this.currSlide - 1].classList.remove("hidden");
+    this.dots[this.currSlide - 1].classList.add('dot__active');
+    this.images[this.currSlide - 1].classList.remove('hidden');
 
     const classArr = new Array(...this.sectionSlider.classList);
     this.sectionSlider.classList.remove(classArr[1]);
