@@ -5,10 +5,15 @@ class SideMenu {
   sideMenuContainer = document.querySelector('#side__menu');
   closeSideMenuBtn = document.querySelector('.close__menu_btn');
   sideMenuSolutionsButton = document.querySelector('#sideMenuSolutions');
+  links = document.querySelectorAll('a.side__menu_link');
 
   constructor() {
-    // Add click listener to three elements simultaneously
-    [this.hamburgerButton, this.overlay, this.closeSideMenuBtn].forEach((el) =>
+    [
+      this.hamburgerButton,
+      this.overlay,
+      this.closeSideMenuBtn,
+      ...this.links,
+    ].forEach((el) =>
       el.addEventListener('click', this.toogleHiddenMenuVisibility.bind(this))
     );
 

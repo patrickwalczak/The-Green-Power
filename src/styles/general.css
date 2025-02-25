@@ -10,16 +10,14 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   font-family: sans-serif;
-  width: 100%;
+  scroll-behavior: smooth;
+  min-height: 100vh;
 }
 
 body {
-  width: 100%;
-  height: auto;
-  overflow-x: hidden;
-  min-width: 100%;
   position: relative;
-  margin-top: 8rem;
+  width: 100%;
+  padding-top: 4rem;
 }
 
 body.loading {

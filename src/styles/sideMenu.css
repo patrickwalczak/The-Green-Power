@@ -155,7 +155,6 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  cursor: pointer;
 }
 
 .overlay.displayOverlay {
@@ -221,11 +220,6 @@
   }
 
   .close_side_menu_layer_btn::before {
-    content: ' \003C';
-    color: black;
-    font-size: 1.5rem;
-    font-weight: 400;
-    position: absolute;
     top: -6%;
     right: 5%;
   }

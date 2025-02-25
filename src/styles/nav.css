@@ -1,11 +1,3 @@
-@media all and (min-width: 149px) and (max-width: 300px) {
-  body {
-    margin-top: 4rem;
-  }
-}
-
-/* General properties */
-
 nav {
   width: 100%;
   height: auto;
@@ -265,10 +257,6 @@ nav {
 }
 
 @media all and (min-width: 300.1px) and (max-width: 600px) {
-  body {
-    margin-top: 4rem;
-  }
-
   nav {
     border-bottom: 1px solid gray;
   }
@@ -364,7 +352,7 @@ nav {
 
 @media all and (min-width: 600.1px) and (max-width: 900px) {
   body {
-    margin-top: 5rem;
+    padding-top: 5rem;
   }
 
   nav {
@@ -481,7 +469,7 @@ nav {
 
 @media all and (min-width: 900.1px) {
   body {
-    margin-top: 6rem;
+    padding-top: 6rem;
   }
 
   nav {
@@ -607,7 +595,7 @@ nav {
 
 @media all and (min-width: 1100.1px) {
   body {
-    margin-top: 8rem;
+    padding-top: 8rem;
   }
 
   .nav__top {

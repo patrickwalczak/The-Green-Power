@@ -969,24 +969,22 @@
   .article__image__2 {
     grid-column: 4/5;
     grid-row: 2/3;
-    width: 20vw;
-    height: 20vw;
-    max-height: 312px;
+    width: 100%;
+    height: 100%;
   }
 
   .article__image__3 {
     grid-column: 4/5;
     grid-row: 3/4;
-    width: 25vw;
-    height: 20vw;
-    max-height: 312px;
+    width: 100%;
+    height: 100%;
   }
 
   .article__image__4 {
     grid-column: 4/5;
     grid-row: 4/5;
-    width: 25vw;
-    height: 30vw;
+    width: 100%;
+    height: 100%;
   }
 
   .article__image__5 {
@@ -1114,7 +1112,6 @@
   .events {
     grid-column: 3/5;
     grid-row: 5/6;
-    width: 50vw;
     height: auto;
     padding-left: 1vw;
     padding-top: 1vw;
