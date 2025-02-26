@@ -176,7 +176,7 @@ This is intro animaton (fading in elements) */
   left: 0%;
   top: 0%;
   animation-name: createBordersWidth;
-  animation-delay: 2.5s;
+  animation-delay: 0.5s;
 }
 
 .line_2 {
@@ -184,7 +184,7 @@ This is intro animaton (fading in elements) */
   left: 0%;
   bottom: 0%;
   animation-name: createBorders;
-  animation-delay: 2.7s;
+  animation-delay: 0.7s;
 }
 
 .line_3 {
@@ -192,7 +192,7 @@ This is intro animaton (fading in elements) */
   left: 0%;
   bottom: 0%;
   animation-name: createBordersWidth;
-  animation-delay: 2.6s;
+  animation-delay: 0.6s;
 }
 
 .line_4 {
@@ -200,7 +200,7 @@ This is intro animaton (fading in elements) */
   right: 0%;
   bottom: 0%;
   animation-name: createBorders;
-  animation-delay: 2.8s;
+  animation-delay: 0.8s;
 }
 
 .line_1,

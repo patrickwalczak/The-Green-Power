@@ -81,7 +81,6 @@
 
 .slider__paragraph {
   color: rgb(219, 218, 218);
-  font-family: serif;
   font-size: clamp(1rem, 5vw + 0.1rem, 2rem);
   width: 80%;
   height: auto;
@@ -731,7 +730,7 @@
     height: 30vw;
     max-width: 440px;
     max-height: 120px;
-    margin-top: -4.5vw;
+    margin-top: 0;
   }
 
   .typing-class {

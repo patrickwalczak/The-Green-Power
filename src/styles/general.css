@@ -16,7 +16,6 @@ html {
 
 body {
   position: relative;
-  width: 100%;
   padding-top: 4rem;
 }
 
@@ -35,6 +34,21 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: rgb(116, 116, 116);
   border-radius: 0.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
 li {
