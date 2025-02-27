@@ -1,0 +1,23 @@
+.button__empty {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.section__heading {
+  color: var(--color--dark-grey);
+  font-size: 4rem;
+  padding-left: 0.5rem;
+}
+
+.border__radius {
+  border-radius: 5px;
+}
+
+.line__clamp {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
