@@ -1,24 +1,24 @@
 class SolutionsView {
-  solutionsSectionIntro = document.querySelector(".solutions__opening");
+  solutionsSectionIntro = document.querySelector('.solutions__opening');
 
-  constrastEl = document.querySelector(".solutions__opening__sidebar");
+  constrastEl = document.querySelector('.solutions__opening__sidebar');
 
-  welcomeHeader = document.querySelector(".solutions__opening__header");
+  welcomeHeader = document.querySelector('.solutions__opening__header');
 
-  wholeTextEl = document.querySelector("#solution__info--1");
+  wholeTextEl = document.querySelector('#solution__info--1');
 
-  wholeSecondTextEl = document.querySelector("#solution__info--2");
+  wholeSecondTextEl = document.querySelector('#solution__info--2');
 
-  wholeThirdTextEl = document.querySelector("#solution__info--3");
+  wholeThirdTextEl = document.querySelector('#solution__info--3');
 
-  wholeFourthTextEl = document.querySelector("#solution__info--4");
+  wholeFourthTextEl = document.querySelector('#solution__info--4');
 
   solutionsSectionIntroObserver;
 
-  solutionOneImg = document.querySelector(".solution__image_1");
-  solutionTwoImg = document.querySelector(".solution__image_2");
-  solutionThreeImg = document.querySelector(".solution__image_3");
-  solutionFourImg = document.querySelector(".solution__image_4");
+  solutionOneImg = document.querySelector('.solution__image_1');
+  solutionTwoImg = document.querySelector('.solution__image_2');
+  solutionThreeImg = document.querySelector('.solution__image_3');
+  solutionFourImg = document.querySelector('.solution__image_4');
 
   solutionImgObserver;
 
@@ -26,12 +26,11 @@ class SolutionsView {
     this.solutionsSectionIntroObserver = new IntersectionObserver(
       this.actions.bind(this),
       {
-        root: null,
         threshold: 0.7,
       }
     ).observe(this.solutionsSectionIntro);
 
-    window.addEventListener("scroll", this.transformOnScrollHandler.bind(this));
+    window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
 
     this.solutionImgObserver = new IntersectionObserver(
       this.solutionImageActions,
@@ -51,12 +50,12 @@ class SolutionsView {
     const [entry] = entries;
 
     if (entry.isIntersecting) {
-      if (entry.target.dataset.imgside === "R") {
-        entry.target.classList.add("runAnimation__rImg");
+      if (entry.target.dataset.imgside === 'R') {
+        entry.target.classList.add('runAnimation__rImg');
         observer.unobserve(entry.target);
       }
-      if (entry.target.dataset.imgside === "L") {
-        entry.target.classList.add("runAnimation__lImg");
+      if (entry.target.dataset.imgside === 'L') {
+        entry.target.classList.add('runAnimation__lImg');
         observer.unobserve(entry.target);
       }
     }
@@ -65,8 +64,8 @@ class SolutionsView {
   actions(entries, observer) {
     const [entry] = entries;
     if (entry.isIntersecting) {
-      this.solutionsSectionIntro.classList.add("runAnimation");
-      this.constrastEl.classList.add("displayBar");
+      this.solutionsSectionIntro.classList.add('runAnimation');
+      this.constrastEl.classList.add('displayBar');
       observer.unobserve(this.solutionsSectionIntro);
     }
   }
