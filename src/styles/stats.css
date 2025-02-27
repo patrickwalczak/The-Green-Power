@@ -1,15 +1,12 @@
 .slider {
-  width: 100%;
-  height: auto;
+  position: relative;
+  display: grid;
   grid-template-columns: 10% 80% 10%;
   grid-template-rows: repeat(5, auto);
-  padding-left: 0rem;
-  transition: 400ms ease-in-out;
-  background-color: var(--slide-BG-color);
-  position: relative;
   margin-top: 0rem;
   margin-bottom: 2px;
-  display: grid;
+  background-color: var(--slide-BG-color);
+  transition: 400ms ease-in-out;
 }
 
 .slider.section--hidden {
@@ -69,7 +66,7 @@
   height: 2px;
   bottom: -5%;
   left: 13vw;
-  width: 40vw;
+  width: 0;
   animation-name: extendLine;
   animation-duration: 800ms;
   animation-delay: 1s;
