@@ -1,0 +1,321 @@
+:root {
+  --left--normal: polygon(100% 0%, 0% 100%, 0% 100%, 0% 0%);
+  --left--active: polygon(100% 0%, 90% 100%, 0% 100%, 0% 0%);
+  --left--unactive: polygon(100% -700%, 0% 100%, 0% 100%, 0% 0%);
+  --right--normal: polygon(100% 100%, 100% 0%, 0% 100%, 0% 100%);
+  --right--active: polygon(100% 100%, 100% -700%, 0% 100%, 0% 100%);
+  --right--unactive: polygon(100% 100%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.hero__section {
+  position: relative;
+  height: calc(100vh - 13.1rem);
+}
+
+.hero__intro_animation {
+  animation-name: text-clip;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.hero__heading {
+  position: absolute;
+  top: 10%;
+  left: calc(50% - 300px);
+  font-size: 4.4rem;
+  text-align: center;
+  color: var(--hero--heading-color);
+  z-index: 10;
+  transition: 500ms ease-in-out;
+  cursor: default;
+}
+
+.hero__heading.hideVisibility {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  display: flex;
+  width: 99.5%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 1200ms ease-in-out;
+}
+
+.hero__business_image {
+  background-image: var(--hero--grey-background-image);
+  clip-path: var(--left--normal);
+}
+
+.hero__business_image.imageIsHovered {
+  background-position: bottom;
+}
+
+.hero__nature_image {
+  right: 0%;
+  background-image: var(--hero--green-background-image);
+  background-position: top;
+  background-size: cover;
+  clip-path: var(--right--normal);
+}
+
+.hero__nature_image.imageIsHovered {
+  background-position: center;
+}
+
+.hero__button {
+  position: absolute;
+  width: 20rem;
+  height: 5.2rem;
+  border: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: white;
+  transition: 1000ms ease-in-out;
+  cursor: pointer;
+}
+
+.hero__left_button {
+  left: 4%;
+  top: 50%;
+  background: rgb(92, 92, 92);
+}
+
+.hero__left_button.isHovered {
+  top: 85%;
+}
+
+.hero__right_button {
+  background: rgba(6, 170, 28, 0.726);
+  right: 5%;
+  bottom: 20%;
+}
+
+.hero__right_button.isHovered {
+  bottom: 5%;
+}
+
+/*  */
+
+.lines__container {
+  position: absolute;
+  bottom: -15%;
+  left: -8%;
+  width: 100%;
+  height: 100%;
+  transition: 500ms ease-in-out;
+}
+
+.hero_btn_border_line {
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.733);
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.line_1 {
+  width: 100%;
+  left: 0%;
+  top: 0%;
+  animation-name: createBordersWidth;
+  animation-delay: 0.5s;
+}
+
+.line_2 {
+  height: 100%;
+  left: 0%;
+  bottom: 0%;
+  animation-name: createBorders;
+  animation-delay: 0.7s;
+}
+
+.line_3 {
+  width: 100%;
+  left: 0%;
+  bottom: 0%;
+  animation-name: createBordersWidth;
+  animation-delay: 0.6s;
+}
+
+.line_4 {
+  height: 100%;
+  right: 0%;
+  bottom: 0%;
+  animation-name: createBorders;
+  animation-delay: 0.8s;
+}
+
+.line_1,
+.line_3 {
+  height: 2px;
+}
+
+.line_2,
+.line_4 {
+  width: 2px;
+}
+
+.image__content {
+  display: none;
+  align-content: start;
+  justify-content: center;
+  row-gap: 5rem;
+  width: 100%;
+  margin-top: 30rem;
+  font-family: serif;
+  cursor: default;
+  opacity: 0;
+  animation-name: removeOpacity;
+  animation-fill-mode: forwards;
+  animation-delay: 600ms;
+  animation-duration: 600ms;
+
+  h3 {
+    color: var(--hero--heading-color);
+    overflow-y: hidden;
+    word-break: break-word;
+    font-size: 4.4rem;
+
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+.image__content.displayContent {
+  display: grid;
+}
+
+.image__content__paragraph {
+  justify-self: center;
+  max-width: 700px;
+  color: var(--hero--paragraph-color);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.word__H.wordHeroRight,
+.word__L.wordHeroRight {
+  transform: translateY(15rem);
+  animation-name: wordUp;
+  animation-fill-mode: forwards;
+  animation-duration: 700ms;
+}
+
+.word__H.word__1,
+.word__L.word__1 {
+  animation-delay: 500ms;
+}
+.word__H.word__2,
+.word__L.word__2 {
+  animation-delay: 550ms;
+}
+.word__H.word__3,
+.word__L.word__3 {
+  animation-delay: 600ms;
+}
+.word__H.word__4,
+.word__L.word__4 {
+  animation-delay: 650ms;
+}
+.word__H.word__5,
+.word__L.word__5 {
+  animation-delay: 700ms;
+}
+.word__H.word__6,
+.word__L.word__6 {
+  animation-delay: 750ms;
+}
+.word__H.word__7,
+.word__L.word__7 {
+  animation-delay: 800ms;
+}
+.word__H.word__8,
+.word__L.word__8 {
+  animation-delay: 850ms;
+}
+
+@media all and (min-width: 1920px) {
+  .hero__heading {
+    font-size: 5.4rem;
+    left: calc(50% - 350px);
+  }
+
+  .image__content {
+    h3 {
+      font-size: 4.8rem;
+    }
+  }
+
+  .image__content__paragraph {
+    font-size: 2.2rem;
+  }
+
+  .hero__button {
+    width: 25rem;
+    height: 6rem;
+    font-size: 1.8rem;
+  }
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    transform: translateY(6rem);
+  }
+  to {
+    clip-path: polygon(-20% 0%, 100% 0, 100% 100%, 0% 250%);
+    transform: translateY(0rem);
+  }
+}
+
+@keyframes createBorders {
+  from {
+    height: 0%;
+    opacity: 0;
+  }
+  to {
+    height: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes createBordersWidth {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes wordUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+}
+
+@keyframes removeOpacity {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -286,6 +286,7 @@
   .popular__articles_container {
     grid-column: 1/2;
     grid-row: 4/6;
+    align-content: start;
   }
 
   .news__container {

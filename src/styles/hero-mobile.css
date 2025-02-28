@@ -1,0 +1,66 @@
+.hero__heading {
+  padding: 5rem;
+  text-align: center;
+  font-size: 2.8rem;
+  color: var(--hero--heading-color);
+  background-color: rgba(5, 20, 5, 0.52);
+}
+
+.hero__image {
+  display: grid;
+  justify-content: center;
+  min-height: 40rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero__business_image {
+  background-image: var(--hero--grey-background-image);
+}
+
+.hero__nature_image {
+  background-image: var(--hero--green-background-image);
+}
+
+.hero__button {
+  display: none;
+}
+
+.image__content {
+  display: grid;
+  align-content: center;
+  row-gap: 3rem;
+  max-width: 700px;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.image__content h3 {
+  color: var(--hero--heading-color);
+}
+
+.image__content h3 span {
+  display: inline-block;
+  font-size: 2.4rem;
+}
+
+.image__content__paragraph {
+  color: var(--hero--paragraph-color);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+@media all and (min-width: 768px) {
+  .hero__heading {
+    font-size: 3rem;
+  }
+
+  .image__content h3 span {
+    font-size: 2.6rem;
+  }
+
+  .image__content__paragraph {
+    font-size: 1.8rem;
+  }
+}

@@ -69,7 +69,6 @@ class SideMenu {
   }
 
   toogleHiddenMenuVisibility() {
-    this.hamburgerButton.classList.toggle('open');
     this.body.classList.toggle('overflowClass');
     this.overlay.classList.toggle('displayOverlay');
     this.sideMenuContainer.classList.toggle('hiddenAnimation');

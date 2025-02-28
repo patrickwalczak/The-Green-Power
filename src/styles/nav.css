@@ -1,591 +1,278 @@
 nav {
   width: 100%;
-  height: auto;
-  flex-direction: column;
+  padding-top: 5.5rem;
   border-bottom: 1px solid gray;
-  display: flex;
 }
 
 .nav__top {
-  width: inherit;
-  display: grid;
-  z-index: 500;
-  background-color: white;
   position: fixed;
   top: 0;
+  display: grid;
+  grid-template-rows: 5.5rem;
+  grid-template-columns: 10% 80%;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 1px solid gray;
+  background-color: white;
+  z-index: 500;
   opacity: 1;
   transition: 500ms ease-in-out;
-  grid-template-columns: 10% 80%;
-  grid-template-rows: 4rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 
-/* ============================== */
-/* properties for smaller black nav */
-
-.nav__top.transform__nav {
-  background-color: black;
-  transition: 500ms ease-in-out;
-  grid-template-columns: 10% 80%;
-  grid-template-rows: 4rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.nav__top .nav__links {
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-}
-
-.nav__top.transform__nav .nav__links {
-  display: flex;
-  justify-content: start;
-  /* place-self: align-self justify-self */
-  place-self: center stretch;
-  /* grid area: GRS / GCS / GRE / GRC */
-  grid-column: 2/3;
-  position: relative;
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-}
-
-.nav__top.transform__nav .nav__link {
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  color: rgb(255, 255, 255);
-  font-weight: 600;
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-  position: relative;
-  display: inline-block;
-  margin-right: 2rem;
-}
-
-/* =================== */
-
-.nav__top.transform__nav .hamburger__button > span {
-  background-color: white;
-}
-
-.nav__top.transform__nav .logo {
-  grid-column: 2/3;
-  place-self: center center;
-  font-size: clamp(1.1rem, 7vw, 1.5rem);
-}
-
-.nav__top.transform__nav .logo h2 {
-  color: white;
-}
-
-/* Leaf's size */
-.nav__top.transform__nav .leaf__large {
-  width: 0.75rem;
-  height: 0.75rem;
-}
-
-.nav__top.transform__nav .btn__contact {
-  border: none;
-  background: rgb(0, 80, 0);
-  color: rgb(255, 255, 255);
-  grid-column: 4/5;
-  font-weight: 500;
-  display: none;
-}
-
-.nav__top.transform__nav .btn__contact:hover {
-  color: rgb(0, 80, 0);
-  background: rgb(255, 255, 255);
-}
-
-/* properties for smaller black nav ^ */
-/* ============================== */
-
-/* ===================== */
-/* nav__top element: hamburger menu */
-.hamburger__button {
-  grid-column: 1/2;
-  place-self: center start;
-  background: none;
-  border: 0;
-  cursor: pointer;
-}
-
-.hamburger__button > span {
-  display: block;
-  width: 13px;
-  height: 1px;
-  background-color: rgb(0, 0, 0);
-  transition: 400ms ease-in-out;
-}
-
-.hamburger__button > span:not(:last-child) {
-  margin-bottom: 2px;
-}
-
-.hamburger__button.open > span {
-  transition: 600ms ease-in-out;
-}
-.hamburger__button.open > span:first-child {
-  transform: rotate(45deg) translateX(5px) translateY(5px);
-}
-
-.hamburger__button.open > span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger__button.open > span:last-child {
-  transform: rotate(-45deg) translateX(5px) translateY(-5px);
-}
-
-/* hamburger menu */
-/* ===================== */
-
-.logo {
-  font-weight: 600;
-  position: relative;
-  user-select: none;
-  place-self: center center;
-  grid-column: 2/3;
-  font-size: clamp(1.1rem, 7vw, 1.5rem);
-}
-
-.logo h2 {
-  color: #0f461f;
-}
-
-.leaf__large {
-  position: absolute;
-  top: 60%;
-  right: -5%;
-  width: 0.8rem;
-  height: 0.8rem;
-}
-
-/* nav__top element: Contact Us */
-.btn__contact {
-  background: inherit;
-  color: rgb(0, 80, 0);
-  font-weight: 500;
-  place-self: center end;
-  cursor: pointer;
-  transition: 200ms ease-in-out;
-  grid-column: 3 / 4;
-  width: 10rem;
-  height: 3rem;
-  border-radius: 2.5rem;
-  font-size: 1.2rem;
-  border: 1px solid rgb(0, 80, 0);
-  display: none;
-}
-
-.btn__contact:hover {
-  color: white;
-  background: rgb(0, 80, 0);
-}
-
-.nav__bottom {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 5.5% 94% 0.5%;
-  grid-template-rows: 2rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.nav__bottom .nav__links {
-  display: flex;
-  justify-content: space-between;
-  /* place-self: align-self justify-self */
-  place-self: center stretch;
-  /* grid area: GRS / GCS / GRE / GRC */
-  grid-column: 2/3;
-  position: relative;
-}
-
-.nav__bottom .nav__links #link_ecohome {
-  display: none;
-}
-
-.nav__link {
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
-  position: relative;
-  letter-spacing: 0.02em;
-  font-size: clamp(0.75rem, 5vw, 1rem);
-  margin-left: 0.5rem;
-  transition: 500ms;
-}
-
-.nav__link:hover {
-  color: rgb(0, 80, 0);
-}
-
-.nav__link::after {
-  content: '';
-  display: block;
-  width: 0;
-  position: absolute;
-  height: 3px;
-  bottom: -15px;
-  background-color: green;
-  transition: all 0.4s linear 0s;
-  left: 0;
-}
-
-.nav__link:hover:after {
-  width: 100%;
-}
-
-.button__newsletter {
-  place-self: center end;
-  grid-column: 3 / 4;
-  border: none;
-  font-family: sans-serif;
-  font-weight: 600;
-  color: rgb(0, 80, 0);
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  background: none;
-  display: none;
-}
-
-@media all and (min-width: 300.1px) and (max-width: 600px) {
-  nav {
-    border-bottom: 1px solid gray;
+  .nav__links {
+    display: none;
   }
 
-  .nav__top {
+  &.fixed__nav {
     grid-template-rows: 4.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    background-color: black;
+
+    .hamburger__button > span {
+      background-color: white;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+
+      h2 {
+        color: white;
+      }
+
+      .leaf__large {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
   }
+}
 
-  /* ============================== */
-  /* properties for smaller black nav */
-
-  .nav__top.transform__nav {
-    grid-template-rows: 4rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  .nav__top .nav__links {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  .nav__top.transform__nav .nav__links {
-    display: none;
-  }
-
-  .nav__top.transform__nav .nav__link {
-    display: none;
-  }
-
-  /* =================== */
-  /* properties for smaller black nav ^ */
-  /* ============================== */
-
-  /* ===================== */
-  /* nav__top element: hamburger menu */
-
-  .hamburger__button > span {
+.hamburger__button {
+  > span {
+    display: block;
     width: 22px;
-    height: 1px;
+    height: 2px;
+    background-color: rgb(58, 58, 58);
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
   }
+}
 
-  .hamburger__button > span:not(:last-child) {
-    margin-bottom: 4px;
-  }
+.logo {
+  position: relative;
+  place-self: center center;
+  font-weight: 600;
+  font-size: 1.8rem;
+  cursor: default;
 
-  /* hamburger menu */
-  /* ===================== */
-
-  .logo {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  h2 {
+    color: #0f461f;
   }
 
   .leaf__large {
+    position: absolute;
     top: 60%;
     right: -4%;
     width: 1.2rem;
     height: 1.2rem;
   }
+}
 
-  /* nav__top element: Contact Us */
-  .btn__contact {
-    display: none;
+.btn__contact,
+.nav__bottom {
+  display: none;
+}
+
+@media all and (min-width: 360px) {
+  .nav__top {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &.fixed__nav {
+      .logo {
+        font-size: 1.8rem;
+      }
+    }
   }
 
-  .nav__bottom {
-    grid-template-columns: 15% 75% 10%;
-    grid-template-rows: 3.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.5rem;
-  }
-
-  .nav__bottom .nav__links #link_ecohome {
-    display: none;
-  }
-
-  .nav__link {
-    font-size: clamp(0.5rem, 6vw, 1.2rem);
-  }
-
-  .nav__link::after {
-    height: 3px;
-    bottom: -5px;
-  }
-
-  .button__newsletter {
-    display: none;
+  .logo {
+    font-size: 2rem;
   }
 }
 
-@media all and (min-width: 600.1px) and (max-width: 900px) {
-  body {
+@media all and (min-width: 768px) {
+  nav {
+    border-bottom: 2px solid gray;
     padding-top: 5rem;
   }
 
-  nav {
-    border-bottom: 2px solid gray;
-  }
-
   .nav__top {
-    grid-template-columns: 15% 65% 20%;
+    grid-template-columns: 15% 70% 15%;
     grid-template-rows: 5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-  }
 
-  /* ============================== */
-  /* properties for smaller black nav */
+    &.fixed__nav {
+      grid-template-rows: 5.5rem;
+      .logo {
+        font-size: 2.2rem;
 
-  .nav__top.transform__nav {
-    grid-template-columns: 20% 50% 40%;
-    grid-template-rows: 4.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+        .leaf__large {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
 
-  .nav__top.transform__nav .nav__links {
-    display: none;
-  }
+      .btn__contact {
+        border: none;
+        color: rgb(255, 255, 255);
+        background: rgb(0, 80, 0);
 
-  .nav__top.transform__nav .nav__link {
-    display: none;
-  }
-
-  /* =================== */
-
-  .nav__top.transform__nav .logo {
-    grid-column: 2/3;
-    place-self: center center;
-    font-size: clamp(1.5rem, 7vw, 2.5rem);
-  }
-
-  /* Leaf's size */
-  .nav__top.transform__nav .leaf__large {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .nav__top.transform__nav .btn__contact {
-    grid-column: 3/4;
-    width: 10rem;
-    height: 2.8rem;
-    place-self: center center;
-    display: block;
-    font-size: 1.1rem;
-  }
-
-  /* properties for smaller black nav ^ */
-  /* ============================== */
-
-  /* ===================== */
-  /* nav__top element: hamburger menu */
-
-  .hamburger__button > span {
-    width: 24px;
-    height: 2px;
-  }
-
-  .hamburger__button > span:not(:last-child) {
-    margin-bottom: 4px;
-  }
-
-  /* hamburger menu */
-  /* ===================== */
-
-  .logo {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
-  }
-
-  .leaf__large {
-    right: -5%;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .nav__bottom {
-    grid-template-columns: 24% 52vw 24%;
-    grid-template-rows: 3.5rem;
-    padding-top: 0.5rem;
+        &:hover {
+          color: rgb(0, 80, 0);
+          background: rgb(255, 255, 255);
+        }
+      }
+    }
   }
 
   .btn__contact {
+    place-self: center end;
     display: block;
+    width: 12rem;
+    height: 3rem;
+    border: 1px solid rgb(0, 80, 0);
+    border-radius: 2.5rem;
+    color: rgb(0, 80, 0);
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: inherit;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
   }
 
-  .nav__bottom .nav__links {
-    justify-content: space-between;
+  .hamburger__button > span {
+    width: 24px;
   }
 
-  .nav__bottom .nav__links #link_ecohome {
-    display: block;
+  .logo {
+    font-size: 3rem;
+
+    .leaf__large {
+      right: -5%;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .nav__bottom {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    padding: 1.5rem;
+
+    .nav__links {
+      position: relative;
+      place-self: center center;
+      grid-column: 2 / 3;
+      justify-self: center;
+      display: flex;
+      column-gap: 3rem;
+    }
   }
 
   .nav__link {
-    font-size: clamp(1rem, 5vw, 1.2rem);
-  }
+    position: relative;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: 500ms;
 
-  .nav__link::after {
-    height: 3px;
-    bottom: -10px;
+    &:hover {
+      color: rgb(0, 80, 0);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      display: block;
+      width: 0;
+      height: 3px;
+      background-color: green;
+      transition: all 0.4s linear 0s;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
   }
 
   .button__newsletter {
-    display: none;
+    position: relative;
+    place-self: center end;
+    font-weight: 600;
+    color: rgb(0, 80, 0);
   }
 }
 
-@media all and (min-width: 900.1px) {
-  body {
+@media all and (min-width: 1280px) {
+  nav {
     padding-top: 6rem;
   }
 
-  nav {
-    border-bottom: 2px solid gray;
-  }
-
   .nav__top {
-    grid-template-columns: 20% 60% 20%;
     grid-template-rows: 6rem;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
 
-  /* ============================== */
-  /* properties for smaller black nav */
+    &.fixed__nav {
+      grid-template-columns: 5% 38% 42% 15%;
 
-  .nav__top.transform__nav {
-    grid-template-rows: 5rem;
-    grid-template-columns: 5% 38% 42% 15%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+      .nav__links {
+        place-self: center stretch;
+        display: flex;
+        justify-content: space-around;
 
-  .nav__top.transform__nav .nav__links {
-    justify-content: space-around;
-    opacity: 1;
-    visibility: visible;
-    display: flex;
-  }
+        .nav__link {
+          font-size: 1.1rem;
+          color: white;
+        }
+      }
 
-  .nav__top.transform__nav .nav__link {
-    margin-right: 0rem;
-    font-size: 1.1rem;
-  }
-
-  /* =================== */
-
-  .nav__top.transform__nav .logo {
-    font-size: 2rem;
-    grid-column: 3/4;
-    justify-self: center;
-  }
-
-  .nav__top.transform__nav .leaf__large {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  .nav__top.transform__nav .btn__contact {
-    border-radius: 2.5rem;
-    border: none;
-    background: rgb(0, 80, 0);
-    color: rgb(255, 255, 255);
-    grid-column: 4/5;
-    width: 10rem;
-    height: 3.2rem;
-    display: block;
-    font-size: 1.1rem;
-  }
-
-  /* ===================== */
-  /* nav__top element: hamburger menu */
-  .hamburger__button {
-    cursor: pointer;
-    place-self: center start;
+      .btn__contact {
+        height: 3.2rem;
+      }
+    }
   }
 
   .hamburger__button > span {
     width: 26px;
-    height: 2px;
   }
 
   .hamburger__button > span:not(:last-child) {
     margin-bottom: 5px;
   }
 
-  /* hamburger menu */
-  /* ===================== */
-
   .logo {
-    font-size: 4rem;
-  }
+    font-size: 3.6rem;
 
-  .leaf__large {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  /* nav__top element: Contact Us */
-  .btn__contact {
-    width: 12rem;
-    height: 4rem;
-    font-weight: 500;
-    display: block;
+    .leaf__large {
+      width: 2rem;
+      height: 2rem;
+    }
   }
 
   .nav__bottom {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 20% 55% 25%;
-    grid-template-rows: 4rem;
     padding-left: 2rem;
     padding-right: 2rem;
-  }
 
-  .nav__bottom .nav__links {
-    justify-content: space-around;
-    font-size: 1rem;
-  }
-
-  .nav__bottom .nav__links #link_ecohome {
-    display: block;
-  }
-
-  .button__newsletter {
-    display: inline-block;
+    .nav__links {
+      column-gap: 5rem;
+    }
   }
 
   .nav__link {
@@ -593,8 +280,8 @@ nav {
   }
 }
 
-@media all and (min-width: 1100.1px) {
-  body {
+@media all and (min-width: 1920px) {
+  nav {
     padding-top: 8rem;
   }
 
@@ -602,60 +289,65 @@ nav {
     grid-template-rows: 8rem;
     padding-left: 4rem;
     padding-right: 4rem;
+
+    &.fixed__nav {
+      grid-template-rows: 7rem;
+
+      .nav__links {
+        .nav__link {
+          font-size: 1.3rem;
+        }
+      }
+
+      .logo {
+        font-size: 2.5rem;
+
+        .leaf__large {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
+
+      .btn__contact {
+        height: 3.6rem;
+      }
+    }
   }
-
-  /* ============================== */
-  /* properties for smaller black nav */
-
-  .nav__top.transform__nav {
-    grid-template-rows: 6rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  /* =================== */
-
-  .nav__top.transform__nav .nav__link {
-    font-size: 1.2rem;
-  }
-
-  .nav__top.transform__nav .logo {
-    font-size: 3rem;
-  }
-
-  .nav__top.transform__nav .leaf__large {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  /* ============================== */
-  /* properties for smaller black nav */
 
   .logo {
-    font-size: 5rem;
+    font-size: 4rem;
+
+    .leaf__large {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 
-  .leaf__large {
-    width: 3rem;
-    height: 3rem;
+  .hamburger__button > span {
+    width: 30px;
   }
 
-  .nav__top.transform__nav .btn__contact {
-    width: 12rem;
-    height: 3.5rem;
+  .hamburger__button > span:not(:last-child) {
+    margin-bottom: 6px;
+  }
+
+  .nav__bottom {
+    grid-template-rows: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .nav__link {
     font-size: 1.4rem;
   }
 
   .btn__contact {
     width: 16rem;
-    height: 4rem;
-    font-size: 1.6rem;
+    height: 3.6rem;
+    font-size: 1.4rem;
   }
 
-  .nav__bottom {
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 5rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .button__newsletter {
+    font-size: 1.4rem;
   }
 }

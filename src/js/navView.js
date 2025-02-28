@@ -9,21 +9,24 @@ class NavView {
       'mouseover',
       this.hoverNavLinkHandler.bind(this, 0.5)
     );
-
     this.navBottom.addEventListener(
       'mouseout',
       this.hoverNavLinkHandler.bind(this, 1)
     );
-
-    this.navBottomObserver = new IntersectionObserver(
-      this.transformNavActions.bind(this),
-      {
-        threshold: [0.9, 0.2],
-        rootMargin: '-40px',
+    // this.navBottomObserver = new IntersectionObserver(
+    //   this.transformNavActions.bind(this),
+    //   {
+    //     threshold: [0.9, 0.2],
+    //   }
+    // );
+    // this.navBottomObserver.observe(this.navBottom);
+    document.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        this.navTop.classList.add('fixed__nav');
+      } else {
+        this.navTop.classList.remove('fixed__nav');
       }
-    );
-
-    this.navBottomObserver.observe(this.navBottom);
+    });
   }
 
   hoverNavLinkHandler(opacity, e) {

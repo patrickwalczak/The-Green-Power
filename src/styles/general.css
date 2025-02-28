@@ -16,7 +16,7 @@ html {
 
 body {
   position: relative;
-  padding-top: 4rem;
+  font-family: Arial, sans-serif;
 }
 
 body.loading {
