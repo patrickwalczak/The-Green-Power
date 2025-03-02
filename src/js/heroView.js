@@ -83,7 +83,6 @@ class HeroView {
   }
 
   resetHero() {
-    // Reset left side
     this.mouseenterHeroImgHandler(
       this.leftHeroImage,
       this.leftHeroButton,
@@ -91,7 +90,6 @@ class HeroView {
       this.hero__leftContentWrapper,
       this.hero__leftContentWords
     );
-    // Reset right side
     this.mouseenterHeroImgHandler(
       this.rightHeroImage,
       this.rightHeroButton,

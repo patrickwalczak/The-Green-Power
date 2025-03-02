@@ -1,3 +1,8 @@
+:root {
+  --logo-color: #0f461f;
+  --green: rgb(0, 80, 0);
+}
+
 nav {
   width: 100%;
   padding-top: 5.5rem;
@@ -49,6 +54,11 @@ nav {
 }
 
 .hamburger__button {
+  width: max-content;
+  height: max-content;
+  place-self: center start;
+  padding: 0.5rem;
+
   > span {
     display: block;
     width: 22px;
@@ -69,7 +79,7 @@ nav {
   cursor: default;
 
   h2 {
-    color: #0f461f;
+    color: var(--logo-color);
   }
 
   .leaf__large {
@@ -127,10 +137,10 @@ nav {
       .btn__contact {
         border: none;
         color: rgb(255, 255, 255);
-        background: rgb(0, 80, 0);
+        background: var(--green);
 
         &:hover {
-          color: rgb(0, 80, 0);
+          color: var(--green);
           background: rgb(255, 255, 255);
         }
       }
@@ -144,12 +154,16 @@ nav {
     height: 3rem;
     border: 1px solid rgb(0, 80, 0);
     border-radius: 2.5rem;
-    color: rgb(0, 80, 0);
+    color: var(--green);
     font-size: 1.2rem;
     font-weight: 500;
     background: inherit;
-    cursor: pointer;
     transition: 200ms ease-in-out;
+  }
+
+  .btn__contact:hover {
+    color: rgb(255, 255, 255);
+    background: var(--green);
   }
 
   .hamburger__button > span {
@@ -170,7 +184,7 @@ nav {
     width: 100%;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    padding: 1.5rem;
+    padding: 1rem;
 
     .nav__links {
       position: relative;
@@ -184,6 +198,7 @@ nav {
 
   .nav__link {
     position: relative;
+    padding: 0.5rem;
     font-weight: 600;
     font-size: 1.2rem;
     color: rgb(0, 0, 0);
@@ -197,22 +212,23 @@ nav {
     &::after {
       content: '';
       position: absolute;
-      left: 0;
+      left: 0.5rem;
       bottom: -5px;
       display: block;
       width: 0;
       height: 3px;
-      background-color: green;
+      background-color: var(--green);
       transition: all 0.4s linear 0s;
     }
 
     &:hover:after {
-      width: 100%;
+      width: calc(100% - 1rem);
     }
   }
 
   .button__newsletter {
     position: relative;
+    padding: 0.5rem;
     place-self: center end;
     font-weight: 600;
     color: rgb(0, 80, 0);
@@ -335,6 +351,10 @@ nav {
     grid-template-rows: 3rem;
     padding-left: 4rem;
     padding-right: 4rem;
+
+    .nav__links {
+      column-gap: 10rem;
+    }
   }
 
   .nav__link {

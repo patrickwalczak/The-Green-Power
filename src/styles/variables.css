@@ -12,8 +12,8 @@
   --hero--paragraph-color: rgb(214, 214, 214);
   --hero--grey-background-image: linear-gradient(
       to right bottom,
-      rgba(128, 128, 128, 0.601) 0%,
-      rgba(51, 51, 51, 0.617) 100%
+      rgba(128, 128, 128, 0.7) 0%,
+      rgba(51, 51, 51, 0.7) 100%
     ),
     url('../assets/heroImageBusiness.jpg');
   --hero--green-background-image: linear-gradient(

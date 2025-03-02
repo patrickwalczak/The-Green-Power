@@ -9,7 +9,7 @@
 
 .hero__section {
   position: relative;
-  height: calc(100vh - 13.1rem);
+  height: calc(100vh - 11rem);
 }
 
 .hero__intro_animation {
@@ -22,8 +22,8 @@
 .hero__heading {
   position: absolute;
   top: 10%;
-  left: calc(50% - 300px);
-  font-size: 4.4rem;
+  left: calc(50% - 352px);
+  font-size: 5rem;
   text-align: center;
   color: var(--hero--heading-color);
   z-index: 10;
@@ -77,7 +77,6 @@
   text-transform: uppercase;
   color: white;
   transition: 1000ms ease-in-out;
-  cursor: pointer;
 }
 
 .hero__left_button {
@@ -165,10 +164,9 @@
   display: none;
   align-content: start;
   justify-content: center;
-  row-gap: 5rem;
+  row-gap: 12rem;
   width: 100%;
-  margin-top: 30rem;
-  font-family: serif;
+  margin-top: 17rem;
   cursor: default;
   opacity: 0;
   animation-name: removeOpacity;
@@ -180,7 +178,8 @@
     color: var(--hero--heading-color);
     overflow-y: hidden;
     word-break: break-word;
-    font-size: 4.4rem;
+    font-size: 5rem;
+    text-align: center;
 
     span {
       display: inline-block;
@@ -194,9 +193,9 @@
 
 .image__content__paragraph {
   justify-self: center;
-  max-width: 700px;
+  max-width: 1010px;
   color: var(--hero--paragraph-color);
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -242,9 +241,13 @@
 }
 
 @media all and (min-width: 1920px) {
+  .hero__section {
+    height: calc(100vh - 13rem);
+  }
+
   .hero__heading {
     font-size: 5.4rem;
-    left: calc(50% - 350px);
+    left: calc(50% - 381px);
   }
 
   .image__content {

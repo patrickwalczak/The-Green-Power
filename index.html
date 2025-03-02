@@ -37,34 +37,39 @@
     <div class="container">
       <div class="overlay hidden"></div>
       <header>
-        <nav>
-          <div class="side__menu" id="side__menu">
+        <nav role="navigation">
+          <div class="side__menu" id="side__menu" aria-hidden="true">
             <div class="side__menu_header">
-              <button aria-label="Close Side Menu" class="close__menu_btn">
+              <button
+                aria-label="Close Side Menu"
+                class="close__menu_btn"
+                aria-controls="side__menu"
+                aria-expanded="false"
+              >
                 <span></span> <span></span>
               </button>
               <h3 class="side__menu_heading">Main menu</h3>
             </div>
             <ul class="side__menu_links_list">
               <li>
-                <button
-                  class="side__menu_link side__menu_button"
-                  id="sideMenuSolutions"
+                <a class="side__menu_link" href="#solutions" tabindex="-1"
+                  >Solutions</a
                 >
-                  Solutions
-                  <div class="indicator__container">
-                    <span class="indicator">></span>
-                  </div>
-                </button>
               </li>
               <li>
-                <a class="side__menu_link" href="#ecohome">EcoHome</a>
+                <a class="side__menu_link" href="#ecohome" tabindex="-1"
+                  >EcoHome</a
+                >
               </li>
               <li>
-                <a class="side__menu_link" href="#contribution">Green Impact</a>
+                <a class="side__menu_link" href="#contribution" tabindex="-1"
+                  >Green Impact</a
+                >
               </li>
               <li>
-                <a class="side__menu_link" href="#highlights">Highlights</a>
+                <a class="side__menu_link" href="#highlights" tabindex="-1"
+                  >Highlights</a
+                >
               </li>
             </ul>
           </div>
@@ -72,6 +77,8 @@
             <button
               aria-label="Open Side Menu"
               class="hamburger__button button__empty"
+              aria-controls="side__menu"
+              aria-expanded="false"
             >
               <span></span>
               <span></span>
@@ -136,6 +143,7 @@
                 <span class="word__L word__2">the</span>
                 <span class="word__L word__3">Best</span>
                 <span class="word__L word__4">Technology</span>
+                <br />
                 <span class="word__L word__5">for</span>
                 <span class="word__L word__6">You</span>
                 <span class="word__L word__7">or</span>
@@ -149,7 +157,6 @@
               </p>
             </div>
             <button
-              tabindex="0"
               class="hero__button hero__intro_animation hero__left_button"
             >
               ABOUT US
@@ -168,6 +175,7 @@
                 <span class="word__H word__2">change</span>
                 <span class="word__H word__3">is</span>
                 <span class="word__H word__4">a</span>
+                <br />
                 <span class="word__H word__5">challenge</span>
                 <span class="word__H word__6">for</span>
                 <span class="word__H word__7">all of</span>
@@ -181,7 +189,6 @@
               </p>
             </div>
             <button
-              tabindex="0"
               class="hero__button hero__intro_animation hero__right_button"
             >
               Sustainability
