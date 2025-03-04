@@ -6,12 +6,15 @@
   box-sizing: inherit;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: sans-serif;
   scroll-behavior: smooth;
-  min-height: 100vh;
 }
 
 body {
@@ -62,10 +65,6 @@ a {
 a,
 button {
   cursor: pointer;
-}
-
-button,
-a {
   outline: none;
 }
 

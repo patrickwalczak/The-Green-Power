@@ -12,6 +12,7 @@
       name="description"
       content="The Green Power provides innovative renewable energy solutions to reduce carbon footprints and build a sustainable future. Join us in making the world greener!"
     />
+    <title>The Green Power - Sustainable Energy Solutions</title>
     <link rel="stylesheet" href="/src/styles/index.css" />
     <link
       rel="stylesheet"
@@ -228,7 +229,12 @@
         </div>
 
         <section class="solutions__section" id="solutions">
-          <div class="solution__info" id="solution__info--1">
+          <div
+            class="solution__info"
+            id="solution__info--1"
+            data-image-path="src/assets/solutionEcohome.jpg"
+            data-image-container-id="solution__image_1"
+          >
             <h3 class="solution__name">EcoHome</h3>
 
             <h2 class="solution__header">
@@ -246,15 +252,14 @@
               comfort—choose EcoHome today!
             </p>
           </div>
-          <img
-            data-imgside="R"
-            class="solution_image solution__image_1"
-            src="src/assets/ecoHome__intro.jpg"
-            alt="eco home"
-            loading="lazy"
-          />
+          <div data-imgside="R" class="solution_image solution__image_1"></div>
 
-          <div class="solution__info" id="solution__info--2">
+          <div
+            class="solution__info"
+            id="solution__info--2"
+            data-image-path="src/assets/solutionWindTurbines.jpg"
+            data-image-container-id="solution__image_2"
+          >
             <h3 class="solution__name">Wind turbines</h3>
 
             <h2 class="solution__header">
@@ -275,7 +280,12 @@
 
           <div data-imgside="L" class="solution_image solution__image_2"></div>
 
-          <div class="solution__info" id="solution__info--3">
+          <div
+            class="solution__info"
+            id="solution__info--3"
+            data-image-path="src/assets/solutionHydropower.jpg"
+            data-image-container-id="solution__image_3"
+          >
             <h3 class="solution__name">Hydropower technology</h3>
             <h2 class="solution__header">
               Benefit from the most <br />
@@ -298,7 +308,12 @@
 
           <div data-imgside="R" class="solution_image solution__image_3"></div>
 
-          <div class="solution__info" id="solution__info--4">
+          <div
+            class="solution__info"
+            id="solution__info--4"
+            data-image-path="src/assets/solutionSolarPanels.jpg"
+            data-image-container-id="solution__image_4"
+          >
             <h3 class="solution__name">Solar Panels</h3>
             <h2 class="solution__header">
               Power Your Future <br />
@@ -461,9 +476,7 @@
 
         <section class="slider slider__BG__1 section--hidden" id="contribution">
           <h2 class="slider__header animation">
-            GreenPower <br />
-            is not just about <br />
-            selling products
+            GreenPower is not just about selling products
             <span class="line"></span>
           </h2>
           <p class="slider__paragraph">
@@ -473,21 +486,71 @@
             save our planet.
           </p>
 
-          <button class="arrow rightArrow">&rarr;</button>
+          <button class="arrow leftArrow">
+            <svg class="svg" viewBox="0 0 24 24">
+              <g>
+                <path
+                  class="svg__path"
+                  d="M10 17L15 12"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  class="svg__path"
+                  d="M15 12L10 7"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath>
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
+          <button class="arrow rightArrow">
+            <svg class="svg" viewBox="0 0 24 24">
+              <g>
+                <path
+                  class="svg__path"
+                  d="M10 17L15 12"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  class="svg__path"
+                  d="M15 12L10 7"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <defs>
+                <clipPath>
+                  <rect width="24" height="24" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </button>
 
-          <button class="arrow leftArrow">&larr;</button>
+          <div class="slide__container">
+            <div class="slide__image image__1"></div>
+            <div class="slide__image image__2 hidden"></div>
+            <div class="slide__image image__3 hidden"></div>
+            <div class="img__descrip__container"></div>
+          </div>
 
           <div class="dots">
             <button class="dot dot__1 dot__active" data-id="1"></button>
             <button class="dot dot__2" data-id="2"></button>
             <button class="dot dot__3" data-id="3"></button>
           </div>
-
-          <div class="slide__image image__1"></div>
-          <div class="slide__image image__2 hidden"></div>
-          <div class="slide__image image__3 hidden"></div>
-
-          <div class="img__descrip__container"></div>
         </section>
 
         <section class="articles__section" id="highlights">

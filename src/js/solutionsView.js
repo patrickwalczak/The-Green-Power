@@ -5,13 +5,13 @@ class SolutionsView {
 
   welcomeHeader = document.querySelector('.solutions__opening__header');
 
-  wholeTextEl = document.querySelector('#solution__info--1');
+  solutionOne = document.querySelector('#solution__info--1');
 
-  wholeSecondTextEl = document.querySelector('#solution__info--2');
+  solutionTwo = document.querySelector('#solution__info--2');
 
-  wholeThirdTextEl = document.querySelector('#solution__info--3');
+  solutionThree = document.querySelector('#solution__info--3');
 
-  wholeFourthTextEl = document.querySelector('#solution__info--4');
+  solutionFour = document.querySelector('#solution__info--4');
 
   solutionsSectionIntroObserver;
 
@@ -26,7 +26,7 @@ class SolutionsView {
     this.solutionsSectionIntroObserver = new IntersectionObserver(
       this.actions.bind(this),
       {
-        threshold: 0.7,
+        threshold: 0.2,
       }
     ).observe(this.solutionsSectionIntro);
 
@@ -35,29 +35,34 @@ class SolutionsView {
     this.solutionImgObserver = new IntersectionObserver(
       this.solutionImageActions,
       {
-        root: null,
-        threshold: 0.5,
+        threshold: [0, 1],
       }
     );
 
-    this.solutionImgObserver.observe(this.solutionOneImg);
-    this.solutionImgObserver.observe(this.solutionTwoImg);
-    this.solutionImgObserver.observe(this.solutionThreeImg);
-    this.solutionImgObserver.observe(this.solutionFourImg);
+    this.solutionImgObserver.observe(this.solutionOne);
+    this.solutionImgObserver.observe(this.solutionTwo);
+    this.solutionImgObserver.observe(this.solutionThree);
+    this.solutionImgObserver.observe(this.solutionFour);
   }
 
   solutionImageActions(entries, observer) {
     const [entry] = entries;
 
     if (entry.isIntersecting) {
-      if (entry.target.dataset.imgside === 'R') {
-        entry.target.classList.add('runAnimation__rImg');
-        observer.unobserve(entry.target);
+      const imgPath = entry.target.getAttribute('data-image-path');
+      const imgId = entry.target.getAttribute('data-image-container-id');
+
+      const bgImg = document.querySelector(`.${imgId}`);
+
+      bgImg.style.backgroundImage = `url('${imgPath}')`;
+
+      if (bgImg.dataset.imgside === 'R') {
+        bgImg.classList.add('runAnimation__rImg');
       }
-      if (entry.target.dataset.imgside === 'L') {
-        entry.target.classList.add('runAnimation__lImg');
-        observer.unobserve(entry.target);
+      if (bgImg.dataset.imgside === 'L') {
+        bgImg.classList.add('runAnimation__lImg');
       }
+      observer.unobserve(entry.target);
     }
   }
 
@@ -72,22 +77,22 @@ class SolutionsView {
 
   transformOnScrollHandler() {
     if (window.scrollY > 770 && window.scrollY < 1450) {
-      this.wholeTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
+      this.solutionOne.style.transform = `matrix(1, 0, 0, 1, 0, ${
         (1200 - window.scrollY) / 12
       })`;
     }
     if (window.scrollY > 1250 && window.scrollY < 2150) {
-      this.wholeSecondTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
+      this.solutionTwo.style.transform = `matrix(1, 0, 0, 1, 0, ${
         (1800 - window.scrollY) / 12
       })`;
     }
     if (window.scrollY > 1750 && window.scrollY < 2750) {
-      this.wholeThirdTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
+      this.solutionThree.style.transform = `matrix(1, 0, 0, 1, 0, ${
         (2200 - window.scrollY) / 12
       })`;
     }
     if (window.scrollY > 2200 && window.scrollY < 3200) {
-      this.wholeFourthTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
+      this.solutionFour.style.transform = `matrix(1, 0, 0, 1, 0, ${
         (2800 - window.scrollY) / 12
       })`;
     }

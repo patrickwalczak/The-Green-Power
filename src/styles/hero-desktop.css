@@ -10,6 +10,7 @@
 .hero__section {
   position: relative;
   height: calc(100vh - 11rem);
+  margin-bottom: 4px;
 }
 
 .hero__intro_animation {
