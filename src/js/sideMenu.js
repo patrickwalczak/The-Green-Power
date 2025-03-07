@@ -1,91 +1,66 @@
 class SideMenu {
-  hamburgerButton = document.querySelector('.hamburger__button');
-  body = document.querySelector('body');
-  overlay = document.querySelector('.overlay');
-  sideMenuContainer = document.querySelector('#side__menu');
-  closeSideMenuBtn = document.querySelector('.close__menu_btn');
-  sideMenuSolutionsButton = document.querySelector('#sideMenuSolutions');
-  links = document.querySelectorAll('a.side__menu_link');
-
   constructor() {
-    [
-      this.hamburgerButton,
-      this.overlay,
-      this.closeSideMenuBtn,
-      ...this.links,
-    ].forEach((el) =>
-      el.addEventListener('click', this.toogleHiddenMenuVisibility.bind(this))
-    );
+    this.hamburgerButton = document.querySelector('.hamburger__button');
+    this.overlay = document.querySelector('.overlay');
+    this.sideMenuContainer = document.querySelector('#side__menu');
+    this.closeSideMenuBtn = document.querySelector('.close__menu_btn');
+    this.links = document.querySelectorAll('.side__menu_link');
 
-    this.sideMenuSolutionsButton.addEventListener(
-      'click',
-      this.toggleHiddenClassHandler.bind(null, 'solutions')
-    );
-
-    this.generateSubMenu('solutions', [
-      { text: 'See All', id: 'solutions' },
-      { text: 'EcoHome', id: 'solutions' },
-      { text: 'Solar Panels', id: 'solution_solarpanels' },
-      { text: 'Wind Turbines', id: 'solution_windturbines' },
-      { text: 'Hydropower Technology', id: 'solution_hydropower' },
-    ]);
+    this.#setupEventListeners();
   }
 
-  toggleHiddenClassHandler(subMenuName) {
-    document
-      .querySelector(`#subMenu__${subMenuName}`)
-      .classList.toggle('hiddenAnimation');
+  #setupEventListeners() {
+    this.hamburgerButton.addEventListener('click', () => this.#openDrawer());
+    this.closeSideMenuBtn.addEventListener('click', () => this.#closeDrawer());
+    this.overlay.addEventListener('click', () => this.#closeDrawer());
+    this.links.forEach((link) => {
+      link.addEventListener('click', () => this.#closeDrawer());
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (
+        event.key === 'Escape' &&
+        this.sideMenuContainer.getAttribute('aria-hidden') === 'false'
+      ) {
+        this.#closeDrawer();
+      }
+    });
   }
 
-  generateSubMenu(subMenuName, linksArr) {
-    const rest = subMenuName.slice(1);
-    const newName = subMenuName[0].toUpperCase() + rest;
-
-    const markup = `
-    <div class="side__menu" id="subMenu__${subMenuName}">
-    <div
-      class="side__menu_header"
-      id="subMenu__header_${subMenuName}"
-    >
-      <div class="close_side_menu_layer_btn">
-        <span class="indicator__back"></span>
-      </div>
-      <h3 class="side__menu_heading">${newName}</h3>
-    </div>
-    <ul class="side__menu_links_list">
-      ${this.generateSubmenuLinks(linksArr)}
-    </ul>
-  </div>
-    `;
-
-    this.sideMenuContainer.insertAdjacentHTML('beforeend', markup);
-
-    document
-      .querySelector(`.close_side_menu_layer_btn`)
-      .addEventListener(
-        'click',
-        this.toggleHiddenClassHandler.bind(null, subMenuName)
-      );
-  }
-
-  toogleHiddenMenuVisibility() {
-    this.hamburgerButton.classList.toggle('open');
-    this.body.classList.toggle('overflowClass');
-    this.overlay.classList.toggle('displayOverlay');
+  #toggleClasses() {
     this.sideMenuContainer.classList.toggle('hiddenAnimation');
+    this.overlay.classList.toggle('hidden');
   }
 
-  generateSubmenuLinks(links) {
-    return links
-      .map(
-        (link) => `
-    <li>
-        <a class="side__menu_link" href="#${link.id}"
-      >${link.text}</a
-    >
-  </li>`
-      )
-      .join('');
+  #adjustAriaAttributes() {
+    const isExpanded =
+      this.hamburgerButton.getAttribute('aria-expanded') === 'true';
+    this.hamburgerButton.setAttribute('aria-expanded', !isExpanded);
+    this.closeSideMenuBtn.setAttribute('aria-expanded', !isExpanded);
+    this.sideMenuContainer.setAttribute('aria-hidden', isExpanded);
+  }
+
+  #openDrawer() {
+    this.#toggleClasses();
+    this.#adjustAriaAttributes();
+    this.#toggleTabIndexAttr();
+    this.closeSideMenuBtn.focus();
+  }
+
+  #closeDrawer() {
+    this.#toggleClasses();
+    this.#adjustAriaAttributes();
+    this.#toggleTabIndexAttr();
+    this.hamburgerButton.focus();
+  }
+
+  #toggleTabIndexAttr() {
+    this.links.forEach((anchor) => {
+      const tabIndexValue = anchor.getAttribute('tabindex');
+      tabIndexValue === '-1'
+        ? anchor.setAttribute('tabindex', '0')
+        : anchor.setAttribute('tabindex', '-1');
+    });
   }
 }
 

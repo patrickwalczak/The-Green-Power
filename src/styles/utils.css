@@ -1,23 +1,34 @@
 .button__empty {
-  border: none;
-  background: none;
-  cursor: pointer;
+	border: none;
+	background: none;
 }
 
 .section__heading {
-  color: var(--color--dark-grey);
-  font-size: 4rem;
-  padding-left: 0.5rem;
+	color: var(--color--dark-grey);
+	font-size: 4rem;
+	padding-left: 0.5rem;
 }
 
 .border__radius {
-  border-radius: 5px;
+	border-radius: 5px;
 }
 
 .line__clamp {
-  display: -webkit-box;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+	display: -webkit-box;
+	line-clamp: 2;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }

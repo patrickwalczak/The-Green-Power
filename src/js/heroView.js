@@ -1,24 +1,24 @@
 class HeroView {
-  leftHeroImage = document.querySelector('.header--leftImage');
+  leftHeroImage = document.querySelector('.hero__business_image');
+  rightHeroImage = document.querySelector('.hero__nature_image');
+  leftHeroButton = document.querySelector('.hero__left_button');
+  rightHeroButton = document.querySelector('.hero__right_button');
+  heroHeader = document.querySelector('.hero__heading');
 
-  rightHeroImage = document.querySelector('.header--rightImage');
+  hero__leftButtonLinesContainer = document.querySelector(
+    '#hero__left_button_lines'
+  );
 
-  leftHeroButton = document.querySelector('.header__leftSide_btn');
-
-  rightHeroButton = document.querySelector('.header__rightSide_btn');
-
-  heroHeader = document.querySelector('.hero__header__wrapper');
-
-  hero__leftButtonLinesContainer = document.querySelector('#leftHero');
-
-  hero__rightButtonLinesContainer = document.querySelector('#rightHero');
+  hero__rightButtonLinesContainer = document.querySelector(
+    '#hero__right_button_lines'
+  );
 
   hero__leftContentWrapper = document.querySelector(
-    '#hero__left__image__content'
+    '#hero__business_image_content'
   );
 
   hero__rightContentWrapper = document.querySelector(
-    '#hero__right__image__content'
+    '#hero__nature_image_content'
   );
 
   hero__rightContentWords = document.querySelectorAll('.word__H');
@@ -27,8 +27,8 @@ class HeroView {
 
   constructor() {
     this.leftHeroButton.addEventListener(
-      'mouseenter',
-      this.mouseenterHeroBtnHandler.bind(
+      'click',
+      this.handleClickHeroButton.bind(
         this,
         this.leftHeroButton,
         'active',
@@ -38,10 +38,9 @@ class HeroView {
         this.hero__leftContentWords
       )
     );
-
     this.rightHeroButton.addEventListener(
-      'mouseenter',
-      this.mouseenterHeroBtnHandler.bind(
+      'click',
+      this.handleClickHeroButton.bind(
         this,
         this.rightHeroButton,
         'unactive',
@@ -51,7 +50,6 @@ class HeroView {
         this.hero__rightContentWords
       )
     );
-
     this.rightHeroImage.addEventListener(
       'mouseenter',
       this.mouseenterHeroImgHandler.bind(
@@ -63,7 +61,6 @@ class HeroView {
         this.hero__leftContentWords
       )
     );
-
     this.leftHeroImage.addEventListener(
       'mouseenter',
       this.mouseenterHeroImgHandler.bind(
@@ -75,20 +72,17 @@ class HeroView {
         this.hero__rightContentWords
       )
     );
-
     this.leftHeroImage.addEventListener(
       'mouseleave',
-      this.mouseoutHeroHandler.bind(this)
+      this.resetHero.bind(this)
     );
-
     this.rightHeroImage.addEventListener(
       'mouseleave',
-      this.mouseoutHeroHandler.bind(this)
+      this.resetHero.bind(this)
     );
   }
 
-  mouseoutHeroHandler() {
-    // Reset left side
+  resetHero() {
     this.mouseenterHeroImgHandler(
       this.leftHeroImage,
       this.leftHeroButton,
@@ -96,7 +90,6 @@ class HeroView {
       this.hero__leftContentWrapper,
       this.hero__leftContentWords
     );
-    // Reset right side
     this.mouseenterHeroImgHandler(
       this.rightHeroImage,
       this.rightHeroButton,
@@ -132,7 +125,7 @@ class HeroView {
     });
   }
 
-  mouseenterHeroBtnHandler(
+  handleClickHeroButton(
     btn,
     leftState,
     rightState,
@@ -140,34 +133,26 @@ class HeroView {
     contentWrapper,
     contentWords
   ) {
-    // ============
-    // Adding/removing classes associate with adjusting 'clip: polygon' property for left and right hero images
+    if (btn.classList.contains('isHovered')) return this.resetHero();
+
     this.leftHeroImage.style.clipPath = `var(--left--${leftState})`;
 
     this.rightHeroImage.style.clipPath = `var(--right--${rightState})`;
 
-    // Hide header text
     this.heroHeader.classList.add('hideVisibility');
 
-    // Change the position of the button's white lines
     linesContainer.style.bottom = '0%';
     linesContainer.style.left = '0%';
 
-    // Change entire button element position
     btn.classList.add('isHovered');
 
-    // ===============
-    //  Change a background-image position
     if (leftState === 'active') {
       this.leftHeroImage.classList.add('imageIsHovered');
     } else {
       this.rightHeroImage.classList.add('imageIsHovered');
     }
-    // =============
-    // For entire content wrapper is added animation which add opacity and visibility
     contentWrapper.classList.add('displayContent');
 
-    // Add animation for each content word
     contentWords.forEach((word) => {
       word.classList.add('wordHeroRight');
     });

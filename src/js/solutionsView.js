@@ -1,101 +1,86 @@
 class SolutionsView {
-  solutionsSectionIntro = document.querySelector('.solutions__opening');
+	sectionHeader = document.querySelector('.solutions__header_content');
 
-  constrastEl = document.querySelector('.solutions__opening__sidebar');
+	headerSidebar = document.querySelector('.solutions__heading_sidebar');
 
-  welcomeHeader = document.querySelector('.solutions__opening__header');
+	sectionHeading = document.querySelector('.solutions__heading');
 
-  wholeTextEl = document.querySelector('#solution__info--1');
+	solutionOne = document.querySelector('#solution__content_1');
 
-  wholeSecondTextEl = document.querySelector('#solution__info--2');
+	solutionTwo = document.querySelector('#solution__content_2');
 
-  wholeThirdTextEl = document.querySelector('#solution__info--3');
+	solutionThree = document.querySelector('#solution__content_3');
 
-  wholeFourthTextEl = document.querySelector('#solution__info--4');
+	solutionFour = document.querySelector('#solution__content_4');
 
-  solutionsSectionIntroObserver;
+	solutionOneImg = document.querySelector('.solution__image_1');
+	solutionTwoImg = document.querySelector('.solution__image_2');
+	solutionThreeImg = document.querySelector('.solution__image_3');
+	solutionFourImg = document.querySelector('.solution__image_4');
 
-  solutionOneImg = document.querySelector('.solution__image_1');
-  solutionTwoImg = document.querySelector('.solution__image_2');
-  solutionThreeImg = document.querySelector('.solution__image_3');
-  solutionFourImg = document.querySelector('.solution__image_4');
+	sectionHeaderObserver;
+	solutionImgObserver;
 
-  solutionImgObserver;
+	constructor() {
+		this.sectionHeaderObserver = new IntersectionObserver(this.handleHeaderObserver.bind(this), {
+			threshold: [0.1, 1],
+		}).observe(this.sectionHeading);
 
-  constructor() {
-    this.solutionsSectionIntroObserver = new IntersectionObserver(
-      this.actions.bind(this),
-      {
-        threshold: 0.7,
-      }
-    ).observe(this.solutionsSectionIntro);
+		window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
 
-    window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
+		this.solutionImgObserver = new IntersectionObserver(this.handleImageObserver.bind(this), {
+			threshold: [0.1, 0.4, 0.6, 1],
+			rootMargin: '50px',
+		});
 
-    this.solutionImgObserver = new IntersectionObserver(
-      this.solutionImageActions,
-      {
-        root: null,
-        threshold: 0.5,
-      }
-    );
+		this.solutionImgObserver.observe(this.solutionOneImg);
+		this.solutionImgObserver.observe(this.solutionTwoImg);
+		this.solutionImgObserver.observe(this.solutionThreeImg);
+		this.solutionImgObserver.observe(this.solutionFourImg);
+	}
 
-    this.solutionImgObserver.observe(this.solutionOneImg);
-    this.solutionImgObserver.observe(this.solutionTwoImg);
-    this.solutionImgObserver.observe(this.solutionThreeImg);
-    this.solutionImgObserver.observe(this.solutionFourImg);
-  }
+	handleImageObserver(entries, observer) {
+		const [entry] = entries;
 
-  solutionImageActions(entries, observer) {
-    const [entry] = entries;
+		const imgSrc = entry.target.getAttribute('data-src');
+		const imgSide = entry.target.getAttribute('data-side');
 
-    if (entry.isIntersecting) {
-      if (entry.target.dataset.imgside === 'R') {
-        entry.target.classList.add('runAnimation__rImg');
-        observer.unobserve(entry.target);
-      }
-      if (entry.target.dataset.imgside === 'L') {
-        entry.target.classList.add('runAnimation__lImg');
-        observer.unobserve(entry.target);
-      }
-    }
-  }
+		entry.target.setAttribute('src', imgSrc);
 
-  actions(entries, observer) {
-    const [entry] = entries;
-    if (entry.isIntersecting) {
-      this.solutionsSectionIntro.classList.add('runAnimation');
-      this.constrastEl.classList.add('displayBar');
-      observer.unobserve(this.solutionsSectionIntro);
-    }
-  }
+		if (imgSide === 'right') entry.target.classList.add('right__side__animation');
+		else entry.target.classList.add('left__side__animation');
 
-  transformOnScrollHandler() {
-    if (window.scrollY > 770 && window.scrollY < 1450) {
-      this.wholeTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
-        (1200 - window.scrollY) / 12
-      })`;
-    }
-    if (window.scrollY > 1250 && window.scrollY < 2150) {
-      this.wholeSecondTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
-        (1800 - window.scrollY) / 12
-      })`;
-    }
-    if (window.scrollY > 1750 && window.scrollY < 2750) {
-      this.wholeThirdTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
-        (2200 - window.scrollY) / 12
-      })`;
-    }
-    if (window.scrollY > 2200 && window.scrollY < 3200) {
-      this.wholeFourthTextEl.style.transform = `matrix(1, 0, 0, 1, 0, ${
-        (2800 - window.scrollY) / 12
-      })`;
-    }
-    if (window.scrollY > 200 && window.scrollY < 850) {
-      this.welcomeHeader.style.transform = `matrix(1, 0, 0, 1, 0, ${
-        (500 - window.scrollY) / 10
-      })`;
-    }
-  }
+		observer.unobserve(entry.target);
+	}
+
+	handleHeaderObserver(entries, observer) {
+		const [entry] = entries;
+
+		if (!entry.isIntersecting) return;
+
+		this.sectionHeading.classList.add('introduce__heading');
+		this.headerSidebar.classList.add('introduce__sidebar');
+
+		observer.unobserve(this.sectionHeading);
+		this.sectionHeaderObserver = null;
+	}
+
+	transformOnScrollHandler() {
+		// if (window.scrollY > 770 && window.scrollY < 1450) {
+		// 	this.solutionOne.style.transform = `matrix(1, 0, 0, 1, 0, ${(1200 - window.scrollY) / 12})`;
+		// }
+		// if (window.scrollY > 1250 && window.scrollY < 2150) {
+		// 	this.solutionTwo.style.transform = `matrix(1, 0, 0, 1, 0, ${(1800 - window.scrollY) / 12})`;
+		// }
+		// if (window.scrollY > 1750 && window.scrollY < 2750) {
+		// 	this.solutionThree.style.transform = `matrix(1, 0, 0, 1, 0, ${(2200 - window.scrollY) / 12})`;
+		// }
+		// if (window.scrollY > 2200 && window.scrollY < 3200) {
+		// 	this.solutionFour.style.transform = `matrix(1, 0, 0, 1, 0, ${(2800 - window.scrollY) / 12})`;
+		// }
+		// if (window.scrollY > 200 && window.scrollY < 850) {
+		// 	this.sectionHeading.style.transform = `matrix(1, 0, 0, 1, 0, ${(500 - window.scrollY) / 10})`;
+		// }
+	}
 }
 export default new SolutionsView();
