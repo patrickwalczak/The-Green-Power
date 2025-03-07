@@ -1,373 +1,370 @@
 :root {
-  --logo-color: #0f461f;
-  --green: rgb(0, 80, 0);
+	--logo-color: #0f461f;
+	--green: rgb(0, 80, 0);
 }
 
 nav {
-  width: 100%;
-  padding-top: 5.5rem;
-  border-bottom: 1px solid gray;
+	width: 100%;
+	padding-top: 5.5rem;
+	border-bottom: 1px solid gray;
 }
 
 .nav__top {
-  position: fixed;
-  top: 0;
-  display: grid;
-  grid-template-rows: 5.5rem;
-  grid-template-columns: 10% 80%;
-  width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-bottom: 1px solid gray;
-  background-color: white;
-  z-index: 500;
-  opacity: 1;
-  transition: 500ms ease-in-out;
+	position: fixed;
+	top: 0;
+	display: grid;
+	grid-template-rows: 5.5rem;
+	grid-template-columns: 10% 80%;
+	width: 100%;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	border-bottom: 1px solid gray;
+	background-color: white;
+	z-index: 500;
+	opacity: 1;
+	transition: 500ms ease-in-out;
 
-  .nav__links {
-    display: none;
-  }
+	.nav__links {
+		display: none;
+	}
 
-  &.fixed__nav {
-    grid-template-rows: 4.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    background-color: black;
+	&.fixed__nav {
+		grid-template-rows: 4.5rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		background-color: black;
 
-    .hamburger__button > span {
-      background-color: white;
-    }
+		.hamburger__button > span {
+			background-color: white;
+		}
 
-    .logo {
-      font-size: 1.6rem;
+		.logo {
+			font-size: 1.6rem;
 
-      h2 {
-        color: white;
-      }
+			h2 {
+				color: white;
+			}
 
-      .leaf__large {
-        width: 1rem;
-        height: 1rem;
-      }
-    }
-  }
+			.leaf__large {
+				width: 1rem;
+				height: 1rem;
+			}
+		}
+	}
 }
 
 .hamburger__button {
-  width: max-content;
-  height: max-content;
-  place-self: center start;
-  padding: 0.5rem;
+	width: max-content;
+	height: max-content;
+	place-self: center start;
+	padding: 0.5rem;
 
-  > span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: rgb(58, 58, 58);
+	> span {
+		display: block;
+		width: 22px;
+		height: 2px;
+		background-color: rgb(58, 58, 58);
 
-    &:not(:last-child) {
-      margin-bottom: 4px;
-    }
-  }
+		&:not(:last-child) {
+			margin-bottom: 4px;
+		}
+	}
 }
 
 .logo {
-  position: relative;
-  place-self: center center;
-  font-weight: 600;
-  font-size: 1.8rem;
-  cursor: default;
+	position: relative;
+	place-self: center center;
+	font-weight: 600;
+	font-size: 1.8rem;
+	cursor: default;
 
-  h2 {
-    color: var(--logo-color);
-  }
+	h2 {
+		color: var(--logo-color);
+	}
 
-  .leaf__large {
-    position: absolute;
-    top: 60%;
-    right: -4%;
-    width: 1.2rem;
-    height: 1.2rem;
-  }
+	.leaf__large {
+		position: absolute;
+		top: 60%;
+		right: -4%;
+		width: 1.2rem;
+		height: 1.2rem;
+	}
 }
 
 .btn__contact,
 .nav__bottom {
-  display: none;
+	display: none;
 }
 
 @media all and (min-width: 360px) {
-  .nav__top {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+	.nav__top {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
 
-    &.fixed__nav {
-      .logo {
-        font-size: 1.8rem;
-      }
-    }
-  }
+		&.fixed__nav {
+			.logo {
+				font-size: 1.8rem;
+			}
+		}
+	}
 
-  .logo {
-    font-size: 2rem;
-  }
+	.logo {
+		font-size: 2rem;
+	}
 }
 
 @media all and (min-width: 768px) {
-  nav {
-    border-bottom: 2px solid gray;
-    padding-top: 5rem;
-  }
+	nav {
+		border-bottom: 2px solid gray;
+		padding-top: 5rem;
+	}
 
-  .nav__top {
-    grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 5rem;
+	.nav__top {
+		grid-template-columns: 15% 70% 15%;
+		grid-template-rows: 5rem;
 
-    &.fixed__nav {
-      grid-template-rows: 5.5rem;
-      .logo {
-        font-size: 2.2rem;
+		&.fixed__nav {
+			grid-template-rows: 5.5rem;
+			.logo {
+				font-size: 2.2rem;
 
-        .leaf__large {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-      }
+				.leaf__large {
+					width: 1.5rem;
+					height: 1.5rem;
+				}
+			}
 
-      .btn__contact {
-        border: none;
-        color: rgb(255, 255, 255);
-        background: var(--green);
+			.btn__contact {
+				border: none;
+				color: rgb(255, 255, 255);
+				background: var(--green);
 
-        &:hover {
-          color: var(--green);
-          background: rgb(255, 255, 255);
-        }
-      }
-    }
-  }
+				&:hover {
+					color: var(--green);
+					background: rgb(255, 255, 255);
+				}
+			}
+		}
+	}
 
-  .btn__contact {
-    place-self: center end;
-    display: block;
-    width: 12rem;
-    height: 3rem;
-    border: 1px solid rgb(0, 80, 0);
-    border-radius: 2.5rem;
-    color: var(--green);
-    font-size: 1.2rem;
-    font-weight: 500;
-    background: inherit;
-    transition: 200ms ease-in-out;
-  }
+	.btn__contact {
+		place-self: center end;
+		display: block;
+		width: 12rem;
+		height: 3rem;
+		border: 1px solid rgb(0, 80, 0);
+		border-radius: 2.5rem;
+		color: var(--green);
+		font-size: 1.2rem;
+		font-weight: 500;
+		background: inherit;
+		transition: 200ms ease-in-out;
+	}
 
-  .btn__contact:hover {
-    color: rgb(255, 255, 255);
-    background: var(--green);
-  }
+	.btn__contact:hover {
+		color: rgb(255, 255, 255);
+		background: var(--green);
+	}
 
-  .hamburger__button > span {
-    width: 24px;
-  }
+	.hamburger__button > span {
+		width: 24px;
+	}
 
-  .logo {
-    font-size: 3rem;
+	.logo {
+		font-size: 3rem;
 
-    .leaf__large {
-      right: -5%;
-      width: 1.5rem;
-      height: 1.5rem;
-    }
-  }
+		.leaf__large {
+			right: -5%;
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
 
-  .nav__bottom {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    padding: 1rem;
+	.nav__bottom {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 20% 60% 20%;
+		padding: 1rem;
 
-    .nav__links {
-      position: relative;
-      place-self: center center;
-      grid-column: 2 / 3;
-      justify-self: center;
-      display: flex;
-      column-gap: 3rem;
-    }
-  }
+		.nav__links {
+			position: relative;
+			place-self: center center;
+			grid-column: 2 / 3;
+			justify-self: center;
+			display: flex;
+			column-gap: 3rem;
+		}
+	}
 
-  .nav__link {
-    position: relative;
-    padding: 0.5rem;
-    font-weight: 600;
-    font-size: 1.2rem;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    transition: 500ms;
+	.nav__link {
+		position: relative;
+		padding: 0.5rem;
+		font-weight: 600;
+		font-size: 1.2rem;
+		color: rgb(0, 0, 0);
+		text-decoration: none;
+		transition: 500ms;
 
-    &:hover {
-      color: rgb(0, 80, 0);
-    }
+		&:hover {
+			color: rgb(0, 80, 0);
+		}
 
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0.5rem;
-      bottom: -5px;
-      display: block;
-      width: 0;
-      height: 3px;
-      background-color: var(--green);
-      transition: all 0.4s linear 0s;
-    }
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0.5rem;
+			bottom: -5px;
+			display: block;
+			width: 0;
+			height: 3px;
+			background-color: var(--green);
+			transition: all 0.4s linear 0s;
+		}
 
-    &:hover:after {
-      width: calc(100% - 1rem);
-    }
-  }
+		&:hover:after {
+			width: calc(100% - 1rem);
+		}
+	}
 
-  .button__newsletter {
-    position: relative;
-    padding: 0.5rem;
-    place-self: center end;
-    font-weight: 600;
-    color: rgb(0, 80, 0);
-  }
+	.button__newsletter {
+		position: relative;
+		padding: 0.5rem;
+		place-self: center end;
+		font-weight: 600;
+		color: rgb(0, 80, 0);
+	}
 }
 
 @media all and (min-width: 1280px) {
-  nav {
-    padding-top: 6rem;
-  }
+	nav {
+		padding-top: 6rem;
+	}
 
-  .nav__top {
-    grid-template-rows: 6rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+	.nav__top {
+		grid-template-rows: 6rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
 
-    &.fixed__nav {
-      grid-template-columns: 5% 38% 42% 15%;
+		&.fixed__nav {
+			grid-template-columns: 5% 38% 42% 15%;
 
-      .nav__links {
-        place-self: center stretch;
-        display: flex;
-        justify-content: space-around;
+			.nav__links {
+				place-self: center stretch;
+				display: flex;
+				justify-content: space-around;
 
-        .nav__link {
-          font-size: 1.1rem;
-          color: white;
-        }
-      }
+				.nav__link {
+					font-size: 1.1rem;
+					color: white;
+				}
+			}
 
-      .btn__contact {
-        height: 3.2rem;
-      }
-    }
-  }
+			.btn__contact {
+				height: 3.2rem;
+			}
+		}
+	}
 
-  .hamburger__button > span {
-    width: 26px;
-  }
+	.hamburger__button > span {
+		width: 26px;
+	}
 
-  .hamburger__button > span:not(:last-child) {
-    margin-bottom: 5px;
-  }
+	.hamburger__button > span:not(:last-child) {
+		margin-bottom: 5px;
+	}
 
-  .logo {
-    font-size: 3.6rem;
+	.logo {
+		font-size: 3.6rem;
 
-    .leaf__large {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
+		.leaf__large {
+			width: 2rem;
+			height: 2rem;
+		}
+	}
 
-  .nav__bottom {
-    padding-left: 2rem;
-    padding-right: 2rem;
+	.nav__bottom {
+		padding-left: 2rem;
+		padding-right: 2rem;
 
-    .nav__links {
-      column-gap: 5rem;
-    }
-  }
+		.nav__links {
+			column-gap: 5rem;
+		}
+	}
 
-  .nav__link {
-    font-size: 1.3rem;
-  }
+	.nav__link {
+		font-size: 1.3rem;
+	}
 }
 
 @media all and (min-width: 1920px) {
-  nav {
-    padding-top: 8rem;
-  }
+	nav {
+		padding-top: 8rem;
+	}
 
-  .nav__top {
-    grid-template-rows: 8rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+	.nav__top {
+		grid-template-rows: 8rem;
+		padding-left: 4rem;
+		padding-right: 4rem;
 
-    &.fixed__nav {
-      grid-template-rows: 7rem;
+		&.fixed__nav {
+			padding-left: 2rem;
+			padding-right: 2rem;
+			grid-template-rows: 5.5rem;
 
-      .nav__links {
-        .nav__link {
-          font-size: 1.3rem;
-        }
-      }
+			.nav__links {
+				.nav__link {
+					font-size: 1.2rem;
+				}
+			}
 
-      .logo {
-        font-size: 2.5rem;
+			.logo {
+				font-size: 2.5rem;
 
-        .leaf__large {
-          width: 1.75rem;
-          height: 1.75rem;
-        }
-      }
+				.leaf__large {
+					width: 1.6rem;
+					height: 1.6rem;
+				}
+			}
+		}
+	}
 
-      .btn__contact {
-        height: 3.6rem;
-      }
-    }
-  }
+	.logo {
+		font-size: 4rem;
 
-  .logo {
-    font-size: 4rem;
+		.leaf__large {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
 
-    .leaf__large {
-      width: 2.5rem;
-      height: 2.5rem;
-    }
-  }
+	.hamburger__button > span {
+		width: 30px;
+	}
 
-  .hamburger__button > span {
-    width: 30px;
-  }
+	.hamburger__button > span:not(:last-child) {
+		margin-bottom: 6px;
+	}
 
-  .hamburger__button > span:not(:last-child) {
-    margin-bottom: 6px;
-  }
+	.nav__bottom {
+		grid-template-rows: 3rem;
+		padding-left: 4rem;
+		padding-right: 4rem;
 
-  .nav__bottom {
-    grid-template-rows: 3rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
+		.nav__links {
+			column-gap: 10rem;
+		}
+	}
 
-    .nav__links {
-      column-gap: 10rem;
-    }
-  }
+	.nav__link {
+		font-size: 1.4rem;
+	}
 
-  .nav__link {
-    font-size: 1.4rem;
-  }
+	.btn__contact {
+		width: 14rem;
+		font-size: 1.3rem;
+	}
 
-  .btn__contact {
-    width: 16rem;
-    height: 3.6rem;
-    font-size: 1.4rem;
-  }
-
-  .button__newsletter {
-    font-size: 1.4rem;
-  }
+	.button__newsletter {
+		font-size: 1.3 rem;
+	}
 }

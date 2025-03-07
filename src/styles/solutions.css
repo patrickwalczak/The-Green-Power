@@ -245,6 +245,10 @@
 }
 
 @media all and (min-width: 1920px) {
+	.solutions__section {
+		row-gap: 5rem;
+	}
+
 	.solutions__heading {
 		font-size: 4.6rem;
 	}
@@ -264,6 +268,10 @@
 
 	.solution__text_content {
 		max-width: 950px;
+	}
+
+	.solution__image {
+		aspect-ratio: 6 / 4;
 	}
 }
 
@@ -312,10 +320,6 @@
 
 	.solution__paragraph {
 		font-size: 2.2rem;
-	}
-
-	.solution__image {
-		aspect-ratio: 6 / 4;
 	}
 }
 
