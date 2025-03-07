@@ -1,47 +1,60 @@
 *,
 *::after,
 *::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
 }
 
 html,
 body {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+	font-size: 62.5%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 body {
-  position: relative;
-  font-family: Arial, sans-serif;
+	position: relative;
+	font-family: Arial, sans-serif;
 }
 
 body.loading {
-  overflow-y: hidden;
+	overflow-y: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 1.2rem;
+	width: 1.2rem;
 }
 
 body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(116, 116, 116);
-  border-radius: 0.5rem;
+	background-color: rgb(116, 116, 116);
+	border-radius: 0.5rem;
 }
 
 img {
-  display: block;
-  max-width: 100%;
+	display: block;
+	max-width: 100%;
+}
+
+p {
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
 }
 
 p,
@@ -51,25 +64,26 @@ h3,
 h4,
 h5,
 h6 {
-  overflow-wrap: break-word;
+	overflow-wrap: break-word;
+	text-wrap: balance;
 }
 
 li {
-  list-style-type: none;
+	list-style-type: none;
 }
 
 a {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 a,
 button {
-  cursor: pointer;
-  outline: none;
+	cursor: pointer;
+	outline: none;
 }
 
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid #000000;
-  outline-offset: 2px;
+	outline: 2px solid #000000;
+	outline-offset: 2px;
 }

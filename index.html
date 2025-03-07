@@ -1,680 +1,563 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="title"
-      content="The Green Power - Sustainable Energy Solutions"
-    />
-    <meta
-      name="description"
-      content="The Green Power provides innovative renewable energy solutions to reduce carbon footprints and build a sustainable future. Join us in making the world greener!"
-    />
-    <title>The Green Power - Sustainable Energy Solutions</title>
-    <link rel="stylesheet" href="/src/styles/index.css" />
-    <link
-      rel="stylesheet"
-      href="/src/styles/hero-mobile.css"
-      media="all and (max-width: 1280px)"
-    />
-    <link
-      rel="stylesheet"
-      href="/src/styles/hero-desktop.css"
-      media="all and (min-width: 1280px)"
-    />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="title" content="The Green Power - Sustainable Energy Solutions" />
+		<meta
+			name="description"
+			content="The Green Power provides innovative renewable energy solutions to reduce carbon footprints and build a sustainable future. Join us in making the world greener!"
+		/>
+		<title>The Green Power - Sustainable Energy Solutions</title>
+		<link rel="stylesheet" href="/src/styles/index.css" />
+		<link rel="stylesheet" href="/src/styles/hero-mobile.css" media="all and (max-width: 1280px)" />
+		<link rel="stylesheet" href="/src/styles/hero-desktop.css" media="all and (min-width: 1280px)" />
 
-    <link rel="icon" type="image/svg+xml" href="leaf.svg" />
-  </head>
-  <body>
-    <div class="loadingModal">
-      <img
-        class="loadingSpinner"
-        src="src/assets/loadingSpinner.png"
-        alt="loading spinner"
-      />
-    </div>
-    <div class="container">
-      <div class="overlay hidden"></div>
-      <header>
-        <nav role="navigation">
-          <div class="side__menu" id="side__menu" aria-hidden="true">
-            <div class="side__menu_header">
-              <button
-                aria-label="Close Side Menu"
-                class="close__menu_btn"
-                aria-controls="side__menu"
-                aria-expanded="false"
-              >
-                <span></span> <span></span>
-              </button>
-              <h3 class="side__menu_heading">Main menu</h3>
-            </div>
-            <ul class="side__menu_links_list">
-              <li>
-                <a class="side__menu_link" href="#solutions" tabindex="-1"
-                  >Solutions</a
-                >
-              </li>
-              <li>
-                <a class="side__menu_link" href="#ecohome" tabindex="-1"
-                  >EcoHome</a
-                >
-              </li>
-              <li>
-                <a class="side__menu_link" href="#contribution" tabindex="-1"
-                  >Green Impact</a
-                >
-              </li>
-              <li>
-                <a class="side__menu_link" href="#highlights" tabindex="-1"
-                  >Highlights</a
-                >
-              </li>
-            </ul>
-          </div>
-          <div class="nav__top">
-            <button
-              aria-label="Open Side Menu"
-              class="hamburger__button button__empty"
-              aria-controls="side__menu"
-              aria-expanded="false"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+		<link rel="icon" type="image/svg+xml" href="leaf.svg" />
+	</head>
+	<body>
+		<div class="loadingModal">
+			<img class="loadingSpinner" src="src/assets/loadingSpinner.png" alt="loading spinner" />
+		</div>
+		<div class="container">
+			<div class="overlay hidden"></div>
+			<header>
+				<nav role="navigation">
+					<div class="side__menu" id="side__menu" aria-hidden="true">
+						<div class="side__menu_header">
+							<button
+								aria-label="Close Side Menu"
+								class="close__menu_btn"
+								aria-controls="side__menu"
+								aria-expanded="false"
+							>
+								<span></span> <span></span>
+							</button>
+							<h3 class="side__menu_heading">Main menu</h3>
+						</div>
+						<ul class="side__menu_links_list">
+							<li>
+								<a class="side__menu_link" href="#solutions" tabindex="-1">Solutions</a>
+							</li>
+							<li>
+								<a class="side__menu_link" href="#ecohome" tabindex="-1">EcoHome</a>
+							</li>
+							<li>
+								<a class="side__menu_link" href="#contribution" tabindex="-1">Green Impact</a>
+							</li>
+							<li>
+								<a class="side__menu_link" href="#highlights" tabindex="-1">Highlights</a>
+							</li>
+						</ul>
+					</div>
+					<div class="nav__top">
+						<button
+							aria-label="Open Side Menu"
+							class="hamburger__button button__empty"
+							aria-controls="side__menu"
+							aria-expanded="false"
+						>
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
 
-            <ul class="nav__links">
-              <li>
-                <a class="nav__link" href="#solutions">SOLUTIONS</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#ecohome">ECOHOME</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#contribution">GREEN IMPACT</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#highlights">HIGHLIGHTS</a>
-              </li>
-            </ul>
+						<ul class="nav__links">
+							<li>
+								<a class="nav__link" href="#solutions">SOLUTIONS</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#ecohome">ECOHOME</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
+							</li>
+						</ul>
 
-            <div class="logo">
-              <img class="leaf__large" src="leaf.svg" alt="Leaf logo" />
-              <h2>GreenPower</h2>
-            </div>
-            <button class="btn__contact">CONTACT US</button>
-          </div>
-          <div class="nav__bottom">
-            <ul class="nav__links">
-              <li>
-                <a class="nav__link" href="#solutions">SOLUTIONS</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#ecohome">ECOHOME</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#contribution">GREEN IMPACT</a>
-              </li>
-              <li>
-                <a class="nav__link" href="#highlights">HIGHLIGHTS</a>
-              </li>
-            </ul>
-            <button class="button__newsletter button__empty">
-              DONATE CHARITY
-            </button>
-          </div>
-        </nav>
-      </header>
-      <main>
-        <section id="hero__section" class="hero__section">
-          <header>
-            <h1 class="hero__heading hero__intro_animation">
-              World Leader in Providing
-              <br />
-              Sustainable Energy Solutions
-            </h1>
-          </header>
-          <div class="hero__image hero__business_image">
-            <div class="image__content" id="hero__business_image_content">
-              <h3>
-                <span class="word__L word__1">Choose</span>
-                <span class="word__L word__2">the</span>
-                <span class="word__L word__3">Best</span>
-                <span class="word__L word__4">Technology</span>
-                <br />
-                <span class="word__L word__5">for</span>
-                <span class="word__L word__6">You</span>
-                <span class="word__L word__7">or</span>
-                <span class="word__L word__8">Your Business</span>
-              </h3>
-              <p class="image__content__paragraph">
-                We've been working to provide the best sustainable energy
-                technology for 20 years. So far, our solutions support over
-                10,000 companies and almost 10 million people around the world.
-                We value every client and believe that we can help you, too!
-              </p>
-            </div>
-            <button
-              class="hero__button hero__intro_animation hero__left_button"
-            >
-              ABOUT US
-              <div class="lines__container" id="hero__left_button_lines">
-                <span class="hero_btn_border_line line_1"></span
-                ><span class="hero_btn_border_line line_2"></span
-                ><span class="hero_btn_border_line line_3"></span
-                ><span class="hero_btn_border_line line_4"></span>
-              </div>
-            </button>
-          </div>
-          <div class="hero__image hero__nature_image">
-            <div class="image__content" id="hero__nature_image_content">
-              <h3>
-                <span class="word__H word__1">Climate</span>
-                <span class="word__H word__2">change</span>
-                <span class="word__H word__3">is</span>
-                <span class="word__H word__4">a</span>
-                <br />
-                <span class="word__H word__5">challenge</span>
-                <span class="word__H word__6">for</span>
-                <span class="word__H word__7">all of</span>
-                <span class="word__H word__8">mankind</span>
-              </h3>
-              <p class="image__content__paragraph">
-                We have only one planet, and we all share it! Combating climate
-                change and other environmental challenges requires effort from
-                everyone. At GreenPower, together with our eco-community, we
-                strive to protect our planet in many ways.
-              </p>
-            </div>
-            <button
-              class="hero__button hero__intro_animation hero__right_button"
-            >
-              Sustainability
-              <div class="lines__container" id="hero__right_button_lines">
-                <span class="hero_btn_border_line line_1"></span
-                ><span class="hero_btn_border_line line_2"></span
-                ><span class="hero_btn_border_line line_3"></span
-                ><span class="hero_btn_border_line line_4"></span>
-              </div>
-            </button>
-          </div>
-        </section>
+						<div class="logo">
+							<img class="leaf__large" src="leaf.svg" alt="Leaf logo" />
+							<h2>GreenPower</h2>
+						</div>
+						<button class="btn__contact">CONTACT US</button>
+					</div>
+					<div class="nav__bottom">
+						<ul class="nav__links">
+							<li>
+								<a class="nav__link" href="#solutions">SOLUTIONS</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#ecohome">ECOHOME</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+							</li>
+							<li>
+								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
+							</li>
+						</ul>
+						<button class="button__newsletter button__empty">DONATE CHARITY</button>
+					</div>
+				</nav>
+			</header>
+			<main>
+				<section id="hero__section" class="hero__section">
+					<header>
+						<h1 class="hero__heading hero__intro_animation">
+							World Leader in Providing
+							<br />
+							Sustainable Energy Solutions
+						</h1>
+					</header>
+					<div class="hero__image hero__business_image">
+						<div class="image__content" id="hero__business_image_content">
+							<h2>
+								<span class="word__L word__1">Choose</span>
+								<span class="word__L word__2">the</span>
+								<span class="word__L word__3">Best</span>
+								<span class="word__L word__4">Technology</span>
+								<br />
+								<span class="word__L word__5">for</span>
+								<span class="word__L word__6">You</span>
+								<span class="word__L word__7">or</span>
+								<span class="word__L word__8">Your Business</span>
+							</h2>
+							<p class="image__content__paragraph">
+								We've been working to provide the best sustainable energy technology for 20 years. So far, our solutions
+								support over 10,000 companies and almost 10 million people around the world. We value every client and
+								believe that we can help you, too!
+							</p>
+						</div>
+						<button class="hero__button hero__intro_animation hero__left_button">
+							ABOUT US
+							<div class="lines__container" id="hero__left_button_lines">
+								<span class="hero_btn_border_line line_1"></span><span class="hero_btn_border_line line_2"></span
+								><span class="hero_btn_border_line line_3"></span><span class="hero_btn_border_line line_4"></span>
+							</div>
+						</button>
+					</div>
+					<div class="hero__image hero__nature_image">
+						<div class="image__content" id="hero__nature_image_content">
+							<h2>
+								<span class="word__H word__1">Climate</span>
+								<span class="word__H word__2">change</span>
+								<span class="word__H word__3">is</span>
+								<span class="word__H word__4">a</span>
+								<br />
+								<span class="word__H word__5">challenge</span>
+								<span class="word__H word__6">for</span>
+								<span class="word__H word__7">all of</span>
+								<span class="word__H word__8">mankind</span>
+							</h2>
+							<p class="image__content__paragraph">
+								We have only one planet, and we all share it! Combating climate change and other environmental
+								challenges requires effort from everyone. At GreenPower, together with our eco-community, we strive to
+								protect our planet in many ways.
+							</p>
+						</div>
+						<button class="hero__button hero__intro_animation hero__right_button">
+							Sustainability
+							<div class="lines__container" id="hero__right_button_lines">
+								<span class="hero_btn_border_line line_1"></span><span class="hero_btn_border_line line_2"></span
+								><span class="hero_btn_border_line line_3"></span><span class="hero_btn_border_line line_4"></span>
+							</div>
+						</button>
+					</div>
+				</section>
+				<section class="solutions__section" id="solutions">
+					<header class="solutions__header">
+						<div class="solutions__header_content introduce__heading">
+							<h2 class="solutions__heading">Build a Greener Future with GreenPower</h2>
+							<p class="solutions__header_paragraph">
+								Today's decisions will impact our lives tomorrow. Yours are important, too. Scroll down to explore the
+								solutions we provide to help you, your business, and our planet.
+							</p>
+							<button
+								class="solutions__header_arrow_container button__empty"
+								aria-label="Scroll down to view solutions"
+							>
+								<span aria-hidden="true"></span>
+							</button>
+						</div>
+						<div class="solutions__heading_sidebar"></div>
+					</header>
 
-        <div class="solutions__opening__wrapper">
-          <div class="solutions__opening">
-            <h2 class="solutions__opening__header">
-              Build a Greener Future <br />
-              with GreenPower
-            </h2>
-            <div class="solutions__opening__paragraph__button">
-              <p class="solutions__opening__paragraph">
-                <span>
-                  Today's decisions will impact our lives tomorrow. <br />
-                </span>
-                <span> Yours are important, too. </span>
-              </p>
-              <p class="solutions__opening__paragraph">
-                <span>
-                  Scroll down to explore the solutions we provide to help you,
-                  your business, and our planet.
-                </span>
-              </p>
-            </div>
-            <div class="scrollDownContainer"><span></span></div>
-          </div>
-          <div class="solutions__opening__sidebar"></div>
-        </div>
+					<article class="solution__container">
+						<figure class="solution__image_container">
+							<img
+								alt="Modern eco-friendly home with solar panels and green architecture"
+								class="solution__image solution__image_1"
+								data-src="src/assets/solutionEcohome.jpg"
+								data-side="right"
+								aria-labelledby="ecoHome-caption"
+							/>
+							<figcaption id="ecoHome-caption" class="sr-only">
+								EcoHome integrates renewable energy solutions and smart home features.
+							</figcaption>
+						</figure>
+						<div class="solution__text_content" id="solution__content_1">
+							<h2 class="solution__name">EcoHome</h2>
+							<h3 class="solution__header">Designed with Passion, Built for Sustainability</h3>
+							<p class="solution__paragraph">
+								Experience the future of eco-friendly living with EcoHome. Designed for sustainability, efficiency, and
+								comfort, our homes integrate cutting-edge green technology to reduce energy consumption and
+								environmental impact. From renewable energy solutions to smart home features, every aspect of EcoHome is
+								crafted to create a healthier planet while enhancing your lifestyle. Live sustainably without
+								compromising on modern comfort—choose EcoHome today!
+							</p>
+						</div>
+					</article>
 
-        <section class="solutions__section" id="solutions">
-          <div
-            class="solution__info"
-            id="solution__info--1"
-            data-image-path="src/assets/solutionEcohome.jpg"
-            data-image-container-id="solution__image_1"
-          >
-            <h3 class="solution__name">EcoHome</h3>
+					<article class="solution__container">
+						<figure class="solution__image_container">
+							<img
+								alt="Wind turbines producing clean energy on an open field"
+								data-side="left"
+								class="solution__image solution__image_2"
+								data-src="src/assets/solutionWindTurbines.jpg"
+								aria-labelledby="wind-caption"
+							/>
+							<figcaption id="wind-caption" class="sr-only">
+								Wind turbines convert wind energy into electricity, reducing carbon footprint.
+							</figcaption>
+						</figure>
+						<div class="solution__text_content" id="solution__content_2">
+							<h2 class="solution__name">Wind turbines</h2>
+							<h3 class="solution__header">Turn Wind Power into Your Energy</h3>
+							<p class="solution__paragraph">
+								Harness the limitless power of the wind with our cutting-edge Wind Turbines. Designed for efficiency,
+								durability, and sustainability, our turbines convert natural wind energy into reliable electricity,
+								helping you reduce energy costs and lower your carbon footprint. Whether you're powering a home,
+								business, or an entire community, our innovative technology ensures maximum energy output with minimal
+								maintenance. Take control of your energy future—go green with Wind Turbines today!
+							</p>
+						</div>
+					</article>
 
-            <h2 class="solution__header">
-              Designed with Passion, <br />
-              Built for Sustainability
-            </h2>
-            <p class="solution__paragraph">
-              Experience the future of eco-friendly living with EcoHome.
-              Designed for sustainability, efficiency, and comfort, our homes
-              integrate cutting-edge green technology to reduce energy
-              consumption and environmental impact. From renewable energy
-              solutions to smart home features, every aspect of EcoHome is
-              crafted to create a healthier planet while enhancing your
-              lifestyle. Live sustainably without compromising on modern
-              comfort—choose EcoHome today!
-            </p>
-          </div>
-          <div data-imgside="R" class="solution_image solution__image_1"></div>
+					<article class="solution__container">
+						<figure class="solution__image_container">
+							<img
+								alt="A hydropower dam generating sustainable electricity"
+								data-side="right"
+								class="solution__image solution__image_3"
+								data-src="src/assets/solutionHydropower.jpg"
+								aria-labelledby="hydropower-caption"
+							/>
+							<figcaption id="hydropower-caption" class="sr-only">
+								Hydropower technology uses rivers to generate clean energy.
+							</figcaption>
+						</figure>
 
-          <div
-            class="solution__info"
-            id="solution__info--2"
-            data-image-path="src/assets/solutionWindTurbines.jpg"
-            data-image-container-id="solution__image_2"
-          >
-            <h3 class="solution__name">Wind turbines</h3>
+						<div class="solution__text_content" id="solution__content_3">
+							<h2 class="solution__name">Hydropower technology</h2>
+							<h3 class="solution__header">Benefit from the most important source of energy</h3>
+							<p class="solution__paragraph">
+								Unlock the power of water with our advanced Hydropower Technology. By harnessing the natural flow of
+								rivers and streams, our innovative systems generate clean, renewable electricity with unmatched
+								efficiency. Designed for reliability and sustainability, our technology provides a steady energy supply
+								while reducing environmental impact. Whether for residential, commercial, or industrial use, our
+								hydropower solutions help you take advantage of one of the most consistent and powerful energy sources
+								on the planet. Make the switch to a greener future with Hydropower Technology.
+							</p>
+						</div>
+					</article>
 
-            <h2 class="solution__header">
-              Turn Wind Power <br />
-              into Your Energy
-            </h2>
-            <p class="solution__paragraph">
-              Harness the limitless power of the wind with our cutting-edge Wind
-              Turbines. Designed for efficiency, durability, and sustainability,
-              our turbines convert natural wind energy into reliable
-              electricity, helping you reduce energy costs and lower your carbon
-              footprint. Whether you're powering a home, business, or an entire
-              community, our innovative technology ensures maximum energy output
-              with minimal maintenance. Take control of your energy future—go
-              green with Wind Turbines today!
-            </p>
-          </div>
+					<article class="solution__container">
+						<figure class="solution__image_container">
+							<img
+								alt="Solar panels installed on a rooftop capturing sunlight"
+								data-side="left"
+								class="solution__image solution__image_4"
+								data-src="src/assets/solutionSolarPanels.jpg"
+								aria-labelledby="solar-panels-caption"
+							/>
+							<figcaption id="solar-panels-caption" class="sr-only">
+								Solar panels convert sunlight into electricity for homes and businesses.
+							</figcaption>
+						</figure>
+						<div class="solution__text_content" id="solution__content_4">
+							<h2 class="solution__name">Solar Panels</h2>
+							<h3 class="solution__header">Power Your Future with Solar Panels</h3>
+							<p class="solution__paragraph">
+								Capture the sun’s energy with our high-efficiency Solar Panels. Designed for maximum power output and
+								durability, our panels provide a sustainable and cost-effective way to generate electricity. Whether for
+								homes, businesses, or large-scale installations, our technology ensures reliable performance with
+								minimal maintenance. Reduce your energy bills and carbon footprint—embrace clean energy with Solar
+								Panels today!
+							</p>
+						</div>
+					</article>
+				</section>
 
-          <div data-imgside="L" class="solution_image solution__image_2"></div>
+				<section class="strengths__section section--hidden">
+					<h2 class="intro__header">Our solutions always fit your needs</h2>
+					<div class="strength__card strength__1">
+						<div class="strength__image__wrapper">
+							<img class="strength__image" src="src/assets/customers.jpg" alt="" />
+						</div>
+						<div class="card__hover__background"></div>
 
-          <div
-            class="solution__info"
-            id="solution__info--3"
-            data-image-path="src/assets/solutionHydropower.jpg"
-            data-image-container-id="solution__image_3"
-          >
-            <h3 class="solution__name">Hydropower technology</h3>
-            <h2 class="solution__header">
-              Benefit from the most <br />
-              important source <br />
-              of energy
-            </h2>
-            <p class="solution__paragraph">
-              Unlock the power of water with our advanced Hydropower Technology.
-              By harnessing the natural flow of rivers and streams, our
-              innovative systems generate clean, renewable electricity with
-              unmatched efficiency. Designed for reliability and sustainability,
-              our technology provides a steady energy supply while reducing
-              environmental impact. Whether for residential, commercial, or
-              industrial use, our hydropower solutions help you take advantage
-              of one of the most consistent and powerful energy sources on the
-              planet. Make the switch to a greener future with Hydropower
-              Technology.
-            </p>
-          </div>
+						<h3 class="strength__textContent">
+							Personalized <br />
+							Services & Products
+						</h3>
+					</div>
+					<div class="strength__card strength__2">
+						<div class="strength__image__wrapper">
+							<img class="strength__image star" src="src/assets/medalEditedOk.jpg" alt="" />
+						</div>
 
-          <div data-imgside="R" class="solution_image solution__image_3"></div>
+						<div class="card__hover__background"></div>
 
-          <div
-            class="solution__info"
-            id="solution__info--4"
-            data-image-path="src/assets/solutionSolarPanels.jpg"
-            data-image-container-id="solution__image_4"
-          >
-            <h3 class="solution__name">Solar Panels</h3>
-            <h2 class="solution__header">
-              Power Your Future <br />
-              with Solar Panels
-            </h2>
-            <p class="solution__paragraph">
-              Capture the sun’s energy with our high-efficiency Solar Panels.
-              Designed for maximum power output and durability, our panels
-              provide a sustainable and cost-effective way to generate
-              electricity. Whether for homes, businesses, or large-scale
-              installations, our technology ensures reliable performance with
-              minimal maintenance. Reduce your energy bills and carbon
-              footprint—embrace clean energy with Solar Panels today!
-            </p>
-          </div>
+						<h3 class="strength__textContent">
+							Unmatched Quality, <br />
+							Every Time
+						</h3>
+					</div>
+					<div class="strength__card strength__3">
+						<div class="strength__image__wrapper">
+							<img class="strength__image" src="src/assets/growthOk.jpg" alt="" />
+						</div>
 
-          <div data-imgside="L" class="solution_image solution__image_4"></div>
-        </section>
+						<div class="card__hover__background"></div>
 
-        <section class="strengths__section section--hidden">
-          <h2 class="intro__header">Our solutions always fit your needs</h2>
-          <div class="strength__card strength__1">
-            <div class="strength__image__wrapper">
-              <img
-                class="strength__image"
-                src="src/assets/customers.jpg"
-                alt=""
-              />
-            </div>
-            <div class="card__hover__background"></div>
+						<h3 class="strength__textContent">
+							Real Impact <br />
+							on the Environment
+						</h3>
+					</div>
+					<div class="strength__card strength__4">
+						<div class="strength__image__wrapper">
+							<img class="strength__image" src="src/assets/earthEdited.jpg" alt="" />
+						</div>
 
-            <h3 class="strength__textContent">
-              Personalized <br />
-              Services & Products
-            </h3>
-          </div>
-          <div class="strength__card strength__2">
-            <div class="strength__image__wrapper">
-              <img
-                class="strength__image star"
-                src="src/assets/medalEditedOk.jpg"
-                alt=""
-              />
-            </div>
+						<div class="card__hover__background"></div>
 
-            <div class="card__hover__background"></div>
+						<h3 class="strength__textContent">Available Across the Globe</h3>
+					</div>
+				</section>
 
-            <h3 class="strength__textContent">
-              Unmatched Quality, <br />
-              Every Time
-            </h3>
-          </div>
-          <div class="strength__card strength__3">
-            <div class="strength__image__wrapper">
-              <img
-                class="strength__image"
-                src="src/assets/growthOk.jpg"
-                alt=""
-              />
-            </div>
+				<section class="solution__ecoHome" id="ecohome">
+					<img class="image_home" src="src/assets/ecoHomeTriangle.jpg" alt="" loading="lazy" />
+					<div class="intro__circle">
+						<span>ECOHOME</span>
+					</div>
+					<div class="ecoHome__header__container">
+						<div class="animated-title__container">
+							<div class="animated-title">
+								<div class="text-top-container">
+									<h2 id="ecoHome__textTop" class="ecoHome__header">
+										Create Your Dream <br />
+										EcoHome with
+									</h2>
+								</div>
+								<div class="text-bottom-container">
+									<h2 id="ecoHome__textBottom" class="greenHighlight ecoHome__header">GreenPower</h2>
+								</div>
+							</div>
+						</div>
+					</div>
 
-            <div class="card__hover__background"></div>
+					<div class="obliqueLine"></div>
 
-            <h3 class="strength__textContent">
-              Real Impact <br />
-              on the Environment
-            </h3>
-          </div>
-          <div class="strength__card strength__4">
-            <div class="strength__image__wrapper">
-              <img
-                class="strength__image"
-                src="src/assets/earthEdited.jpg"
-                alt=""
-              />
-            </div>
+					<div class="ecoHome__buttonsContainer">
+						<button class="ecoHome__button button_1 button--active" data-tab="0">01 ECOHOME</button>
+						<button class="ecoHome__button button_2" data-tab="1">02 ECOHOME</button>
+						<button class="ecoHome__button button_3" data-tab="2">03 ECOHOME</button>
+					</div>
+					<div class="right__circle rightCircle_animation">
+						<span> </span>
+					</div>
+					<img class="ecoHome__image" src="src/assets/ecoHome1.jpg" alt="EcoHome Preview" loading="lazy" />
+					<img class="ecoHome__image hidden" src="src/assets/ecoHome2.jpg" alt="EcoHome Preview" loading="lazy" />
+					<img class="ecoHome__image hidden" src="src/assets/ecoHome3.jpg" alt="EcoHome Preview" loading="lazy" />
 
-            <div class="card__hover__background"></div>
+					<div class="block">
+						<img src="leaf.svg" alt="" />
+						<p>Reach out to our sales specialist for complete details</p>
 
-            <h3 class="strength__textContent">Available Across the Globe</h3>
-          </div>
-        </section>
+						<button class="circle__button">CONTACT</button>
+					</div>
+				</section>
 
-        <section class="solution__ecoHome" id="ecohome">
-          <img
-            class="image_home"
-            src="src/assets/ecoHomeTriangle.jpg"
-            alt=""
-            loading="lazy"
-          />
-          <div class="intro__circle">
-            <span>ECOHOME</span>
-          </div>
-          <div class="ecoHome__header__container">
-            <div class="animated-title__container">
-              <div class="animated-title">
-                <div class="text-top-container">
-                  <h2 id="ecoHome__textTop" class="ecoHome__header">
-                    Create Your Dream <br />
-                    EcoHome with
-                  </h2>
-                </div>
-                <div class="text-bottom-container">
-                  <h2
-                    id="ecoHome__textBottom"
-                    class="greenHighlight ecoHome__header"
-                  >
-                    GreenPower
-                  </h2>
-                </div>
-              </div>
-            </div>
-          </div>
+				<section class="slider slider__BG__1 section--hidden" id="contribution">
+					<h2 class="slider__header animation">
+						GreenPower is not just about selling products
+						<span class="line"></span>
+					</h2>
+					<p class="slider__paragraph">
+						We strive to involve everyone in changing the approach to environmental protection by organizing and
+						participating in events, publishing articles, and much more. We believe that together, we can save our
+						planet.
+					</p>
 
-          <div class="obliqueLine"></div>
+					<button class="arrow leftArrow">
+						<svg class="svg" viewBox="0 0 24 24">
+							<g>
+								<path
+									class="svg__path"
+									d="M10 17L15 12"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									class="svg__path"
+									d="M15 12L10 7"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</g>
+							<defs>
+								<clipPath>
+									<rect width="24" height="24" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</button>
+					<button class="arrow rightArrow">
+						<svg class="svg" viewBox="0 0 24 24">
+							<g>
+								<path
+									class="svg__path"
+									d="M10 17L15 12"
+									stroke="#ffffff"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+								<path
+									class="svg__path"
+									d="M15 12L10 7"
+									stroke="#ffffff"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</g>
+							<defs>
+								<clipPath>
+									<rect width="24" height="24" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</button>
 
-          <div class="ecoHome__buttonsContainer">
-            <button
-              class="ecoHome__button button_1 button--active"
-              data-tab="0"
-            >
-              01 ECOHOME
-            </button>
-            <button class="ecoHome__button button_2" data-tab="1">
-              02 ECOHOME
-            </button>
-            <button class="ecoHome__button button_3" data-tab="2">
-              03 ECOHOME
-            </button>
-          </div>
-          <div class="right__circle rightCircle_animation">
-            <span> </span>
-          </div>
-          <img
-            class="ecoHome__image"
-            src="src/assets/ecoHome1.jpg"
-            alt="EcoHome Preview"
-            loading="lazy"
-          />
-          <img
-            class="ecoHome__image hidden"
-            src="src/assets/ecoHome2.jpg"
-            alt="EcoHome Preview"
-            loading="lazy"
-          />
-          <img
-            class="ecoHome__image hidden"
-            src="src/assets/ecoHome3.jpg"
-            alt="EcoHome Preview"
-            loading="lazy"
-          />
+					<div class="slide__container">
+						<div class="slide__image image__1"></div>
+						<div class="slide__image image__2 hidden"></div>
+						<div class="slide__image image__3 hidden"></div>
+						<div class="img__descrip__container"></div>
+					</div>
 
-          <div class="block">
-            <img src="leaf.svg" alt="" />
-            <p>Reach out to our sales specialist for complete details</p>
+					<div class="dots">
+						<button class="dot dot__1 dot__active" data-id="1"></button>
+						<button class="dot dot__2" data-id="2"></button>
+						<button class="dot dot__3" data-id="3"></button>
+					</div>
+				</section>
 
-            <button class="circle__button">CONTACT</button>
-          </div>
-        </section>
+				<section class="articles__section" id="highlights">
+					<h2 class="section__heading articles__section_heading">Highlights</h2>
 
-        <section class="slider slider__BG__1 section--hidden" id="contribution">
-          <h2 class="slider__header animation">
-            GreenPower is not just about selling products
-            <span class="line"></span>
-          </h2>
-          <p class="slider__paragraph">
-            We strive to involve everyone in changing the approach to
-            environmental protection by organizing and participating in events,
-            publishing articles, and much more. We believe that together, we can
-            save our planet.
-          </p>
+					<!-- eye image -->
+					<div class="artImg article__image__1 article__image"></div>
 
-          <button class="arrow leftArrow">
-            <svg class="svg" viewBox="0 0 24 24">
-              <g>
-                <path
-                  class="svg__path"
-                  d="M10 17L15 12"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  class="svg__path"
-                  d="M15 12L10 7"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath>
-                  <rect width="24" height="24" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </button>
-          <button class="arrow rightArrow">
-            <svg class="svg" viewBox="0 0 24 24">
-              <g>
-                <path
-                  class="svg__path"
-                  d="M10 17L15 12"
-                  stroke="#ffffff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  class="svg__path"
-                  d="M15 12L10 7"
-                  stroke="#ffffff"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </g>
-              <defs>
-                <clipPath>
-                  <rect width="24" height="24" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </button>
+					<div class="subscribe">
+						<h3>Subscribe and get the latest news, articles and many more!</h3>
+						<button class="sub__button">SIGN UP HERE</button>
+					</div>
 
-          <div class="slide__container">
-            <div class="slide__image image__1"></div>
-            <div class="slide__image image__2 hidden"></div>
-            <div class="slide__image image__3 hidden"></div>
-            <div class="img__descrip__container"></div>
-          </div>
+					<!-- black/purple bacteria -->
+					<div class="artImg article__image__2 article__image"></div>
 
-          <div class="dots">
-            <button class="dot dot__1 dot__active" data-id="1"></button>
-            <button class="dot dot__2" data-id="2"></button>
-            <button class="dot dot__3" data-id="3"></button>
-          </div>
-        </section>
+					<div class="popular__articles_container">
+						<h3 class="subsection__heading popular__articles_heading">POPULAR ARTICLES</h3>
+						<div class="subsection__list">
+							<div class="popular__article">
+								<span>01</span>
+								<h4 class="line__clamp">How does climate change affect our lives?</h4>
+							</div>
+							<div class="popular__article">
+								<span>02</span>
+								<h4 class="line__clamp">Why are bees so important to the environment?</h4>
+							</div>
+							<div class="popular__article">
+								<span>03</span>
+								<h4 class="line__clamp">How to properly sort waste?</h4>
+							</div>
+							<div class="popular__article">
+								<span>04</span>
+								<h4 class="line__clamp">10 Green Habits to Save Our Planet</h4>
+							</div>
+							<div class="popular__article">
+								<span>05</span>
+								<h4 class="line__clamp">Less Is More: Beginner's Guide to Minimalism</h4>
+							</div>
+						</div>
+					</div>
 
-        <section class="articles__section" id="highlights">
-          <h2 class="section__heading articles__section_heading">Highlights</h2>
+					<!-- ecological -->
+					<div class="artImg article__image__4 article__image"></div>
 
-          <!-- eye image -->
-          <div class="artImg article__image__1 article__image"></div>
+					<div class="news__container">
+						<h3 class="subsection__heading news__subsection_heading">LATEST NEWS</h3>
+						<div class="subsection__list">
+							<div class="news">
+								<span>10 Oct 2025</span>
+								<h4 class="line__clamp">Global Call to Address Biodiversity Crisis</h4>
+							</div>
+							<div class="news">
+								<span>4 Oct 2025 </span>
+								<h4 class="line__clamp">Innovative Water Management in Agriculture</h4>
+							</div>
+							<div class="news">
+								<span>27 Sep 2025</span>
+								<h4 class="line__clamp">Eco-Friendly Batteries: A Sustainable Alternative to Lithium-Ion</h4>
+							</div>
+							<div class="news">
+								<span>18 Sep 2025</span>
+								<h4 class="line__clamp">Drones to the Rescue: AI-Powered Technology Helps Fight Deforestation</h4>
+							</div>
+							<div class="news">
+								<span>09 Sep 2025</span>
+								<h4 class="line__clamp">New Wind Turbine Design Increases Energy Efficiency by 40%</h4>
+							</div>
+							<div class="news">
+								<span>05 Sep 2025</span>
+								<h4 class="line__clamp">Breakthrough in Hydropower: Generating Energy Without Damming Rivers</h4>
+							</div>
+						</div>
+						<button class="button__empty button__news">View All</button>
+					</div>
 
-          <div class="subscribe">
-            <h3>Subscribe and get the latest news, articles and many more!</h3>
-            <button class="sub__button">SIGN UP HERE</button>
-          </div>
+					<!-- middle psycho leaves -->
+					<div class="artImg article__image__5 article__image"></div>
 
-          <!-- black/purple bacteria -->
-          <div class="artImg article__image__2 article__image"></div>
-
-          <div class="popular__articles_container">
-            <h3 class="subsection__heading popular__articles_heading">
-              POPULAR ARTICLES
-            </h3>
-            <div class="subsection__list">
-              <div class="popular__article">
-                <span>01</span>
-                <h4 class="line__clamp">
-                  How does climate change affect our lives?
-                </h4>
-              </div>
-              <div class="popular__article">
-                <span>02</span>
-                <h4 class="line__clamp">
-                  Why are bees so important to the environment?
-                </h4>
-              </div>
-              <div class="popular__article">
-                <span>03</span>
-                <h4 class="line__clamp">How to properly sort waste?</h4>
-              </div>
-              <div class="popular__article">
-                <span>04</span>
-                <h4 class="line__clamp">10 Green Habits to Save Our Planet</h4>
-              </div>
-              <div class="popular__article">
-                <span>05</span>
-                <h4 class="line__clamp">
-                  Less Is More: Beginner's Guide to Minimalism
-                </h4>
-              </div>
-            </div>
-          </div>
-
-          <!-- ecological -->
-          <div class="artImg article__image__4 article__image"></div>
-
-          <div class="news__container">
-            <h3 class="subsection__heading news__subsection_heading">
-              LATEST NEWS
-            </h3>
-            <div class="subsection__list">
-              <div class="news">
-                <span>10 Oct 2025</span>
-                <h4 class="line__clamp">
-                  Global Call to Address Biodiversity Crisis
-                </h4>
-              </div>
-              <div class="news">
-                <span>4 Oct 2025 </span>
-                <h4 class="line__clamp">
-                  Innovative Water Management in Agriculture
-                </h4>
-              </div>
-              <div class="news">
-                <span>27 Sep 2025</span>
-                <h4 class="line__clamp">
-                  Eco-Friendly Batteries: A Sustainable Alternative to
-                  Lithium-Ion
-                </h4>
-              </div>
-              <div class="news">
-                <span>18 Sep 2025</span>
-                <h4 class="line__clamp">
-                  Drones to the Rescue: AI-Powered Technology Helps Fight
-                  Deforestation
-                </h4>
-              </div>
-              <div class="news">
-                <span>09 Sep 2025</span>
-                <h4 class="line__clamp">
-                  New Wind Turbine Design Increases Energy Efficiency by 40%
-                </h4>
-              </div>
-              <div class="news">
-                <span>05 Sep 2025</span>
-                <h4 class="line__clamp">
-                  Breakthrough in Hydropower: Generating Energy Without Damming
-                  Rivers
-                </h4>
-              </div>
-            </div>
-            <button class="button__empty button__news">View All</button>
-          </div>
-
-          <!-- middle psycho leaves -->
-          <div class="artImg article__image__5 article__image"></div>
-
-          <div class="events__container">
-            <h3 class="subsection__heading events__heading">UPCOMING EVENTS</h3>
-            <div class="subsection__list events__list">
-              <div class="event">
-                <span>12 Apr 2029</span>
-                <h4>International Day of Forests</h4>
-              </div>
-              <div class="event">
-                <span>5 May 2029</span>
-                <h4>Environmental Technology & Innovation Expo</h4>
-              </div>
-              <div class="event">
-                <span>24 May 2029</span>
-                <h4>International Polar Bear Day</h4>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-  </body>
-  <script type="module" src="/src/js/index.js"></script>
+					<div class="events__container">
+						<h3 class="subsection__heading events__heading">UPCOMING EVENTS</h3>
+						<div class="subsection__list events__list">
+							<div class="event">
+								<span>12 Apr 2029</span>
+								<h4>International Day of Forests</h4>
+							</div>
+							<div class="event">
+								<span>5 May 2029</span>
+								<h4>Environmental Technology & Innovation Expo</h4>
+							</div>
+							<div class="event">
+								<span>24 May 2029</span>
+								<h4>International Polar Bear Day</h4>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
+	<script type="module" src="/src/js/index.js"></script>
 </html>

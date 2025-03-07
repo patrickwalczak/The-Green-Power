@@ -175,7 +175,7 @@
   animation-delay: 600ms;
   animation-duration: 600ms;
 
-  h3 {
+  h2 {
     color: var(--hero--heading-color);
     overflow-y: hidden;
     word-break: break-word;
@@ -252,7 +252,7 @@
   }
 
   .image__content {
-    h3 {
+    h2 {
       font-size: 4.8rem;
     }
   }
