@@ -394,8 +394,8 @@
 						planet.
 					</p>
 
-					<button class="arrow leftArrow">
-						<svg class="svg" viewBox="0 0 24 24">
+					<button class="arrow leftArrow" aria-label="Previous Slide" title="Previous Slide">
+						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
 									class="svg__path"
@@ -419,21 +419,20 @@
 							</defs>
 						</svg>
 					</button>
-					<button class="arrow rightArrow">
-						<svg class="svg" viewBox="0 0 24 24">
+					<button class="arrow rightArrow" aria-label="Next Slide" title="Next Slide">
+						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
 									class="svg__path"
 									d="M10 17L15 12"
-									stroke="#ffffff"
 									stroke-width="2"
+									stroke="currentColor"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									class="svg__path"
 									d="M15 12L10 7"
-									stroke="#ffffff"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
@@ -448,23 +447,67 @@
 					</button>
 
 					<div class="slide__container">
-						<div class="slide__image image__1"></div>
-						<div class="slide__image image__2 hidden"></div>
-						<div class="slide__image image__3 hidden"></div>
+						<div
+							class="slide__image image__1"
+							role="tabpanel"
+							id="slide__1"
+							aria-hidden="false"
+							aria-labelledby="dot__1"
+						></div>
+						<div
+							class="slide__image image__2 hidden"
+							role="tabpanel"
+							id="slide__2"
+							aria-hidden="true"
+							aria-labelledby="dot__2"
+						></div>
+						<div
+							class="slide__image image__3 hidden"
+							role="tabpanel"
+							id="slide__3"
+							aria-hidden="true"
+							aria-labelledby="dot__3"
+						></div>
 						<div class="img__descrip__container"></div>
 					</div>
 
-					<div class="dots">
-						<button class="dot dot__1 dot__active" data-id="1"></button>
-						<button class="dot dot__2" data-id="2"></button>
-						<button class="dot dot__3" data-id="3"></button>
+					<div class="dots" role="tablist">
+						<button
+							id="dot__1"
+							class="dot dot__1 dot__active"
+							data-id="1"
+							aria-label="Go to slide 1"
+							title="Go to Slide 1"
+							role="tab"
+							aria-selected="true"
+							aria-controls="slide__1"
+						></button>
+						<button
+							id="dot__2"
+							class="dot dot__2"
+							data-id="2"
+							aria-label="Go to slide 2"
+							title="Go to Slide 2"
+							role="tab"
+							aria-selected="false"
+							aria-controls="slide__2"
+						></button>
+						<button
+							id="dot__3"
+							aria-selected="false"
+							class="dot dot__3"
+							data-id="3"
+							aria-label="Go to slide 3"
+							title="Go to Slide 3"
+							role="tab"
+							aria-controls="slide__3"
+						></button>
 					</div>
 				</section>
 
 				<section class="articles__section" id="highlights">
 					<h2 class="section__heading articles__section_heading">Highlights</h2>
 
-					<!-- eye image -->
 					<div class="artImg article__image__1 article__image"></div>
 
 					<div class="subscribe">
@@ -472,7 +515,6 @@
 						<button class="sub__button">SIGN UP HERE</button>
 					</div>
 
-					<!-- black/purple bacteria -->
 					<div class="artImg article__image__2 article__image"></div>
 
 					<div class="popular__articles_container">
@@ -501,7 +543,6 @@
 						</div>
 					</div>
 
-					<!-- ecological -->
 					<div class="artImg article__image__4 article__image"></div>
 
 					<div class="news__container">
