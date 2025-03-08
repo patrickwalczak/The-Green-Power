@@ -362,7 +362,7 @@
 
 	.slider__paragraph {
 		grid-area: paragraph;
-		max-width: unset;
+		max-width: 960px;
 		font-size: 2rem;
 	}
 
