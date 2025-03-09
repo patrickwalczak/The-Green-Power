@@ -1,12 +1,15 @@
 .solutions__section {
 	display: grid;
 	justify-items: center;
-	row-gap: 2rem;
-	background-color: #ffffff;
 }
 
 .solutions__header {
 	width: 100%;
+}
+
+.solutions__section_heading {
+	padding: 10rem;
+	background-color: #eeeae74d;
 }
 
 .solutions__header_content {
@@ -20,8 +23,7 @@
 
 	&.introduce__heading {
 		clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
-		animation: displayRightSideImage 1s;
-		animation-delay: 800ms;
+		animation: displayRightSideImage 1.5s;
 		animation-fill-mode: forwards;
 	}
 }
@@ -78,9 +80,9 @@
 }
 
 .solution__name {
+	justify-self: left;
 	font-size: 1.4rem;
 	color: rgb(66, 66, 66);
-	justify-self: left;
 }
 
 .solution__header {
@@ -116,10 +118,6 @@
 }
 
 @media all and (min-width: 768px) {
-	.solutions__section {
-		row-gap: 3rem;
-	}
-
 	.solutions__header {
 		display: flex;
 	}
@@ -204,7 +202,7 @@
 		clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
 
 		&.introduce__sidebar {
-			transition: 2000ms ease-in-out;
+			transition: 1000ms ease-in-out;
 			opacity: 1;
 			clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 		}
@@ -219,7 +217,7 @@
 		column-gap: 3rem;
 		max-width: unset;
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 700px) minmax(50%, 1fr);
 			grid-template-areas: 'image text';
 
@@ -245,8 +243,9 @@
 }
 
 @media all and (min-width: 1920px) {
-	.solutions__section {
-		row-gap: 5rem;
+	/* Add gaps between articles in previous breakpoints */
+	article {
+		margin-bottom: 5rem;
 	}
 
 	.solutions__heading {
@@ -261,7 +260,7 @@
 	.solution__container {
 		grid-template-columns: minmax(50%, 1fr) minmax(auto, 750px);
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 750px) minmax(50%, 1fr);
 		}
 	}
@@ -299,7 +298,7 @@
 		grid-template-columns: minmax(50%, 1fr) minmax(auto, 950px);
 		column-gap: 3rem;
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 950px) minmax(50%, 1fr);
 		}
 	}
@@ -340,7 +339,6 @@
 @keyframes displayRightSideImage {
 	from {
 		clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
-		opacity: 0;
 	}
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
@@ -351,7 +349,6 @@
 @keyframes displayLeftSideImage {
 	from {
 		clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
-		opacity: 1;
 	}
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);

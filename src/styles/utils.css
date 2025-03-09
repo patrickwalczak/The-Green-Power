@@ -4,9 +4,15 @@
 }
 
 .section__heading {
+	width: 100%;
 	color: var(--color--dark-grey);
-	font-size: 4rem;
-	padding-left: 0.5rem;
+	text-align: center;
+	font-weight: normal;
+	font-size: 3.8rem;
+
+	@media all and (min-width: 1920px) {
+		font-size: 7.2rem;
+	}
 }
 
 .border__radius {

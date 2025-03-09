@@ -4,7 +4,8 @@
 	justify-content: center;
 	row-gap: 5rem;
 	padding: 5rem 2rem;
-	border-top: 1px solid black;
+	margin-top: 10rem;
+	border-top: 2px solid rgb(151, 151, 151);
 	transition: transform 1s, opacity 1s;
 	overflow: hidden;
 
@@ -38,9 +39,6 @@
 } */
 
 .strengths__section_heading {
-	font-size: 3.8rem;
-	text-align: center;
-	color: rgb(36, 36, 36);
 	transition: 1000ms ease-in-out;
 }
 
@@ -174,7 +172,7 @@
 @media all and (min-width: 1280px) {
 	.strengths__section {
 		row-gap: 10rem;
-		padding: 15rem 1rem;
+		padding: 10rem 1rem;
 	}
 
 	.strengths__section_heading {

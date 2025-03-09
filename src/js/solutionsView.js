@@ -23,7 +23,7 @@ class SolutionsView {
 
 	constructor() {
 		this.sectionHeaderObserver = new IntersectionObserver(this.handleHeaderObserver.bind(this), {
-			threshold: [0.1, 1],
+			threshold: [0.2, 1],
 		}).observe(this.sectionHeading);
 
 		window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
@@ -42,6 +42,8 @@ class SolutionsView {
 	handleImageObserver(entries, observer) {
 		const [entry] = entries;
 
+		if (!entry.isIntersecting) return;
+
 		const imgSrc = entry.target.getAttribute('data-src');
 		const imgSide = entry.target.getAttribute('data-side');
 
@@ -58,7 +60,7 @@ class SolutionsView {
 
 		if (!entry.isIntersecting) return;
 
-		this.sectionHeading.classList.add('introduce__heading');
+		this.sectionHeader.classList.add('introduce__heading');
 		this.headerSidebar.classList.add('introduce__sidebar');
 
 		observer.unobserve(this.sectionHeading);
