@@ -446,7 +446,7 @@
 					<div class="ecoHome--background_element ecoHome--background_circle" aria-hidden="true"></div>
 				</section>
 
-				<section class="slider slider__BG__1 section--hidden" id="contribution">
+				<section class="slider section--hidden" id="contribution" data-slide="0">
 					<h2 class="slider__header animation">
 						GreenPower is not just about selling products
 						<span class="line"></span>
@@ -509,36 +509,18 @@
 						</svg>
 					</button>
 
-					<div class="slide__container">
-						<div
-							class="slide__image image__1"
-							role="tabpanel"
-							id="slide__1"
-							aria-hidden="false"
-							aria-labelledby="dot__1"
-						></div>
-						<div
-							class="slide__image image__2 hidden"
-							role="tabpanel"
-							id="slide__2"
-							aria-hidden="true"
-							aria-labelledby="dot__2"
-						></div>
-						<div
-							class="slide__image image__3 hidden"
-							role="tabpanel"
-							id="slide__3"
-							aria-hidden="true"
-							aria-labelledby="dot__3"
-						></div>
+					<div class="slide__container" aria-live="polite">
+						<div class="slide__image image__1" role="tabpanel" id="slide__1" aria-labelledby="dot__1"></div>
+						<div class="slide__image image__2" role="tabpanel" id="slide__2" aria-labelledby="dot__2" hidden></div>
+						<div class="slide__image image__3" role="tabpanel" id="slide__3" aria-labelledby="dot__3" hidden></div>
 						<div class="img__descrip__container"></div>
 					</div>
 
-					<div class="dots" role="tablist">
+					<nav class="dots" role="tablist" aria-orientation="horizontal">
 						<button
 							id="dot__1"
 							class="dot dot__1 dot__active"
-							data-id="1"
+							data-index="0"
 							aria-label="Go to slide 1"
 							title="Go to Slide 1"
 							role="tab"
@@ -548,7 +530,7 @@
 						<button
 							id="dot__2"
 							class="dot dot__2"
-							data-id="2"
+							data-index="1"
 							aria-label="Go to slide 2"
 							title="Go to Slide 2"
 							role="tab"
@@ -558,14 +540,14 @@
 						<button
 							id="dot__3"
 							class="dot dot__3"
-							data-id="3"
+							data-index="2"
 							aria-label="Go to slide 3"
 							title="Go to Slide 3"
 							role="tab"
 							aria-selected="false"
 							aria-controls="slide__3"
 						></button>
-					</div>
+					</nav>
 				</section>
 
 				<section class="articles__section" id="highlights">

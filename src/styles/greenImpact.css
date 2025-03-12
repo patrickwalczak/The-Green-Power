@@ -1,4 +1,4 @@
-.slider__BG__1 {
+.slider[data-slide='0'] {
 	--slide-BG-color: rgb(52, 100, 47);
 	--slide-detailsColor: #e1dd72;
 	--arrColor: rgb(9, 56, 0);
@@ -6,7 +6,7 @@
 	--littleTextColor: rgb(9, 56, 0);
 }
 
-.slider__BG__2 {
+.slider[data-slide='1'] {
 	--slide-BG-color: rgb(10, 109, 175);
 	--slide-detailsColor: #eea47fff;
 	--arrColor: white;
@@ -14,7 +14,7 @@
 	--littleTextColor: rgb(16, 31, 41);
 }
 
-.slider__BG__3 {
+.slider[data-slide='2'] {
 	--slide-BG-color: rgb(121, 54, 21);
 	--slide-detailsColor: #fff1e1;
 	--arrColor: rgb(9, 56, 0);

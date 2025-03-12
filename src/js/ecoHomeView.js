@@ -1,4 +1,6 @@
 class EcoHomeView {
+	activeIndex = 0;
+
 	constructor() {
 		this.selectElements();
 		this.initHeaderObserver();
@@ -15,7 +17,6 @@ class EcoHomeView {
 		this.ecoHomeImageContainers = document.querySelectorAll('.ecoHome--img_container');
 		this.ecoHomeButtonsContainer = document.querySelector('.solution__ecoHome_buttons_container');
 		this.ecoHomeImages = document.querySelectorAll('.ecoHome--image');
-		this.activeIndex = 0;
 	}
 
 	initSectionObserver() {
@@ -63,12 +64,10 @@ class EcoHomeView {
 
 		this.ecoHomeButtons[this.activeIndex]?.classList.remove('active');
 		this.ecoHomeButtons[this.activeIndex]?.setAttribute('aria-selected', 'false');
-		this.ecoHomeButtons[this.activeIndex]?.setAttribute('tabindex', '-1');
 		this.ecoHomeImageContainers[this.activeIndex]?.setAttribute('hidden', 'true');
 
 		this.ecoHomeButtons[newIndex]?.classList.add('active');
 		this.ecoHomeButtons[newIndex]?.setAttribute('aria-selected', 'true');
-		this.ecoHomeButtons[newIndex]?.setAttribute('tabindex', '0');
 		this.ecoHomeImageContainers[newIndex]?.removeAttribute('hidden');
 
 		this.ecoHomeButtons[newIndex]?.focus();
