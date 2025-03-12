@@ -5,9 +5,9 @@ import NavView from './navView.js';
 import GreenImpactView from './greenImpact.js';
 import FollowingTitleView from './followingTitleView.js';
 import SolutionsView from './solutionsView.js';
-import CompanyStrengths from './companyStrengths.js';
+import Strengths from './strengths.js';
 
 window.addEventListener('load', () => {
-  document.querySelector('body').classList.remove('loading');
-  document.querySelector('.loadingModal').classList.add('loaded');
+	document.querySelector('body').classList.remove('loading');
+	document.querySelector('.loadingModal').classList.add('loaded');
 });

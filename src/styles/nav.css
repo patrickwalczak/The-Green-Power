@@ -3,7 +3,7 @@
 	--green: rgb(0, 80, 0);
 }
 
-nav {
+.nav {
 	width: 100%;
 	padding-top: 5.5rem;
 	border-bottom: 1px solid gray;
@@ -114,7 +114,7 @@ nav {
 }
 
 @media all and (min-width: 768px) {
-	nav {
+	.nav {
 		border-bottom: 2px solid gray;
 		padding-top: 5rem;
 	}
@@ -236,7 +236,7 @@ nav {
 }
 
 @media all and (min-width: 1280px) {
-	nav {
+	.nav {
 		padding-top: 6rem;
 	}
 
@@ -297,7 +297,7 @@ nav {
 }
 
 @media all and (min-width: 1920px) {
-	nav {
+	.nav {
 		padding-top: 8rem;
 	}
 

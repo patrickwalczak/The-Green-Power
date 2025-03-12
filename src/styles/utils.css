@@ -3,6 +3,10 @@
 	background: none;
 }
 
+.hidden {
+	display: none;
+}
+
 .section__heading {
 	width: 100%;
 	color: var(--color--dark-grey);

@@ -45,7 +45,7 @@ class GreenImpactView {
 
 	initObserver() {
 		this.sliderSectionObserver = new IntersectionObserver(this.initTypingClass.bind(this), {
-			threshold: [0.2],
+			threshold: [0, 0.1, 0.2, 0.4],
 		}).observe(this.elements.sectionSlider);
 	}
 

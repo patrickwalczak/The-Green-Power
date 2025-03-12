@@ -22,7 +22,7 @@
 		<div class="container">
 			<div class="overlay hidden"></div>
 			<header>
-				<nav role="navigation">
+				<nav role="navigation" class="nav">
 					<div class="side__menu" id="side__menu" aria-hidden="true">
 						<div class="side__menu_header">
 							<button
@@ -40,7 +40,7 @@
 								<a class="side__menu_link" href="#solutions" tabindex="-1">Solutions</a>
 							</li>
 							<li>
-								<a class="side__menu_link" href="#ecohome" tabindex="-1">EcoHome</a>
+								<a class="side__menu_link" href="#ecohome__section" tabindex="-1">EcoHome</a>
 							</li>
 							<li>
 								<a class="side__menu_link" href="#contribution" tabindex="-1">Green Impact</a>
@@ -67,7 +67,7 @@
 								<a class="nav__link" href="#solutions">SOLUTIONS</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#ecohome">ECOHOME</a>
+								<a class="nav__link" href="#ecohome__section">ECOHOME</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
@@ -89,7 +89,7 @@
 								<a class="nav__link" href="#solutions">SOLUTIONS</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#ecohome">ECOHOME</a>
+								<a class="nav__link" href="#ecoHome__section">ECOHOME</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
@@ -193,9 +193,9 @@
 								class="solution__image solution__image_1"
 								data-src="src/assets/solutionEcohome.jpg"
 								data-side="right"
-								aria-labelledby="ecoHome-caption"
+								aria-labelledby="ecoHome_caption"
 							/>
-							<figcaption id="ecoHome-caption" class="sr-only">
+							<figcaption id="ecoHome_caption" class="sr-only">
 								EcoHome integrates renewable energy solutions and smart home features.
 							</figcaption>
 						</figure>
@@ -219,9 +219,9 @@
 								data-side="left"
 								class="solution__image solution__image_2"
 								data-src="src/assets/solutionWindTurbines.jpg"
-								aria-labelledby="wind-caption"
+								aria-labelledby="wind_caption"
 							/>
-							<figcaption id="wind-caption" class="sr-only">
+							<figcaption id="wind_caption" class="sr-only">
 								Wind turbines convert wind energy into electricity, reducing carbon footprint.
 							</figcaption>
 						</figure>
@@ -245,9 +245,9 @@
 								data-side="right"
 								class="solution__image solution__image_3"
 								data-src="src/assets/solutionHydropower.jpg"
-								aria-labelledby="hydropower-caption"
+								aria-labelledby="hydropower_caption"
 							/>
-							<figcaption id="hydropower-caption" class="sr-only">
+							<figcaption id="hydropower_caption" class="sr-only">
 								Hydropower technology uses rivers to generate clean energy.
 							</figcaption>
 						</figure>
@@ -273,9 +273,9 @@
 								data-side="left"
 								class="solution__image solution__image_4"
 								data-src="src/assets/solutionSolarPanels.jpg"
-								aria-labelledby="solar-panels-caption"
+								aria-labelledby="solar_panels_caption"
 							/>
-							<figcaption id="solar-panels-caption" class="sr-only">
+							<figcaption id="solar_panels_caption" class="sr-only">
 								Solar panels convert sunlight into electricity for homes and businesses.
 							</figcaption>
 						</figure>
@@ -347,47 +347,103 @@
 					</div>
 				</section>
 
-				<section class="solution__ecoHome" id="ecohome">
-					<img class="image_home" src="src/assets/ecoHomeTriangle.jpg" alt="" loading="lazy" />
-					<div class="intro__circle">
-						<span>ECOHOME</span>
-					</div>
-					<div class="ecoHome__header__container">
-						<div class="animated-title__container">
-							<div class="animated-title">
-								<div class="text-top-container">
-									<h2 id="ecoHome__textTop" class="ecoHome__header">
-										Create Your Dream <br />
-										EcoHome with
-									</h2>
-								</div>
-								<div class="text-bottom-container">
-									<h2 id="ecoHome__textBottom" class="greenHighlight ecoHome__header">GreenPower</h2>
-								</div>
-							</div>
+				<section class="ecoHome__section" id="ecohome__section">
+					<img
+						class="ecoHome--header__img"
+						src="src/assets/ecoHomeTriangle.jpg"
+						alt="The beauty of EcoHome in the early morning light with modern design"
+						loading="lazy"
+					/>
+					<h2 class="ecoHome--heading">
+						<div class="ecoHome--heading__top_text_container">
+							<span id="ecoHome__heading_top" class="ecoHome--heading__text">
+								Create Your Dream <br />
+								EcoHome with
+							</span>
+						</div>
+						<div class="ecoHome--heading__bottom_text_container">
+							<span id="ecoHome__heading_bottom" class="ecoHome--heading__text ecoHome--heading__text--green"
+								>GreenPower</span
+							>
+						</div>
+					</h2>
+
+					<div class="ecoHome--slider" aria-live="polite">
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__1"
+							aria-labelledby="ecoHome__button__1"
+							tabindex="0"
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome1.jpg" alt="Exterior view of EcoHome 1" />
+						</div>
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__2"
+							aria-labelledby="ecoHome__button__2"
+							tabindex="-1"
+							hidden
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome2.jpg" alt="Exterior view of EcoHome 2" />
+						</div>
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__3"
+							aria-labelledby="ecoHome__button__3"
+							tabindex="-1"
+							hidden
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome3.jpg" alt="Exterior view of EcoHome 3" />
 						</div>
 					</div>
 
-					<div class="obliqueLine"></div>
+					<nav class="solution__ecoHome_buttons_container" role="tablist" aria-orientation="horizontal">
+						<button
+							class="ecoHome--change_slide_btn active"
+							id="ecoHome__button__1"
+							title="Preview EcoHome 1"
+							role="tab"
+							aria-selected="true"
+							aria-controls="ecoHome__1"
+							aria-label="EcoHome 1"
+						>
+							<span aria-hidden="true">01</span> ECOHOME
+						</button>
+						<button
+							class="ecoHome--change_slide_btn"
+							id="ecoHome__button__2"
+							title="Preview EcoHome 2"
+							role="tab"
+							aria-selected="false"
+							aria-controls="ecoHome__2"
+							aria-label="EcoHome 2"
+						>
+							<span aria-hidden="true">02</span> ECOHOME
+						</button>
+						<button
+							class="ecoHome--change_slide_btn"
+							id="ecoHome__button__3"
+							title="Preview EcoHome 3"
+							role="tab"
+							aria-selected="false"
+							aria-controls="ecoHome__3"
+							aria-label="EcoHome 3"
+						>
+							<span aria-hidden="true">03</span> ECOHOME
+						</button>
+					</nav>
 
-					<div class="ecoHome__buttonsContainer">
-						<button class="ecoHome__button button_1 button--active" data-tab="0">01 ECOHOME</button>
-						<button class="ecoHome__button button_2" data-tab="1">02 ECOHOME</button>
-						<button class="ecoHome__button button_3" data-tab="2">03 ECOHOME</button>
+					<div class="ecoHome--contact_container">
+						<img src="leaf.svg" alt="Leaf icon symbolizing GreenPower's commitment to sustainability" loading="lazy" />
+						<h3>Reach out to our sales specialist for complete details</h3>
+						<button class="ecoHome--contact_btn" aria-label="Contact sales specialist">CONTACT</button>
 					</div>
-					<div class="right__circle rightCircle_animation">
-						<span> </span>
-					</div>
-					<img class="ecoHome__image" src="src/assets/ecoHome1.jpg" alt="EcoHome Preview" loading="lazy" />
-					<img class="ecoHome__image hidden" src="src/assets/ecoHome2.jpg" alt="EcoHome Preview" loading="lazy" />
-					<img class="ecoHome__image hidden" src="src/assets/ecoHome3.jpg" alt="EcoHome Preview" loading="lazy" />
 
-					<div class="block">
-						<img src="leaf.svg" alt="" />
-						<p>Reach out to our sales specialist for complete details</p>
-
-						<button class="circle__button">CONTACT</button>
-					</div>
+					<div class="ecoHome--background_element ecoHome--background_line" aria-hidden="true"></div>
+					<div class="ecoHome--background_element ecoHome--background_circle" aria-hidden="true"></div>
 				</section>
 
 				<section class="slider slider__BG__1 section--hidden" id="contribution">
@@ -501,12 +557,12 @@
 						></button>
 						<button
 							id="dot__3"
-							aria-selected="false"
 							class="dot dot__3"
 							data-id="3"
 							aria-label="Go to slide 3"
 							title="Go to Slide 3"
 							role="tab"
+							aria-selected="false"
 							aria-controls="slide__3"
 						></button>
 					</div>
