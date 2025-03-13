@@ -30,13 +30,13 @@ class GreenImpactView {
 
 	constructor() {
 		this.elements = {
-			sectionSlider: document.querySelector('.slider'),
-			rArrow: document.querySelector('.rightArrow'),
-			lArrow: document.querySelector('.leftArrow'),
-			dotsContainer: document.querySelector('.dots'),
-			dots: document.querySelectorAll('.dot'),
-			images: document.querySelectorAll('.slide__image'),
-			descriptionContainer: document.querySelector('.img__descrip__container'),
+			section: document.querySelector('.green_impact__section'),
+			rArrow: document.querySelector('.green_impact--arrow_right'),
+			lArrow: document.querySelector('.green_impact--arrow_left'),
+			navigation: document.querySelector('.green_impact--navigation'),
+			dots: document.querySelectorAll('.green_impact--navigation_dot'),
+			images: document.querySelectorAll('.green_impact--slide'),
+			descriptionContainer: document.querySelector('.green_impact--slide_text_container'),
 		};
 
 		this.initObserver();
@@ -49,13 +49,13 @@ class GreenImpactView {
 			{
 				threshold: [0, 0.1, 0.2, 0.4],
 			}
-		).observe(this.elements.sectionSlider);
+		).observe(this.elements.section);
 	}
 
 	initEventListeners() {
 		this.elements.rArrow.addEventListener('click', this.nextSlide.bind(this));
 		this.elements.lArrow.addEventListener('click', this.prevSlide.bind(this));
-		this.elements.dotsContainer.addEventListener('keydown', (e) => this.handleKeyNavigation(e));
+		this.elements.navigation.addEventListener('keydown', (e) => this.handleKeyNavigation(e));
 		this.elements.dots.forEach((dot) =>
 			dot.addEventListener('click', () => this.gotoSlide(Number(dot.getAttribute('data-index'))))
 		);
@@ -72,7 +72,7 @@ class GreenImpactView {
 		if (!entries[0].isIntersecting) return;
 
 		this.updateSlideContent();
-		this.elements.sectionSlider.classList.remove('section--hidden');
+		this.elements.section.classList.remove('section--hidden');
 		observer.unobserve(entries[0].target);
 	}
 
@@ -120,7 +120,7 @@ class GreenImpactView {
 		currentActiveImage.setAttribute('tabindex', '-1');
 		newActiveImage.hidden = false;
 		newActiveImage.setAttribute('tabindex', '0');
-		this.elements.sectionSlider.setAttribute('data-slide', this.clickedIndex);
+		this.elements.section.setAttribute('data-slide', this.clickedIndex);
 	}
 }
 

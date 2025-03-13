@@ -1,4 +1,4 @@
-.slider[data-slide='0'] {
+.green_impact__section[data-slide='0'] {
 	--slide-BG-color: rgb(52, 100, 47);
 	--slide-detailsColor: #e1dd72;
 	--arrColor: rgb(9, 56, 0);
@@ -6,7 +6,7 @@
 	--littleTextColor: rgb(9, 56, 0);
 }
 
-.slider[data-slide='1'] {
+.green_impact__section[data-slide='1'] {
 	--slide-BG-color: rgb(10, 109, 175);
 	--slide-detailsColor: #eea47fff;
 	--arrColor: white;
@@ -14,7 +14,7 @@
 	--littleTextColor: rgb(16, 31, 41);
 }
 
-.slider[data-slide='2'] {
+.green_impact__section[data-slide='2'] {
 	--slide-BG-color: rgb(121, 54, 21);
 	--slide-detailsColor: #fff1e1;
 	--arrColor: rgb(9, 56, 0);
@@ -22,7 +22,7 @@
 	--littleTextColor: #1d3c45;
 }
 
-.slider {
+.green_impact__section {
 	display: grid;
 	justify-items: center;
 	align-items: center;
@@ -32,12 +32,12 @@
 	transition: 400ms ease-in-out;
 }
 
-.slider.section--hidden {
+.green_impact__section.section--hidden {
 	opacity: 0;
 	transform: translateY(8rem);
 }
 
-.slider__header {
+.green_impact--header {
 	position: relative;
 	max-width: 500px;
 	font-size: 4rem;
@@ -60,7 +60,7 @@
 	background-color: var(--slide-detailsColor);
 }
 
-.slider__paragraph {
+.green_impact--paragraph {
 	max-width: 500px;
 	text-align: center;
 	font-size: 1.8rem;
@@ -68,7 +68,7 @@
 	color: rgb(219, 218, 218);
 }
 
-.slide__container {
+.green_impact--slides__container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -78,7 +78,7 @@
 	border: 2px solid var(--slide-detailsColor);
 }
 
-.slide__image {
+.green_impact--slide {
 	position: relative;
 	width: calc(100% - max(3rem, 8vw));
 	height: calc(82% - max(1.5rem, 4vw));
@@ -88,22 +88,22 @@
 	opacity: 0.8;
 }
 
-.image__1 {
+.green_impact--slide_1 {
 	background-image: url('../assets/planted_tree.jpg');
 	transition: 1000ms ease-in-out;
 }
 
-.image__2 {
+.green_impact--slide_2 {
 	background-image: url('../assets/waterPollution.jpg');
 	transition: 400ms ease-in-out;
 }
 
-.image__3 {
+.green_impact--slide_3 {
 	background-image: url('../assets/helped_animals.jpg');
 	transition: 400ms ease-in-out;
 }
 
-.img__descrip__container {
+.green_impact--slide_text_container {
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -233,18 +233,18 @@
 	color: var(--emphasisNum);
 }
 
-.arrow {
+.green_impact--arrow {
 	display: none;
 }
 
-.dots {
+.green_impact--navigation {
 	display: flex;
 	width: 100%;
 	justify-content: center;
 	column-gap: 2rem;
 }
 
-.dot {
+.green_impact--navigation_dot {
 	width: 1rem;
 	height: 1rem;
 	border-radius: 50%;
@@ -252,10 +252,10 @@
 	transition: 400ms ease-in-out;
 	border: none;
 	cursor: pointer;
-}
 
-.dot.dot__active {
-	background-color: rgb(0, 0, 0);
+	&.dot__active {
+		background-color: rgb(0, 0, 0);
+	}
 }
 
 @keyframes typing {
@@ -290,17 +290,17 @@
 }
 
 @media all and (min-width: 768px) {
-	.slider {
+	.green_impact__section {
 		grid-template-columns: minmax(auto, 450px) minmax(auto, 450px);
 		grid-template-rows: 40% auto auto;
 		grid-template-areas:
 			'heading slide'
 			'paragraph slide'
-			'paragraph dots';
+			'paragraph navigation';
 		justify-content: center;
 	}
 
-	.slider__header {
+	.green_impact--header {
 		place-self: center start;
 		grid-area: heading;
 		max-width: 600px;
@@ -308,7 +308,7 @@
 		text-align: left;
 	}
 
-	.slider__paragraph {
+	.green_impact--paragraph {
 		place-self: start start;
 		grid-area: paragraph;
 		max-width: 450px;
@@ -316,12 +316,12 @@
 		text-align: left;
 	}
 
-	.slide__container {
+	.green_impact--slides__container {
 		grid-area: slide;
 		width: min(80%, 400px);
 	}
 
-	.slide__image {
+	.green_impact--slide {
 		width: calc(100% - max(3rem, 4vw));
 		height: calc(82% - max(1.5rem, 2vw));
 	}
@@ -335,53 +335,53 @@
 		font-size: 2rem;
 	}
 
-	.dots {
-		grid-area: dots;
+	.green_impact--navigation {
+		grid-area: navigation;
 		column-gap: 2rem;
 	}
 }
 
 @media all and (min-width: 1280px) {
-	.slider {
+	.green_impact__section {
 		grid-template-columns: 1fr minmax(2%, 1vw) repeat(3, auto);
 		grid-template-rows: 50% auto auto;
 		grid-template-areas:
 			'heading . leftArrow slide rightArrow'
 			'paragraph . leftArrow slide rightArrow'
-			'paragraph . leftArrow dots rightArrow';
+			'paragraph . leftArrow navigation rightArrow';
 		row-gap: 2rem;
 		column-gap: 1rem;
 		padding: 3rem 15rem;
 	}
 
-	.slider__header {
+	.green_impact--header {
 		grid-area: heading;
 		max-width: unset;
 		font-size: 4.8rem;
 	}
 
-	.slider__paragraph {
+	.green_impact--paragraph {
 		grid-area: paragraph;
 		max-width: 960px;
 		font-size: 2rem;
 	}
 
-	.slide__container {
+	.green_impact--slides__container {
 		grid-area: slide;
 		width: max(21vw, 42rem);
 	}
 
-	.slide__image {
+	.green_impact--slide {
 		width: calc(100% - 6rem);
 		height: calc(82% - 3rem);
 	}
 
-	.dots {
-		grid-area: dots;
+	.green_impact--navigation {
+		grid-area: navigation;
 		column-gap: 3rem;
 	}
 
-	.arrow {
+	.green_impact--arrow {
 		align-self: center;
 		display: flex;
 		justify-content: center;
@@ -411,48 +411,49 @@
 		}
 	}
 
-	.rightArrow {
+	.green_impact--arrow_right {
 		grid-area: rightArrow;
 	}
 
-	.leftArrow {
+	.green_impact--arrow_left {
 		grid-area: leftArrow;
 		transform: rotate(180deg);
 	}
 }
 
 @media all and (min-width: 1920px) {
-	.slider {
+	.green_impact__section {
 		display: grid;
 		grid-template-columns: 1fr minmax(9%, 6vw) repeat(3, auto);
 		column-gap: 2rem;
-		padding: 6rem 30rem;
+		padding: 8rem 30rem;
+		margin-top: 10rem;
 	}
 
-	.slider__header {
+	.green_impact--header {
 		max-width: unset;
 		font-size: 6rem;
 	}
 
-	.slider__paragraph {
+	.green_impact--paragraph {
 		max-width: unset;
 		font-size: 2.2rem;
 	}
 
-	.slide__container {
+	.green_impact--slides__container {
 		width: max(21vw, 42rem);
 	}
 
-	.slide__image {
+	.green_impact--slide {
 		width: calc(100% - 6rem);
 		height: calc(82% - 3rem);
 	}
 
-	.dots {
+	.green_impact--navigation {
 		column-gap: 3rem;
 	}
 
-	.arrow {
+	.green_impact--arrow {
 		width: 7rem;
 		height: 7rem;
 	}

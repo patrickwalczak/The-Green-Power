@@ -43,7 +43,7 @@
 								<a class="side__menu_link" href="#ecohome__section" tabindex="-1">EcoHome</a>
 							</li>
 							<li>
-								<a class="side__menu_link" href="#contribution" tabindex="-1">Green Impact</a>
+								<a class="side__menu_link" href="#green_impact__section" tabindex="-1">Green Impact</a>
 							</li>
 							<li>
 								<a class="side__menu_link" href="#highlights" tabindex="-1">Highlights</a>
@@ -70,7 +70,7 @@
 								<a class="nav__link" href="#ecohome__section">ECOHOME</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+								<a class="nav__link" href="#green_impact__section">GREEN IMPACT</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
@@ -92,7 +92,7 @@
 								<a class="nav__link" href="#ecoHome__section">ECOHOME</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+								<a class="nav__link" href="#green_impact__section">GREEN IMPACT</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
@@ -104,16 +104,16 @@
 			</header>
 			<main>
 				<section id="hero__section" class="hero__section">
-					<header>
+					<header class="hero--header">
 						<h1 class="hero__heading hero__intro_animation">
 							World Leader in Providing
 							<br />
-							Sustainable Energy Solutions
+							Sustainable Energy <span class="hero--heading_underline">Solutions</span>
 						</h1>
 					</header>
-					<div class="hero__image hero__business_image">
+					<div class="hero--image hero__business_image">
 						<div class="image__content" id="hero__business_image_content">
-							<h2>
+							<h2 class="hero--content_heading">
 								<span class="word__L word__1">Choose</span>
 								<span class="word__L word__2">the</span>
 								<span class="word__L word__3">Best</span>
@@ -138,9 +138,9 @@
 							</div>
 						</button>
 					</div>
-					<div class="hero__image hero__nature_image">
+					<div class="hero--image hero__nature_image">
 						<div class="image__content" id="hero__nature_image_content">
-							<h2>
+							<h2 class="hero--content_heading">
 								<span class="word__H word__1">Climate</span>
 								<span class="word__H word__2">change</span>
 								<span class="word__H word__3">is</span>
@@ -446,18 +446,22 @@
 					<div class="ecoHome--background_element ecoHome--background_circle" aria-hidden="true"></div>
 				</section>
 
-				<section class="slider section--hidden" id="contribution" data-slide="0">
-					<h2 class="slider__header animation">
+				<section class="green_impact__section section--hidden" id="green_impact__section" data-slide="0">
+					<h2 class="green_impact--header">
 						GreenPower is not just about selling products
 						<span class="line"></span>
 					</h2>
-					<p class="slider__paragraph">
+					<p class="green_impact--paragraph">
 						We strive to involve everyone in changing the approach to environmental protection by organizing and
 						participating in events, publishing articles, and much more. We believe that together, we can save our
 						planet.
 					</p>
 
-					<button class="arrow leftArrow" aria-label="Previous Slide" title="Previous Slide">
+					<button
+						class="green_impact--arrow green_impact--arrow_left"
+						aria-label="Previous Slide"
+						title="Previous Slide"
+					>
 						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
@@ -482,7 +486,7 @@
 							</defs>
 						</svg>
 					</button>
-					<button class="arrow rightArrow" aria-label="Next Slide" title="Next Slide">
+					<button class="green_impact--arrow green_impact--arrow_right" aria-label="Next Slide" title="Next Slide">
 						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
@@ -509,17 +513,34 @@
 						</svg>
 					</button>
 
-					<div class="slide__container" aria-live="polite">
-						<div class="slide__image image__1" role="tabpanel" id="slide__1" aria-labelledby="dot__1"></div>
-						<div class="slide__image image__2" role="tabpanel" id="slide__2" aria-labelledby="dot__2" hidden></div>
-						<div class="slide__image image__3" role="tabpanel" id="slide__3" aria-labelledby="dot__3" hidden></div>
-						<div class="img__descrip__container"></div>
+					<div class="green_impact--slides__container" aria-live="polite">
+						<div
+							class="green_impact--slide green_impact--slide_1"
+							role="tabpanel"
+							id="slide__1"
+							aria-labelledby="dot__1"
+						></div>
+						<div
+							class="green_impact--slide green_impact--slide_2"
+							role="tabpanel"
+							id="slide__2"
+							aria-labelledby="dot__2"
+							hidden
+						></div>
+						<div
+							class="green_impact--slide green_impact--slide_3"
+							role="tabpanel"
+							id="slide__3"
+							aria-labelledby="dot__3"
+							hidden
+						></div>
+						<div class="green_impact--slide_text_container"></div>
 					</div>
 
-					<nav class="dots" role="tablist" aria-orientation="horizontal">
+					<nav class="green_impact--navigation" role="tablist" aria-orientation="horizontal">
 						<button
 							id="dot__1"
-							class="dot dot__1 dot__active"
+							class="green_impact--navigation_dot dot__active"
 							data-index="0"
 							aria-label="Go to slide 1"
 							title="Go to Slide 1"
@@ -529,7 +550,7 @@
 						></button>
 						<button
 							id="dot__2"
-							class="dot dot__2"
+							class="green_impact--navigation_dot"
 							data-index="1"
 							aria-label="Go to slide 2"
 							title="Go to Slide 2"
@@ -539,7 +560,7 @@
 						></button>
 						<button
 							id="dot__3"
-							class="dot dot__3"
+							class="green_impact--navigation_dot"
 							data-index="2"
 							aria-label="Go to slide 3"
 							title="Go to Slide 3"

@@ -29,8 +29,7 @@ class SolutionsView {
 		window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
 
 		this.solutionImgObserver = new IntersectionObserver(this.handleImageObserver.bind(this), {
-			threshold: [0.1, 0.4, 0.6, 1],
-			rootMargin: '50px',
+			threshold: [0.1, 0.2, 0.4, 0.6, 1],
 		});
 
 		this.solutionImgObserver.observe(this.solutionOneImg);

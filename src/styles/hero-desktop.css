@@ -37,7 +37,7 @@
 	visibility: hidden;
 }
 
-.hero__image {
+.hero--image {
 	position: absolute;
 	display: flex;
 	width: 99.5%;

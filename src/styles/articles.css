@@ -242,10 +242,13 @@
 		grid-template-columns: 45% 15% 20% 20%;
 		grid-template-rows: repeat(7, auto);
 		max-width: unset;
+		margin-top: 10rem;
 	}
 
 	.articles__section_heading {
 		grid-column: 1 / 5;
+		/* padding: 10rem 0; */
+		/* background-color: #eeeae74d; */
 	}
 
 	.article__image__1 {
