@@ -4,7 +4,7 @@
 	justify-content: center;
 	row-gap: 5rem;
 	padding: 5rem 2rem;
-	margin-top: 10rem;
+	margin-top: 5rem;
 	border-top: 2px solid rgb(151, 151, 151);
 	transition: transform 1s, opacity 1s;
 	overflow: hidden;
@@ -15,31 +15,8 @@
 	}
 }
 
-/* .strengths__section::after,
-.strengths__section::before {
-	position: absolute;
-	width: 80%;
-	aspect-ratio: 1 / 1;
-	content: '';
-	background-image: url('../assets/leafsBackGround.png');
-	background-repeat: no-repeat;
-	background-size: 40%;
-	background-position: center;
-	opacity: 0.1;
-	z-index: -100;
-}
-
-.strengths__section::after {
-	left: -15%;
-}
-
-.strengths__section::before {
-	right: -15%;
-	transform: rotate(-90deg);
-} */
-
 .strengths__section_heading {
-	transition: 1000ms ease-in-out;
+	font-size: clamp(5rem, 9vw + 0.1rem, 6.4rem);
 }
 
 .strengths__container {
@@ -77,9 +54,9 @@
 	display: grid;
 	align-items: center;
 	justify-items: center;
-	width: 260px;
-	aspect-ratio: 4 / 7;
-	padding: 4rem 3rem 3rem 3rem;
+	width: 250px;
+	aspect-ratio: 7 / 11;
+	padding: 4rem 2rem 3rem 2rem;
 	border-radius: 2rem;
 	box-shadow: 0px 0rem 2rem rgba(0, 0, 0, 0.233);
 	background-color: rgba(255, 255, 255, 0.637);
@@ -93,7 +70,7 @@
 		top: 9%;
 		right: -19%;
 		width: 135px;
-		height: 8px;
+		height: 10px;
 		content: '';
 		background-color: var(--accent-color);
 		clip-path: polygon(86% 100%, 66% 0%, 0% 0%, 0% 100%);
@@ -106,7 +83,7 @@
 			outline: 2px solid white;
 
 			&::after {
-				transform: scale(12);
+				transform: scale(10.3);
 			}
 		}
 
@@ -121,8 +98,8 @@
 }
 
 .strength__image {
-	width: 72px;
-	height: 72px;
+	width: 64px;
+	height: 64px;
 }
 
 .strength__image__wrapper {
@@ -130,7 +107,7 @@
 	display: flex;
 	padding: 3rem;
 	border-radius: 50%;
-	outline-offset: 8px;
+	outline-offset: 10px;
 	outline: 2px solid var(--accent-color);
 	background-color: rgb(255, 255, 255);
 
@@ -159,13 +136,33 @@
 }
 
 @media all and (min-width: 768px) {
-	.strengths__section_heading {
-		font-size: 4.2rem;
-	}
-
 	.strengths__section {
 		row-gap: 7.5rem;
 		padding: 7.5rem 1rem;
+	}
+
+	.strength__card {
+		width: 260px;
+		aspect-ratio: 4 / 7;
+		padding: 4rem 3rem 3rem 3rem;
+
+		&:hover,
+		&:focus-visible {
+			.strength__image__wrapper {
+				&::after {
+					transform: scale(12);
+				}
+			}
+		}
+	}
+
+	.strength__image {
+		width: 72px;
+		height: 72px;
+	}
+
+	.image__medal {
+		object-position: 7px;
 	}
 }
 
@@ -176,7 +173,7 @@
 	}
 
 	.strengths__section_heading {
-		font-size: 4.8rem;
+		font-size: 6.2rem;
 	}
 
 	.strengths__container {
@@ -188,7 +185,7 @@
 
 @media all and (min-width: 2400px) {
 	.strengths__section_heading {
-		font-size: 5.6rem;
+		font-size: 7rem;
 	}
 
 	.strength__card {

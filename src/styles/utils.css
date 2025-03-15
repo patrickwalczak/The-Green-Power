@@ -11,12 +11,7 @@
 	width: 100%;
 	color: var(--color--dark-grey);
 	text-align: center;
-	font-weight: normal;
-	font-size: 3.8rem;
-
-	@media all and (min-width: 1920px) {
-		font-size: 7.2rem;
-	}
+	font-weight: 400;
 }
 
 .border__radius {

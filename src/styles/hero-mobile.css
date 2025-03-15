@@ -60,7 +60,7 @@
 	row-gap: 5rem;
 	min-height: calc(100vh - 46px);
 	max-width: 700px;
-	padding: 0 1rem;
+	padding: 0 1.5rem;
 }
 
 .hero--content_heading {
@@ -83,7 +83,7 @@
 	}
 
 	.hero--header {
-		min-height: calc(100vh - 100px);
+		min-height: calc(100vh - 97px);
 	}
 
 	.hero__heading {
@@ -94,7 +94,7 @@
 
 	.image__content {
 		row-gap: 7.5rem;
-		max-width: 800px;
+		max-width: 900px;
 		padding-left: 5rem;
 		padding-right: 2rem;
 	}

@@ -10,6 +10,7 @@
 .hero__section {
 	position: relative;
 	height: calc(100vh - 11rem);
+	width: 100%;
 	margin-bottom: 4px;
 }
 
@@ -196,7 +197,7 @@
 	justify-self: center;
 	max-width: 1010px;
 	color: var(--hero--paragraph-color);
-	font-size: 3rem;
+	font-size: 2rem;
 	text-align: center;
 }
 
@@ -258,13 +259,36 @@
 	}
 
 	.image__content__paragraph {
-		font-size: 2rem;
+		font-size: 2.2rem;
 	}
 
 	.hero__button {
 		width: 22rem;
 		height: 5rem;
 		font-size: 1.6rem;
+	}
+}
+
+@media all and (min-width: 2400px) {
+	.hero__heading {
+		font-size: 6.6rem;
+		left: calc(50% - 461px);
+	}
+
+	.image__content {
+		h2 {
+			font-size: 6.2rem;
+		}
+	}
+
+	.image__content__paragraph {
+		font-size: 2.8rem;
+	}
+
+	.hero__button {
+		width: 25rem;
+		height: 6rem;
+		font-size: 2rem;
 	}
 }
 
