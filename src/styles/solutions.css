@@ -1,43 +1,47 @@
 .solutions__section {
 	display: grid;
 	justify-items: center;
-	row-gap: 2rem;
-	background-color: #ffffff;
 }
 
 .solutions__header {
 	width: 100%;
 }
 
+.solutions__section_heading {
+	padding: 6rem;
+	background-color: #eeeae74d;
+	font-size: clamp(5rem, 9vw + 0.1rem, 6.4rem);
+}
+
 .solutions__header_content {
 	display: grid;
-	justify-items: center;
-	align-items: center;
-	row-gap: 3rem;
-	padding: 4rem;
+	align-content: center;
+	place-items: start;
+	row-gap: 5rem;
+	min-height: calc(100vh - 46px);
+	padding: 0 1.5rem;
 	background-color: #101820ff;
 	opacity: 0;
 
 	&.introduce__heading {
 		clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
-		animation: displayRightSideImage 1s;
-		animation-delay: 800ms;
+		animation: displayRightSideImage 1.5s;
 		animation-fill-mode: forwards;
 	}
 }
 
 .solutions__heading {
-	font-size: 2.4rem;
+	width: 88%;
+	max-width: 550px;
+	font-size: clamp(2rem, 13vw + 0.1rem, 7rem);
 	font-weight: 400;
-	text-align: center;
 	color: rgb(211, 211, 211);
 	transition: 1400ms ease-in-out;
 }
 
 .solutions__header_paragraph {
 	max-width: 450px;
-	font-size: 1.4rem;
-	text-align: center;
+	font-size: 1.8rem;
 	color: rgb(211, 211, 211);
 }
 
@@ -45,6 +49,7 @@
 	position: relative;
 	height: 6rem;
 	width: 5rem;
+	justify-self: center;
 
 	span {
 		position: absolute;
@@ -78,19 +83,20 @@
 }
 
 .solution__name {
+	justify-self: left;
 	font-size: 1.4rem;
 	color: rgb(66, 66, 66);
-	justify-self: left;
 }
 
 .solution__header {
-	font-size: 2.6rem;
+	font-size: clamp(3.6rem, 9vw + 0.1rem, 4.6rem);
 	text-align: center;
+	font-weight: normal;
 	color: rgb(54, 54, 54);
 }
 
 .solution__paragraph {
-	font-size: 1.6rem;
+	font-size: 1.8rem;
 	text-align: center;
 	color: rgb(94, 94, 94);
 }
@@ -116,10 +122,6 @@
 }
 
 @media all and (min-width: 768px) {
-	.solutions__section {
-		row-gap: 3rem;
-	}
-
 	.solutions__header {
 		display: flex;
 	}
@@ -130,12 +132,16 @@
 		padding: 6rem 4rem;
 	}
 
+	.solutions__section_heading {
+		padding: 8rem;
+	}
+
 	.solutions__heading {
-		font-size: 2.8rem;
+		max-width: 800px;
 	}
 
 	.solutions__header_paragraph {
-		max-width: 500px;
+		max-width: 800px;
 		font-size: 1.8rem;
 	}
 
@@ -150,10 +156,6 @@
 
 	.solution__name {
 		font-size: 1.6rem;
-	}
-
-	.solution__header {
-		font-size: 3rem;
 	}
 
 	.solution__paragraph {
@@ -177,8 +179,14 @@
 		grid-template-areas: 'heading paragraph' 'arrow arrow';
 		justify-content: space-around;
 		column-gap: 3rem;
+		min-height: unset;
 		padding: 12rem;
 		padding-bottom: 4rem;
+	}
+
+	.solutions__section_heading {
+		padding: 10rem;
+		font-size: 6.2rem;
 	}
 
 	.solutions__heading {
@@ -204,7 +212,7 @@
 		clip-path: polygon(100% 0%, 100% 0%, 0% 0%, 0% 0%);
 
 		&.introduce__sidebar {
-			transition: 2000ms ease-in-out;
+			transition: 1000ms ease-in-out;
 			opacity: 1;
 			clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 		}
@@ -219,7 +227,7 @@
 		column-gap: 3rem;
 		max-width: unset;
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 700px) minmax(50%, 1fr);
 			grid-template-areas: 'image text';
 
@@ -245,8 +253,9 @@
 }
 
 @media all and (min-width: 1920px) {
-	.solutions__section {
-		row-gap: 5rem;
+	/* Add gaps between articles in previous breakpoints */
+	article {
+		margin-bottom: 5rem;
 	}
 
 	.solutions__heading {
@@ -261,7 +270,7 @@
 	.solution__container {
 		grid-template-columns: minmax(50%, 1fr) minmax(auto, 750px);
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 750px) minmax(50%, 1fr);
 		}
 	}
@@ -299,7 +308,7 @@
 		grid-template-columns: minmax(50%, 1fr) minmax(auto, 950px);
 		column-gap: 3rem;
 
-		&:nth-child(odd) {
+		&:nth-child(even) {
 			grid-template-columns: minmax(auto, 950px) minmax(50%, 1fr);
 		}
 	}
@@ -340,7 +349,6 @@
 @keyframes displayRightSideImage {
 	from {
 		clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
-		opacity: 0;
 	}
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
@@ -351,7 +359,6 @@
 @keyframes displayLeftSideImage {
 	from {
 		clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
-		opacity: 1;
 	}
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);

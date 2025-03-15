@@ -15,7 +15,6 @@ html {
 	font-size: 62.5%;
 	box-sizing: border-box;
 	scroll-behavior: smooth;
-	/* color-scheme: dark light; */
 }
 
 body {
@@ -87,4 +86,14 @@ button:focus-visible,
 a:focus-visible {
 	outline: 2px solid #000000;
 	outline-offset: 2px;
+}
+
+main {
+	display: grid;
+}
+
+.container {
+	width: 100%;
+	max-width: 2400px;
+	margin: 0 auto;
 }

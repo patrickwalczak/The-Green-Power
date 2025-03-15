@@ -13,7 +13,6 @@
 		<link rel="stylesheet" href="/src/styles/index.css" />
 		<link rel="stylesheet" href="/src/styles/hero-mobile.css" media="all and (max-width: 1280px)" />
 		<link rel="stylesheet" href="/src/styles/hero-desktop.css" media="all and (min-width: 1280px)" />
-
 		<link rel="icon" type="image/svg+xml" href="leaf.svg" />
 	</head>
 	<body>
@@ -23,7 +22,7 @@
 		<div class="container">
 			<div class="overlay hidden"></div>
 			<header>
-				<nav role="navigation">
+				<nav role="navigation" class="nav">
 					<div class="side__menu" id="side__menu" aria-hidden="true">
 						<div class="side__menu_header">
 							<button
@@ -41,10 +40,10 @@
 								<a class="side__menu_link" href="#solutions" tabindex="-1">Solutions</a>
 							</li>
 							<li>
-								<a class="side__menu_link" href="#ecohome" tabindex="-1">EcoHome</a>
+								<a class="side__menu_link" href="#ecohome__section" tabindex="-1">EcoHome</a>
 							</li>
 							<li>
-								<a class="side__menu_link" href="#contribution" tabindex="-1">Green Impact</a>
+								<a class="side__menu_link" href="#green_impact__section" tabindex="-1">Green Impact</a>
 							</li>
 							<li>
 								<a class="side__menu_link" href="#highlights" tabindex="-1">Highlights</a>
@@ -68,10 +67,10 @@
 								<a class="nav__link" href="#solutions">SOLUTIONS</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#ecohome">ECOHOME</a>
+								<a class="nav__link" href="#ecohome__section">ECOHOME</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+								<a class="nav__link" href="#green_impact__section">GREEN IMPACT</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
@@ -90,10 +89,10 @@
 								<a class="nav__link" href="#solutions">SOLUTIONS</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#ecohome">ECOHOME</a>
+								<a class="nav__link" href="#ecoHome__section">ECOHOME</a>
 							</li>
 							<li>
-								<a class="nav__link" href="#contribution">GREEN IMPACT</a>
+								<a class="nav__link" href="#green_impact__section">GREEN IMPACT</a>
 							</li>
 							<li>
 								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
@@ -105,16 +104,16 @@
 			</header>
 			<main>
 				<section id="hero__section" class="hero__section">
-					<header>
+					<header class="hero--header">
 						<h1 class="hero__heading hero__intro_animation">
 							World Leader in Providing
 							<br />
-							Sustainable Energy Solutions
+							Sustainable Energy <span class="hero--heading_underline">Solutions</span>
 						</h1>
 					</header>
-					<div class="hero__image hero__business_image">
+					<div class="hero--image hero__business_image">
 						<div class="image__content" id="hero__business_image_content">
-							<h2>
+							<h2 class="hero--content_heading">
 								<span class="word__L word__1">Choose</span>
 								<span class="word__L word__2">the</span>
 								<span class="word__L word__3">Best</span>
@@ -139,9 +138,9 @@
 							</div>
 						</button>
 					</div>
-					<div class="hero__image hero__nature_image">
+					<div class="hero--image hero__nature_image">
 						<div class="image__content" id="hero__nature_image_content">
-							<h2>
+							<h2 class="hero--content_heading">
 								<span class="word__H word__1">Climate</span>
 								<span class="word__H word__2">change</span>
 								<span class="word__H word__3">is</span>
@@ -169,7 +168,7 @@
 				</section>
 				<section class="solutions__section" id="solutions">
 					<header class="solutions__header">
-						<div class="solutions__header_content introduce__heading">
+						<div class="solutions__header_content">
 							<h2 class="solutions__heading">Build a Greener Future with GreenPower</h2>
 							<p class="solutions__header_paragraph">
 								Today's decisions will impact our lives tomorrow. Yours are important, too. Scroll down to explore the
@@ -185,6 +184,8 @@
 						<div class="solutions__heading_sidebar"></div>
 					</header>
 
+					<h2 class="section__heading solutions__section_heading">Solutions</h2>
+
 					<article class="solution__container">
 						<figure class="solution__image_container">
 							<img
@@ -192,9 +193,9 @@
 								class="solution__image solution__image_1"
 								data-src="src/assets/solutionEcohome.jpg"
 								data-side="right"
-								aria-labelledby="ecoHome-caption"
+								aria-labelledby="ecoHome_caption"
 							/>
-							<figcaption id="ecoHome-caption" class="sr-only">
+							<figcaption id="ecoHome_caption" class="sr-only">
 								EcoHome integrates renewable energy solutions and smart home features.
 							</figcaption>
 						</figure>
@@ -218,9 +219,9 @@
 								data-side="left"
 								class="solution__image solution__image_2"
 								data-src="src/assets/solutionWindTurbines.jpg"
-								aria-labelledby="wind-caption"
+								aria-labelledby="wind_caption"
 							/>
-							<figcaption id="wind-caption" class="sr-only">
+							<figcaption id="wind_caption" class="sr-only">
 								Wind turbines convert wind energy into electricity, reducing carbon footprint.
 							</figcaption>
 						</figure>
@@ -244,9 +245,9 @@
 								data-side="right"
 								class="solution__image solution__image_3"
 								data-src="src/assets/solutionHydropower.jpg"
-								aria-labelledby="hydropower-caption"
+								aria-labelledby="hydropower_caption"
 							/>
-							<figcaption id="hydropower-caption" class="sr-only">
+							<figcaption id="hydropower_caption" class="sr-only">
 								Hydropower technology uses rivers to generate clean energy.
 							</figcaption>
 						</figure>
@@ -272,9 +273,9 @@
 								data-side="left"
 								class="solution__image solution__image_4"
 								data-src="src/assets/solutionSolarPanels.jpg"
-								aria-labelledby="solar-panels-caption"
+								aria-labelledby="solar_panels_caption"
 							/>
-							<figcaption id="solar-panels-caption" class="sr-only">
+							<figcaption id="solar_panels_caption" class="sr-only">
 								Solar panels convert sunlight into electricity for homes and businesses.
 							</figcaption>
 						</figure>
@@ -293,109 +294,175 @@
 				</section>
 
 				<section class="strengths__section section--hidden">
-					<h2 class="intro__header">Our solutions always fit your needs</h2>
-					<div class="strength__card strength__1">
-						<div class="strength__image__wrapper">
-							<img class="strength__image" src="src/assets/customers.jpg" alt="" />
-						</div>
-						<div class="card__hover__background"></div>
+					<h2 class="strengths__section_heading section__heading">Why Choose Us?</h2>
+					<div class="strengths__container">
+						<article tabindex="0" class="strength__card strength__1">
+							<figure class="strength__image__wrapper">
+								<img
+									loading="lazy"
+									class="strength__image"
+									src="src/assets/team.jpg"
+									alt="Team collaborating to provide personalized services"
+								/>
+							</figure>
 
-						<h3 class="strength__textContent">
-							Personalized <br />
-							Services & Products
-						</h3>
-					</div>
-					<div class="strength__card strength__2">
-						<div class="strength__image__wrapper">
-							<img class="strength__image star" src="src/assets/medalEditedOk.jpg" alt="" />
-						</div>
+							<h3 class="strength__heading">Tailored Solutions for Every Customer</h3>
+						</article>
+						<article tabindex="0" class="strength__card strength__2">
+							<figure class="strength__image__wrapper">
+								<img
+									loading="lazy"
+									class="strength__image image__medal"
+									src="src/assets/medal.jpg"
+									alt="Medal representing top quality and excellence"
+								/>
+							</figure>
 
-						<div class="card__hover__background"></div>
+							<h3 class="strength__heading">Industry-Leading Quality Standards</h3>
+						</article>
+						<article tabindex="0" class="strength__card strength__3">
+							<figure class="strength__image__wrapper">
+								<img
+									loading="lazy"
+									class="strength__image"
+									src="src/assets/growth.jpg"
+									alt="Growing plant symbolizing sustainability and environmental impact"
+								/>
+							</figure>
 
-						<h3 class="strength__textContent">
-							Unmatched Quality, <br />
-							Every Time
-						</h3>
-					</div>
-					<div class="strength__card strength__3">
-						<div class="strength__image__wrapper">
-							<img class="strength__image" src="src/assets/growthOk.jpg" alt="" />
-						</div>
+							<h3 class="strength__heading">Committed to a Sustainable Future</h3>
+						</article>
+						<article tabindex="0" class="strength__card strength__4">
+							<figure class="strength__image__wrapper">
+								<img
+									loading="lazy"
+									class="strength__image"
+									src="src/assets/globe.jpg"
+									alt="Globe representing global reach and presence"
+								/>
+							</figure>
 
-						<div class="card__hover__background"></div>
-
-						<h3 class="strength__textContent">
-							Real Impact <br />
-							on the Environment
-						</h3>
-					</div>
-					<div class="strength__card strength__4">
-						<div class="strength__image__wrapper">
-							<img class="strength__image" src="src/assets/earthEdited.jpg" alt="" />
-						</div>
-
-						<div class="card__hover__background"></div>
-
-						<h3 class="strength__textContent">Available Across the Globe</h3>
-					</div>
-				</section>
-
-				<section class="solution__ecoHome" id="ecohome">
-					<img class="image_home" src="src/assets/ecoHomeTriangle.jpg" alt="" loading="lazy" />
-					<div class="intro__circle">
-						<span>ECOHOME</span>
-					</div>
-					<div class="ecoHome__header__container">
-						<div class="animated-title__container">
-							<div class="animated-title">
-								<div class="text-top-container">
-									<h2 id="ecoHome__textTop" class="ecoHome__header">
-										Create Your Dream <br />
-										EcoHome with
-									</h2>
-								</div>
-								<div class="text-bottom-container">
-									<h2 id="ecoHome__textBottom" class="greenHighlight ecoHome__header">GreenPower</h2>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="obliqueLine"></div>
-
-					<div class="ecoHome__buttonsContainer">
-						<button class="ecoHome__button button_1 button--active" data-tab="0">01 ECOHOME</button>
-						<button class="ecoHome__button button_2" data-tab="1">02 ECOHOME</button>
-						<button class="ecoHome__button button_3" data-tab="2">03 ECOHOME</button>
-					</div>
-					<div class="right__circle rightCircle_animation">
-						<span> </span>
-					</div>
-					<img class="ecoHome__image" src="src/assets/ecoHome1.jpg" alt="EcoHome Preview" loading="lazy" />
-					<img class="ecoHome__image hidden" src="src/assets/ecoHome2.jpg" alt="EcoHome Preview" loading="lazy" />
-					<img class="ecoHome__image hidden" src="src/assets/ecoHome3.jpg" alt="EcoHome Preview" loading="lazy" />
-
-					<div class="block">
-						<img src="leaf.svg" alt="" />
-						<p>Reach out to our sales specialist for complete details</p>
-
-						<button class="circle__button">CONTACT</button>
+							<h3 class="strength__heading">Global Reach, Local Expertise</h3>
+						</article>
 					</div>
 				</section>
 
-				<section class="slider slider__BG__1 section--hidden" id="contribution">
-					<h2 class="slider__header animation">
+				<section class="ecoHome__section" id="ecohome__section">
+					<img
+						class="ecoHome--header__img"
+						src="src/assets/ecoHomeTriangle.jpg"
+						alt="The beauty of EcoHome in the early morning light with modern design"
+						loading="lazy"
+					/>
+					<h2 class="ecoHome--heading">
+						<div class="ecoHome--heading__top_text_container">
+							<span id="ecoHome__heading_top" class="ecoHome--heading__text">
+								Create Your Dream <br />
+								EcoHome with
+							</span>
+						</div>
+						<div class="ecoHome--heading__bottom_text_container">
+							<span id="ecoHome__heading_bottom" class="ecoHome--heading__text ecoHome--heading__text--green"
+								>GreenPower</span
+							>
+						</div>
+					</h2>
+
+					<div class="ecoHome--slider" aria-live="polite">
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__1"
+							aria-labelledby="ecoHome__button__1"
+							tabindex="0"
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome1.jpg" alt="Exterior view of EcoHome 1" />
+						</div>
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__2"
+							aria-labelledby="ecoHome__button__2"
+							tabindex="-1"
+							hidden
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome2.jpg" alt="Exterior view of EcoHome 2" />
+						</div>
+						<div
+							class="ecoHome--img_container"
+							role="tabpanel"
+							id="ecoHome__3"
+							aria-labelledby="ecoHome__button__3"
+							tabindex="-1"
+							hidden
+						>
+							<img class="ecoHome--image" data-src="src/assets/ecoHome3.jpg" alt="Exterior view of EcoHome 3" />
+						</div>
+					</div>
+
+					<nav class="solution__ecoHome_buttons_container" role="tablist" aria-orientation="horizontal">
+						<button
+							class="ecoHome--change_slide_btn active"
+							id="ecoHome__button__1"
+							title="Preview EcoHome 1"
+							role="tab"
+							aria-selected="true"
+							aria-controls="ecoHome__1"
+							aria-label="EcoHome 1"
+						>
+							<span aria-hidden="true">01</span> ECOHOME
+						</button>
+						<button
+							class="ecoHome--change_slide_btn"
+							id="ecoHome__button__2"
+							title="Preview EcoHome 2"
+							role="tab"
+							aria-selected="false"
+							aria-controls="ecoHome__2"
+							aria-label="EcoHome 2"
+						>
+							<span aria-hidden="true">02</span> ECOHOME
+						</button>
+						<button
+							class="ecoHome--change_slide_btn"
+							id="ecoHome__button__3"
+							title="Preview EcoHome 3"
+							role="tab"
+							aria-selected="false"
+							aria-controls="ecoHome__3"
+							aria-label="EcoHome 3"
+						>
+							<span aria-hidden="true">03</span> ECOHOME
+						</button>
+					</nav>
+
+					<div class="ecoHome--contact_container">
+						<img src="leaf.svg" alt="Leaf icon symbolizing GreenPower's commitment to sustainability" loading="lazy" />
+						<h3>Reach out to our sales specialist for complete details</h3>
+						<button class="ecoHome--contact_btn" aria-label="Contact sales specialist">CONTACT</button>
+					</div>
+
+					<div class="ecoHome--background_element ecoHome--background_line" aria-hidden="true"></div>
+					<div class="ecoHome--background_element ecoHome--background_circle" aria-hidden="true"></div>
+				</section>
+
+				<section class="green_impact__section section--hidden" id="green_impact__section" data-slide="0">
+					<h2 class="green_impact--header">
 						GreenPower is not just about selling products
 						<span class="line"></span>
 					</h2>
-					<p class="slider__paragraph">
+					<p class="green_impact--paragraph">
 						We strive to involve everyone in changing the approach to environmental protection by organizing and
 						participating in events, publishing articles, and much more. We believe that together, we can save our
 						planet.
 					</p>
 
-					<button class="arrow leftArrow">
-						<svg class="svg" viewBox="0 0 24 24">
+					<button
+						class="green_impact--arrow green_impact--arrow_left"
+						aria-label="Previous Slide"
+						title="Previous Slide"
+					>
+						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
 									class="svg__path"
@@ -419,21 +486,20 @@
 							</defs>
 						</svg>
 					</button>
-					<button class="arrow rightArrow">
-						<svg class="svg" viewBox="0 0 24 24">
+					<button class="green_impact--arrow green_impact--arrow_right" aria-label="Next Slide" title="Next Slide">
+						<svg class="svg" viewBox="0 0 24 24" aria-hidden="true">
 							<g>
 								<path
 									class="svg__path"
 									d="M10 17L15 12"
-									stroke="#ffffff"
 									stroke-width="2"
+									stroke="currentColor"
 									stroke-linecap="round"
 									stroke-linejoin="round"
 								/>
 								<path
 									class="svg__path"
 									d="M15 12L10 7"
-									stroke="#ffffff"
 									stroke-width="2"
 									stroke-linecap="round"
 									stroke-linejoin="round"
@@ -447,24 +513,67 @@
 						</svg>
 					</button>
 
-					<div class="slide__container">
-						<div class="slide__image image__1"></div>
-						<div class="slide__image image__2 hidden"></div>
-						<div class="slide__image image__3 hidden"></div>
-						<div class="img__descrip__container"></div>
+					<div class="green_impact--slides__container" aria-live="polite">
+						<div
+							class="green_impact--slide green_impact--slide_1"
+							role="tabpanel"
+							id="slide__1"
+							aria-labelledby="dot__1"
+						></div>
+						<div
+							class="green_impact--slide green_impact--slide_2"
+							role="tabpanel"
+							id="slide__2"
+							aria-labelledby="dot__2"
+							hidden
+						></div>
+						<div
+							class="green_impact--slide green_impact--slide_3"
+							role="tabpanel"
+							id="slide__3"
+							aria-labelledby="dot__3"
+							hidden
+						></div>
+						<div class="green_impact--slide_text_container"></div>
 					</div>
 
-					<div class="dots">
-						<button class="dot dot__1 dot__active" data-id="1"></button>
-						<button class="dot dot__2" data-id="2"></button>
-						<button class="dot dot__3" data-id="3"></button>
-					</div>
+					<nav class="green_impact--navigation" role="tablist" aria-orientation="horizontal">
+						<button
+							id="dot__1"
+							class="green_impact--navigation_dot dot__active"
+							data-index="0"
+							aria-label="Go to slide 1"
+							title="Go to Slide 1"
+							role="tab"
+							aria-selected="true"
+							aria-controls="slide__1"
+						></button>
+						<button
+							id="dot__2"
+							class="green_impact--navigation_dot"
+							data-index="1"
+							aria-label="Go to slide 2"
+							title="Go to Slide 2"
+							role="tab"
+							aria-selected="false"
+							aria-controls="slide__2"
+						></button>
+						<button
+							id="dot__3"
+							class="green_impact--navigation_dot"
+							data-index="2"
+							aria-label="Go to slide 3"
+							title="Go to Slide 3"
+							role="tab"
+							aria-selected="false"
+							aria-controls="slide__3"
+						></button>
+					</nav>
 				</section>
 
 				<section class="articles__section" id="highlights">
 					<h2 class="section__heading articles__section_heading">Highlights</h2>
 
-					<!-- eye image -->
 					<div class="artImg article__image__1 article__image"></div>
 
 					<div class="subscribe">
@@ -472,7 +581,6 @@
 						<button class="sub__button">SIGN UP HERE</button>
 					</div>
 
-					<!-- black/purple bacteria -->
 					<div class="artImg article__image__2 article__image"></div>
 
 					<div class="popular__articles_container">
@@ -501,7 +609,6 @@
 						</div>
 					</div>
 
-					<!-- ecological -->
 					<div class="artImg article__image__4 article__image"></div>
 
 					<div class="news__container">
@@ -535,7 +642,6 @@
 						<button class="button__empty button__news">View All</button>
 					</div>
 
-					<!-- middle psycho leaves -->
 					<div class="artImg article__image__5 article__image"></div>
 
 					<div class="events__container">
