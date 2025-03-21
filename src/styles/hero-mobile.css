@@ -40,13 +40,11 @@
 }
 
 .hero__business_image {
-	background-image: linear-gradient(to right bottom, rgba(128, 128, 128, 0.7) 0%, rgba(51, 51, 51, 0.7) 100%),
-		url('../assets/heroImageBusiness.jpg');
+	background-image: var(--hero--business-background-image);
 }
 
 .hero__nature_image {
-	background-image: linear-gradient(to right, rgba(56, 56, 56, 0.2), rgba(88, 88, 88, 0.203)),
-		url('/src/assets/heroImageNature.jpg');
+	background-image: var(--hero--nature-background-image);
 }
 
 .hero__button {

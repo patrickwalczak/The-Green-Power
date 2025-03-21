@@ -8,12 +8,14 @@
 
 	--hero--heading-color: rgb(230 230 230);
 	--hero--paragraph-color: rgb(214, 214, 214);
-	--hero--grey-background-image: linear-gradient(
+	--hero--business-background-image: linear-gradient(
 			to right bottom,
 			rgba(128, 128, 128, 0.7) 0%,
 			rgba(51, 51, 51, 0.7) 100%
 		),
-		url('../assets/heroImageBusiness.jpg');
-	--hero--green-background-image: linear-gradient(to right, rgba(7, 116, 7, 0.296) 0%, rgba(23, 138, 23, 0.351) 100%),
-		url('../assets/heroImageNature.jpg');
+		url('../assets/heroImageBusiness.webp');
+	/* --hero--nature-background-image: linear-gradient(to right, rgba(7, 116, 7, 0.296) 0%, rgba(23, 138, 23, 0.351) 100%),
+		url('../assets/heroImageNature.webp'); */
+	--hero--nature-background-image: linear-gradient(to right, rgba(56, 56, 56, 0.2), rgba(88, 88, 88, 0.203)),
+		url('/src/assets/heroImageNature.webp');
 }

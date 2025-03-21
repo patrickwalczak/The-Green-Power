@@ -1,0 +1,8 @@
+User-agent: *
+Disallow:
+
+# Allow crawling of all assets (CSS, JS, images)
+Allow: /src/styles/
+Allow: /src/assets/
+
+Sitemap: https://thegreenpower.netlify.app/sitemap.xml

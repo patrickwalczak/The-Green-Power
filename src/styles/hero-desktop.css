@@ -50,7 +50,7 @@
 }
 
 .hero__business_image {
-	background-image: var(--hero--grey-background-image);
+	background-image: var(--hero--business-background-image);
 	clip-path: var(--left--normal);
 }
 
@@ -60,7 +60,7 @@
 
 .hero__nature_image {
 	right: 0%;
-	background-image: var(--hero--green-background-image);
+	background-image: var(--hero--nature-background-image);
 	background-position: top;
 	background-size: cover;
 	clip-path: var(--right--normal);

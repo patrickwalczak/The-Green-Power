@@ -35,7 +35,8 @@ class GreenImpactView {
 			lArrow: document.querySelector('.green_impact--arrow_left'),
 			navigation: document.querySelector('.green_impact--navigation'),
 			dots: document.querySelectorAll('.green_impact--navigation_dot'),
-			images: document.querySelectorAll('.green_impact--slide'),
+			imageWrappers: document.querySelectorAll('.green_impact--slide'),
+			images: document.querySelectorAll('.green_impact--image'),
 			descriptionContainer: document.querySelector('.green_impact--slide_text_container'),
 		};
 
@@ -47,7 +48,7 @@ class GreenImpactView {
 		this.sliderSectionObserver = new IntersectionObserver(
 			(entries, observer) => this.initTypingClass(entries, observer),
 			{
-				threshold: [0, 0.1, 0.2, 0.4],
+				threshold: [0, 0.1, 0.2, 0.3, 0.4],
 			}
 		).observe(this.elements.section);
 	}
@@ -73,16 +74,25 @@ class GreenImpactView {
 
 		this.updateSlideContent();
 		this.elements.section.classList.remove('section--hidden');
+		this.elements.images.forEach((img) => {
+			const imgSrc = img.getAttribute('data-src');
+			if (imgSrc) {
+				img.setAttribute('src', imgSrc);
+				img.removeAttribute('data-src');
+			}
+		});
+
 		observer.unobserve(entries[0].target);
 	}
 
 	nextSlide() {
-		this.clickedIndex = (this.activeIndex + 1) % this.elements.images.length;
+		this.clickedIndex = (this.activeIndex + 1) % this.elements.imageWrappers.length;
 		this.updateSlideContent();
 	}
 
 	prevSlide() {
-		this.clickedIndex = (this.activeIndex - 1 + this.elements.images.length) % this.elements.images.length;
+		this.clickedIndex =
+			(this.activeIndex - 1 + this.elements.imageWrappers.length) % this.elements.imageWrappers.length;
 		this.updateSlideContent();
 	}
 
@@ -114,8 +124,8 @@ class GreenImpactView {
 	}
 
 	updateContent() {
-		const currentActiveImage = this.elements.images[this.activeIndex];
-		const newActiveImage = this.elements.images[this.clickedIndex];
+		const currentActiveImage = this.elements.imageWrappers[this.activeIndex];
+		const newActiveImage = this.elements.imageWrappers[this.clickedIndex];
 		currentActiveImage.hidden = true;
 		currentActiveImage.setAttribute('tabindex', '-1');
 		newActiveImage.hidden = false;

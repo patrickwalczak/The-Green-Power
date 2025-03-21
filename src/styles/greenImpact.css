@@ -7,19 +7,19 @@
 }
 
 .green_impact__section[data-slide='1'] {
-	--slide-BG-color: rgb(10, 109, 175);
-	--slide-detailsColor: #eea47fff;
-	--arrColor: white;
-	--emphasisNum: rgb(3, 35, 95);
-	--littleTextColor: rgb(16, 31, 41);
-}
-
-.green_impact__section[data-slide='2'] {
 	--slide-BG-color: rgb(121, 54, 21);
 	--slide-detailsColor: #fff1e1;
 	--arrColor: rgb(9, 56, 0);
 	--emphasisNum: #6e1f07;
 	--littleTextColor: #1d3c45;
+}
+
+.green_impact__section[data-slide='2'] {
+	--slide-BG-color: rgb(10, 109, 175);
+	--slide-detailsColor: #eea47fff;
+	--arrColor: white;
+	--emphasisNum: rgb(3, 35, 95);
+	--littleTextColor: rgb(16, 31, 41);
 }
 
 .green_impact__section {
@@ -86,21 +86,17 @@
 	background-size: cover;
 	background-position: bottom;
 	opacity: 0.8;
-}
-
-.green_impact--slide_1 {
-	background-image: url('../assets/planted_tree.jpg');
 	transition: 1000ms ease-in-out;
 }
 
-.green_impact--slide_2 {
-	background-image: url('../assets/waterPollution.jpg');
-	transition: 400ms ease-in-out;
+.green_impact--image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-.green_impact--slide_3 {
-	background-image: url('../assets/helped_animals.jpg');
-	transition: 400ms ease-in-out;
+.green_impact--image_butterfly {
+	object-position: 60%;
 }
 
 .green_impact--slide_text_container {
