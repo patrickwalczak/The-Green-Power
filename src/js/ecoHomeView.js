@@ -95,12 +95,10 @@ class EcoHomeView {
 
 		this.ecoHomeImages.forEach((img) => {
 			const imgName = img.getAttribute('data-name');
-			if (imgSrc) {
-				const imgSrc = new URL(`../assets/${imgName}`, import.meta.url).href;
+			const imgSrc = new URL(`../assets/${imgName}`, import.meta.url).href;
 
-				img.setAttribute('src', imgSrc);
-				img.removeAttribute('data-name');
-			}
+			img.setAttribute('src', imgSrc);
+			img.removeAttribute('data-name');
 		});
 
 		observer.unobserve(entry.target);
