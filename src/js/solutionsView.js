@@ -18,8 +18,9 @@ class SolutionsView {
 	solutionThreeImg = document.querySelector('.solution__image_3');
 	solutionFourImg = document.querySelector('.solution__image_4');
 
+	threshold = [0, 0.1, 0.2, 0.4, 0.6, 1];
+
 	sectionHeaderObserver;
-	solutionImgObserver;
 
 	constructor() {
 		this.sectionHeaderObserver = new IntersectionObserver(this.handleHeaderObserver.bind(this), {
@@ -28,14 +29,16 @@ class SolutionsView {
 
 		window.addEventListener('scroll', this.transformOnScrollHandler.bind(this));
 
-		this.solutionImgObserver = new IntersectionObserver(this.handleImageObserver.bind(this), {
-			threshold: [0.1, 0.2, 0.4, 0.6, 1],
-		});
+		[this.solutionOneImg, this.solutionTwoImg, this.solutionThreeImg, this.solutionFourImg].forEach((img) =>
+			this.attachObserver(img)
+		);
+	}
 
-		this.solutionImgObserver.observe(this.solutionOneImg);
-		this.solutionImgObserver.observe(this.solutionTwoImg);
-		this.solutionImgObserver.observe(this.solutionThreeImg);
-		this.solutionImgObserver.observe(this.solutionFourImg);
+	attachObserver(target) {
+		const observer = new IntersectionObserver((entries, observer) => this.handleImageObserver(entries, observer), {
+			threshold: this.threshold,
+		});
+		observer.observe(target);
 	}
 
 	handleImageObserver(entries, observer) {
