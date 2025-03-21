@@ -17,5 +17,5 @@
 	/* --hero--nature-background-image: linear-gradient(to right, rgba(7, 116, 7, 0.296) 0%, rgba(23, 138, 23, 0.351) 100%),
 		url('../assets/heroImageNature.webp'); */
 	--hero--nature-background-image: linear-gradient(to right, rgba(56, 56, 56, 0.2), rgba(88, 88, 88, 0.203)),
-		url('/src/assets/heroImageNature.webp');
+		url('../assets/heroImageNature.webp');
 }

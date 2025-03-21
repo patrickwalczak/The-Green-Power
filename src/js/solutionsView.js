@@ -49,7 +49,6 @@ class SolutionsView {
 		const imgSrc = new URL(`../assets/${imgName}`, import.meta.url).href;
 
 		entry.target.setAttribute('src', imgSrc);
-
 		entry.target.removeAttribute('data-name');
 
 		if (imgSide === 'right') entry.target.classList.add('right__side__animation');
