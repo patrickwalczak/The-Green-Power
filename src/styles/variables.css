@@ -8,6 +8,8 @@
 
 	--hero--heading-color: rgb(230 230 230);
 	--hero--paragraph-color: rgb(214, 214, 214);
+	--hero--mobile-background-image: linear-gradient(to right, rgba(255, 255, 255, 0.099), rgba(255, 255, 255, 0.122)),
+		url('../assets/mobileHeroBackground.webp');
 	--hero--business-background-image: linear-gradient(
 			to right bottom,
 			rgba(128, 128, 128, 0.7) 0%,

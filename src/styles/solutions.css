@@ -101,6 +101,10 @@
 	color: rgb(94, 94, 94);
 }
 
+.solution__image_container {
+	width: 100%;
+}
+
 .solution__image {
 	width: 100%;
 	aspect-ratio: 6 / 5;

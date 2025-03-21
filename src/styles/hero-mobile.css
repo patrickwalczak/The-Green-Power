@@ -11,8 +11,7 @@
 	justify-content: start;
 	align-items: center;
 	min-height: calc(100vh - 56px);
-	background-image: linear-gradient(to right, rgba(255, 255, 255, 0.099), rgba(255, 255, 255, 0.122)),
-		url('../assets/mobileHeroBackground.webp');
+	background-image: var(--hero--mobile-background-image);
 	background-position: left;
 	background-size: cover;
 }
