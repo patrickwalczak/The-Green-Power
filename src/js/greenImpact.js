@@ -27,6 +27,7 @@ class GreenImpactView {
 	];
 	activeIndex = 0;
 	clickedIndex = 0;
+	startX = 0;
 
 	constructor() {
 		this.elements = {
@@ -38,7 +39,23 @@ class GreenImpactView {
 			imageWrappers: document.querySelectorAll('.green_impact--slide'),
 			images: document.querySelectorAll('.green_impact--image'),
 			descriptionContainer: document.querySelector('.green_impact--slide_text_container'),
+			slider: document.querySelector('.green_impact--slides__container'),
 		};
+
+		this.elements.slider.addEventListener('touchstart', (e) => {
+			this.startX = e.touches[0].clientX;
+		});
+
+		this.elements.slider.addEventListener('touchend', (e) => {
+			const endX = e.changedTouches[0].clientX;
+			const diff = endX - this.startX;
+
+			if (diff > 50) {
+				this.prevSlide();
+			} else if (diff < -50) {
+				this.nextSlide();
+			}
+		});
 
 		this.initObserver();
 		this.initEventListeners();
