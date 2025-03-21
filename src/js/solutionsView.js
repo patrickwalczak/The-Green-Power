@@ -46,7 +46,7 @@ class SolutionsView {
 		const imgSrc = entry.target.getAttribute('data-src');
 		const imgSide = entry.target.getAttribute('data-side');
 
-		entry.target.setAttribute('src', imgSrc);
+		entry.target.setAttribute('src', `${window.location.origin}/${imgSrc}`);
 
 		if (imgSide === 'right') entry.target.classList.add('right__side__animation');
 		else entry.target.classList.add('left__side__animation');

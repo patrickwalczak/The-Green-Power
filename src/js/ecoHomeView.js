@@ -96,7 +96,7 @@ class EcoHomeView {
 		this.ecoHomeImages.forEach((img) => {
 			const imgSrc = img.getAttribute('data-src');
 			if (imgSrc) {
-				img.setAttribute('src', imgSrc);
+				img.setAttribute('src', `${window.location.origin}/${imgSrc}`);
 				img.removeAttribute('data-src');
 			}
 		});
