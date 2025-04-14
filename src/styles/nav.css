@@ -92,7 +92,6 @@
 	}
 }
 
-.btn__contact,
 .nav__bottom {
 	display: none;
 }
@@ -134,37 +133,7 @@
 					height: 1.5rem;
 				}
 			}
-
-			.btn__contact {
-				border: none;
-				color: rgb(255, 255, 255);
-				background: var(--green);
-
-				&:hover {
-					color: var(--green);
-					background: rgb(255, 255, 255);
-				}
-			}
 		}
-	}
-
-	.btn__contact {
-		place-self: center end;
-		display: block;
-		width: 12rem;
-		height: 3rem;
-		border: 1px solid rgb(0, 80, 0);
-		border-radius: 2.5rem;
-		color: var(--green);
-		font-size: 1.2rem;
-		font-weight: 500;
-		background: inherit;
-		transition: 200ms ease-in-out;
-	}
-
-	.btn__contact:hover {
-		color: rgb(255, 255, 255);
-		background: var(--green);
 	}
 
 	.hamburger__button > span {
@@ -226,14 +195,6 @@
 			width: calc(100% - 1rem);
 		}
 	}
-
-	.button__newsletter {
-		position: relative;
-		padding: 0.5rem;
-		place-self: center end;
-		font-weight: 600;
-		color: rgb(0, 80, 0);
-	}
 }
 
 @media all and (min-width: 1280px) {
@@ -258,10 +219,6 @@
 					font-size: 1.1rem;
 					color: white;
 				}
-			}
-
-			.btn__contact {
-				height: 3.2rem;
 			}
 		}
 	}
@@ -358,14 +315,5 @@
 
 	.nav__link {
 		font-size: 1.4rem;
-	}
-
-	.btn__contact {
-		width: 14rem;
-		font-size: 1.3rem;
-	}
-
-	.button__newsletter {
-		font-size: 1.3rem;
 	}
 }
