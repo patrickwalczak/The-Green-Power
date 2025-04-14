@@ -181,7 +181,9 @@
 		grid-template-columns: 50rem 50rem;
 		grid-template-rows: auto auto;
 		grid-template-areas: 'heading paragraph' 'arrow arrow';
-		justify-content: space-around;
+		justify-items: center;
+		justify-content: space-evenly;
+		align-items: center;
 		column-gap: 3rem;
 		min-height: unset;
 		padding: 12rem;
@@ -196,10 +198,12 @@
 	.solutions__heading {
 		grid-area: heading;
 		font-size: 4.2rem;
+		text-align: center;
 	}
 
 	.solutions__header_paragraph {
 		max-width: unset;
+		text-align: center;
 	}
 
 	.solutions__header_arrow_container {

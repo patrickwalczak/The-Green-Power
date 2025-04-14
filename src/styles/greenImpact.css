@@ -184,16 +184,16 @@
 .second_part_3 {
 	--width: 11ch;
 	--steps: 11;
-	--duration: 0.3s;
+	--duration: 1s;
 	--delay: 1.5s;
-	--removeBlinkingCursorDelay: 1.8s;
+	--removeBlinkingCursorDelay: 2.5s;
 }
 
 .third_part_3 {
 	--width: 13ch;
 	--steps: 13;
 	--duration: 2s;
-	--delay: 1.8s;
+	--delay: 2.5s;
 	--removeBlinkingCursorDelay: 3.8s;
 }
 
