@@ -52,4 +52,4 @@ This project was originally a sandbox for learning basic web development. Coming
 
 ## 🔗 Live Demo
 
-👉 [https://thegreenpower.netlify.app](https://thegreenpower.netlify.app)
+👉 [https://greenpowercorp.netlify.app/](https://greenpowercorp.netlify.app/)
