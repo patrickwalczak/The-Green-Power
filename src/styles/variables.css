@@ -10,11 +10,9 @@
 	--hero--paragraph-color: rgb(214, 214, 214);
 	--hero--mobile-background-image: linear-gradient(to right, rgba(255, 255, 255, 0.099), rgba(255, 255, 255, 0.122)),
 		url('../assets/mobileHeroBackground.webp');
-	--hero--business-background-image: linear-gradient(
-			to right bottom,
+	--hero--business-background-image: linear-gradient(to right bottom,
 			rgba(128, 128, 128, 0.7) 0%,
-			rgba(51, 51, 51, 0.7) 100%
-		),
+			rgba(51, 51, 51, 0.7) 100%),
 		url('../assets/heroImageBusiness.webp');
 	/* --hero--nature-background-image: linear-gradient(to right, rgba(7, 116, 7, 0.296) 0%, rgba(23, 138, 23, 0.351) 100%),
 		url('../assets/heroImageNature.webp'); */

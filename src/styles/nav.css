@@ -125,6 +125,7 @@
 
 		&.fixed__nav {
 			grid-template-rows: 5.5rem;
+
 			.logo {
 				font-size: 2.2rem;
 

@@ -213,30 +213,37 @@
 .word__L.word__1 {
 	animation-delay: 500ms;
 }
+
 .word__H.word__2,
 .word__L.word__2 {
 	animation-delay: 550ms;
 }
+
 .word__H.word__3,
 .word__L.word__3 {
 	animation-delay: 600ms;
 }
+
 .word__H.word__4,
 .word__L.word__4 {
 	animation-delay: 650ms;
 }
+
 .word__H.word__5,
 .word__L.word__5 {
 	animation-delay: 700ms;
 }
+
 .word__H.word__6,
 .word__L.word__6 {
 	animation-delay: 750ms;
 }
+
 .word__H.word__7,
 .word__L.word__7 {
 	animation-delay: 800ms;
 }
+
 .word__H.word__8,
 .word__L.word__8 {
 	animation-delay: 850ms;
@@ -297,6 +304,7 @@
 		clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
 		transform: translateY(6rem);
 	}
+
 	to {
 		clip-path: polygon(-20% 0%, 100% 0, 100% 100%, 0% 250%);
 		transform: translateY(0rem);
@@ -308,6 +316,7 @@
 		height: 0%;
 		opacity: 0;
 	}
+
 	to {
 		height: 100%;
 		opacity: 1;
@@ -319,6 +328,7 @@
 		width: 0%;
 		opacity: 0;
 	}
+
 	to {
 		width: 100%;
 		opacity: 1;
@@ -330,6 +340,7 @@
 		opacity: 0;
 		transform: translateY(15rem);
 	}
+
 	100% {
 		opacity: 1;
 		transform: translateY(0) translateX(0) rotate(0);
@@ -340,9 +351,11 @@
 	0% {
 		opacity: 0;
 	}
+
 	50% {
 		opacity: 0.5;
 	}
+
 	100% {
 		opacity: 1;
 	}

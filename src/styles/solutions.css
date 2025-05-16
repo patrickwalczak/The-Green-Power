@@ -261,6 +261,7 @@
 }
 
 @media all and (min-width: 1920px) {
+
 	/* Add gaps between articles in previous breakpoints */
 	article {
 		margin-bottom: 5rem;
@@ -345,9 +346,11 @@
 		transform: rotate(-45deg) translate(0, 0);
 		opacity: 0;
 	}
+
 	50% {
 		opacity: 1;
 	}
+
 	100% {
 		transform: rotate(-45deg) translate(-20px, 20px);
 		opacity: 0;
@@ -358,6 +361,7 @@
 	from {
 		clip-path: polygon(100% 0%, 100% 100%, 100% 100%, 100% 0%);
 	}
+
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 		opacity: 1;
@@ -368,6 +372,7 @@
 	from {
 		clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 0%);
 	}
+
 	to {
 		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%);
 		opacity: 1;
