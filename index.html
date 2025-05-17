@@ -26,14 +26,22 @@
 					<div class="side__menu" id="side__menu" aria-hidden="true">
 						<div class="side__menu_header">
 							<button
-								aria-label="Close Side Menu"
-								class="close__menu_btn"
+								aria-label="Close side menu"
+								class="close__menu_btn button__empty"
 								aria-controls="side__menu"
 								aria-expanded="false"
 							>
-								<span></span> <span></span>
+								<svg
+									aria-hidden="true"
+									class="close__menu_icon"
+									xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 24 24"
+									fill="none"
+								>
+									<path d="M3 3L21 21 M3 21L21 3" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
 							</button>
-							<h3 class="side__menu_heading">Main menu</h3>
+							<h3 class="side__menu_heading">Menu</h3>
 						</div>
 						<ul class="side__menu_links_list">
 							<li>
@@ -52,14 +60,14 @@
 					</div>
 					<div class="nav__top">
 						<button
-							aria-label="Open Side Menu"
+							aria-label="Open side menu"
 							class="hamburger__button button__empty"
 							aria-controls="side__menu"
 							aria-expanded="false"
 						>
-							<span></span>
-							<span></span>
-							<span></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
+							<span aria-hidden="true"></span>
 						</button>
 
 						<ul class="nav__links">

@@ -212,6 +212,7 @@
 			grid-template-columns: 5% 38% 42% 15%;
 
 			.nav__links {
+				grid-column: 2/3;
 				place-self: center stretch;
 				display: flex;
 				justify-content: space-around;
@@ -221,18 +222,19 @@
 					color: white;
 				}
 			}
+
+			.logo {
+				grid-column: 3/4;
+			}
 		}
 	}
 
-	.hamburger__button > span {
-		width: 26px;
-	}
-
-	.hamburger__button > span:not(:last-child) {
-		margin-bottom: 5px;
+	.hamburger__button {
+		display: none;
 	}
 
 	.logo {
+		grid-column: 2/3;
 		font-size: 3.6rem;
 
 		.leaf__large {
@@ -294,14 +296,6 @@
 			width: 2.5rem;
 			height: 2.5rem;
 		}
-	}
-
-	.hamburger__button > span {
-		width: 30px;
-	}
-
-	.hamburger__button > span:not(:last-child) {
-		margin-bottom: 6px;
 	}
 
 	.nav__bottom {
