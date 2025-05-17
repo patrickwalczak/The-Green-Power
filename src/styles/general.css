@@ -22,10 +22,6 @@ body {
 	font-family: Arial, sans-serif;
 }
 
-body.loading {
-	overflow-y: hidden;
-}
-
 body::-webkit-scrollbar {
 	width: 1.2rem;
 }
