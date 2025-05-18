@@ -1,5 +1,4 @@
 class NavView {
-	donateBtn = null;
 	navTop = null;
 	navBottom = null;
 	navObserver = null;
