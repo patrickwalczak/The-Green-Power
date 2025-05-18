@@ -22,7 +22,7 @@ class SolutionsView {
 
 	constructor() {
 		this.sectionHeaderObserver = new IntersectionObserver(this.handleHeaderObserver.bind(this), {
-			threshold: [0.2, 1],
+			threshold: [0.1, 1],
 		}).observe(this.sectionHeading);
 
 		this.scrollDownBtn.addEventListener('click', () => {
@@ -56,8 +56,10 @@ class SolutionsView {
 		entry.target.setAttribute('src', imgSrc);
 		entry.target.removeAttribute('data-name');
 
-		if (imgSide === 'right') entry.target.classList.add('right__side__animation');
-		else entry.target.classList.add('left__side__animation');
+		entry.target.addEventListener('load', () => {
+			if (imgSide === 'right') entry.target.classList.add('right__side__animation');
+			else entry.target.classList.add('left__side__animation');
+		});
 
 		observer.unobserve(entry.target);
 	}
