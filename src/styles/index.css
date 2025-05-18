@@ -1,9 +1,9 @@
+@import 'variables.css';
 @import 'general.css';
 @import 'nav.css';
+@import 'solutions.css';
 @import 'greenImpact.css';
 @import 'strengths.css';
 @import 'solutionEcoHome.css';
-@import 'solutions.css';
 @import 'sideMenu.css';
-@import 'variables.css';
 @import 'utils.css';

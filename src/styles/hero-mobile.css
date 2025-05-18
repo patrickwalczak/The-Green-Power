@@ -38,11 +38,11 @@
 	background-position: center;
 }
 
-.hero__business_image {
+.hero__business_image.loaded {
 	background-image: var(--hero--business-background-image);
 }
 
-.hero__nature_image {
+.hero__nature_image.loaded {
 	background-image: var(--hero--nature-background-image);
 }
 

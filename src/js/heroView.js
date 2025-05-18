@@ -1,6 +1,9 @@
-class HeroView {
-	leftHeroImage = document.querySelector('.hero__business_image');
-	rightHeroImage = document.querySelector('.hero__nature_image');
+class Hero {
+	businessImage = document.querySelector('.hero__business_image');
+	natureImage = document.querySelector('.hero__nature_image');
+}
+
+class HeroDesktop extends Hero {
 	leftHeroButton = document.querySelector('.hero__left_button');
 	rightHeroButton = document.querySelector('.hero__right_button');
 	heroHeader = document.querySelector('.hero__heading');
@@ -18,6 +21,7 @@ class HeroView {
 	hero__leftContentWords = document.querySelectorAll('.word__L');
 
 	constructor() {
+		super();
 		this.leftHeroButton.addEventListener(
 			'click',
 			this.handleClickHeroButton.bind(
@@ -42,42 +46,42 @@ class HeroView {
 				this.hero__rightContentWords
 			)
 		);
-		this.rightHeroImage.addEventListener(
+		this.natureImage.addEventListener(
 			'mouseenter',
 			this.mouseenterHeroImgHandler.bind(
 				this,
-				this.leftHeroImage,
+				this.businessImage,
 				this.leftHeroButton,
 				this.hero__leftButtonLinesContainer,
 				this.hero__leftContentWrapper,
 				this.hero__leftContentWords
 			)
 		);
-		this.leftHeroImage.addEventListener(
+		this.businessImage.addEventListener(
 			'mouseenter',
 			this.mouseenterHeroImgHandler.bind(
 				this,
-				this.rightHeroImage,
+				this.natureImage,
 				this.rightHeroButton,
 				this.hero__rightButtonLinesContainer,
 				this.hero__rightContentWrapper,
 				this.hero__rightContentWords
 			)
 		);
-		this.leftHeroImage.addEventListener('mouseleave', this.resetHero.bind(this));
-		this.rightHeroImage.addEventListener('mouseleave', this.resetHero.bind(this));
+		this.businessImage.addEventListener('mouseleave', this.resetHero.bind(this));
+		this.natureImage.addEventListener('mouseleave', this.resetHero.bind(this));
 	}
 
 	resetHero() {
 		this.mouseenterHeroImgHandler(
-			this.leftHeroImage,
+			this.businessImage,
 			this.leftHeroButton,
 			this.hero__leftButtonLinesContainer,
 			this.hero__leftContentWrapper,
 			this.hero__leftContentWords
 		);
 		this.mouseenterHeroImgHandler(
-			this.rightHeroImage,
+			this.natureImage,
 			this.rightHeroButton,
 			this.hero__rightButtonLinesContainer,
 			this.hero__rightContentWrapper,
@@ -86,8 +90,8 @@ class HeroView {
 	}
 
 	mouseenterHeroImgHandler(oppositeImg, btn, linesContainer, contentWrapper, contentWords) {
-		this.leftHeroImage.style.clipPath = 'var(--left--normal)';
-		this.rightHeroImage.style.clipPath = 'var(--right--normal)';
+		this.businessImage.style.clipPath = 'var(--left--normal)';
+		this.natureImage.style.clipPath = 'var(--right--normal)';
 
 		this.heroHeader.classList.remove('hideVisibility');
 
@@ -108,9 +112,9 @@ class HeroView {
 	handleClickHeroButton(btn, leftState, rightState, linesContainer, contentWrapper, contentWords) {
 		if (btn.classList.contains('isHovered')) return this.resetHero();
 
-		this.leftHeroImage.style.clipPath = `var(--left--${leftState})`;
+		this.businessImage.style.clipPath = `var(--left--${leftState})`;
 
-		this.rightHeroImage.style.clipPath = `var(--right--${rightState})`;
+		this.natureImage.style.clipPath = `var(--right--${rightState})`;
 
 		this.heroHeader.classList.add('hideVisibility');
 
@@ -120,15 +124,61 @@ class HeroView {
 		btn.classList.add('isHovered');
 
 		if (leftState === 'active') {
-			this.leftHeroImage.classList.add('imageIsHovered');
+			this.businessImage.classList.add('imageIsHovered');
 		} else {
-			this.rightHeroImage.classList.add('imageIsHovered');
+			this.natureImage.classList.add('imageIsHovered');
 		}
 		contentWrapper.classList.add('displayContent');
 
 		contentWords.forEach((word) => {
 			word.classList.add('wordHeroRight');
 		});
+	}
+}
+
+class HeroMobile extends Hero {
+	threshold = [0, 0.5, 1];
+
+	constructor() {
+		super();
+		this.attachObserver(this.businessImage);
+		this.attachObserver(this.natureImage);
+	}
+
+	handleImageObserver = (entries, observer) => {
+		const [entry] = entries;
+
+		if (!entry.isIntersecting) return;
+
+		entry.target.classList.add('loaded');
+
+		observer.unobserve(entry.target);
+	};
+
+	attachObserver(target) {
+		const observer = new IntersectionObserver((entries, observer) => this.handleImageObserver(entries, observer), {
+			threshold: this.threshold,
+		});
+		observer.observe(target);
+	}
+}
+
+class HeroView {
+	constructor() {
+		window.addEventListener('resize', this.handleBreakpointChange.bind(this));
+		this.handleBreakpointChange();
+	}
+
+	removeListener() {
+		window.removeEventListener('resize', this.handleBreakpointChange);
+	}
+
+	handleBreakpointChange() {
+		if (window.innerWidth < 1280) new HeroMobile();
+		else {
+			new HeroDesktop();
+			this.removeListener();
+		}
 	}
 }
 

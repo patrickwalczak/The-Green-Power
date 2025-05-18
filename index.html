@@ -20,13 +20,14 @@
 			<div class="overlay hidden"></div>
 			<header>
 				<nav role="navigation" class="nav">
-					<div class="side__menu" id="side__menu" aria-hidden="true">
+					<div class="side__menu" id="side__menu" aria-hidden="true" role="navigation">
 						<div class="side__menu_header">
 							<button
 								aria-label="Close side menu"
 								class="close__menu_btn button__empty"
 								aria-controls="side__menu"
 								aria-expanded="false"
+								tabindex="-1"
 							>
 								<svg
 									aria-hidden="true"
@@ -91,9 +92,6 @@
 							</li>
 							<li>
 								<a class="nav__link" href="#green_impact__section">GREEN IMPACT</a>
-							</li>
-							<li>
-								<a class="nav__link" href="#highlights">HIGHLIGHTS</a>
 							</li>
 						</ul>
 					</div>

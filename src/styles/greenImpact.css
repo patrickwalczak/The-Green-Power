@@ -28,6 +28,7 @@
 	align-items: center;
 	row-gap: 2rem;
 	padding: 5rem max(1.25rem, 4vw);
+	margin-top: 3rem;
 	background-color: var(--slide-BG-color);
 	transition: 400ms ease-in-out;
 }
@@ -297,6 +298,7 @@
 			'paragraph slide'
 			'paragraph navigation';
 		justify-content: center;
+		margin-top: 4rem;
 	}
 
 	.green_impact--header {
@@ -351,6 +353,7 @@
 		row-gap: 2rem;
 		column-gap: 1rem;
 		padding: 3rem 15rem;
+		margin-top: 6rem;
 	}
 
 	.green_impact--header {
